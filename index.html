@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Hub - BPS Lampung Utara</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at top right, #e0f2fe, #f8fafc);
+            min-height: 100vh;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .bg-gradient-bps {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #0369a1, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center p-4 md:p-8">
+
+    <!-- Background Decoration -->
+    <div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden opacity-50">
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
+        <div class="absolute top-1/2 -right-24 w-80 h-80 bg-sky-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="text-center mb-12 animate-fade-in">
+        <div class="flex justify-center mb-6">
+            <div class="w-20 h-20 bg-gradient-bps rounded-2xl flex items-center justify-center shadow-lg floating">
+                <i class="fas fa-database text-white text-3xl"></i>
+            </div>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-3 tracking-tight">
+            Digital <span class="gradient-text">Hub</span>
+        </h1>
+        <p class="text-slate-600 text-lg font-medium">BPS Kabupaten Lampung Utara</p>
+        <div class="h-1 w-20 bg-blue-500 mx-auto mt-4 rounded-full"></div>
+    </header>
+
+    <!-- Links Grid -->
+    <main class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
+        
+        <!-- ASMARA -->
+        <a href="https://asmara.bpslampungutara.cloud" target="_blank" class="glass-card p-6 rounded-3xl flex items-start space-x-5 group">
+            <div class="flex-shrink-0 w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <i class="fas fa-calendar-alt text-2xl"></i>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold text-slate-800 mb-1">ASMARA</h2>
+                <p class="text-sm text-slate-500 leading-relaxed">Agenda Schedule Manager of BPS Lampung Utara</p>
+            </div>
+        </a>
+
+        <!-- SETARA -->
+        <a href="https://setara.bpslampungutara.cloud" target="_blank" class="glass-card p-6 rounded-3xl flex items-start space-x-5 group">
+            <div class="flex-shrink-0 w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                <i class="fas fa-newspaper text-2xl"></i>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold text-slate-800 mb-1">SETARA</h2>
+                <p class="text-sm text-slate-500 leading-relaxed">Scraper Berita Kabupaten Lampung Utara</p>
+            </div>
+        </a>
+
+        <!-- SI TARA -->
+        <a href="https://wa.me/6285366296035" target="_blank" class="glass-card p-6 rounded-3xl flex items-start space-x-5 group">
+            <div class="flex-shrink-0 w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                <i class="fas fa-comments text-2xl"></i>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold text-slate-800 mb-1">SI TARA</h2>
+                <p class="text-sm text-slate-500 leading-relaxed">Konsultasi dan Tanya Data Lampung Utara</p>
+            </div>
+        </a>
+
+        <!-- LARA -->
+        <a href="https://lara.bpslampungutara.cloud" target="_blank" class="glass-card p-6 rounded-3xl flex items-start space-x-5 group">
+            <div class="flex-shrink-0 w-14 h-14 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                <i class="fas fa-book-open text-2xl"></i>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold text-slate-800 mb-1">LARA</h2>
+                <p class="text-sm text-slate-500 leading-relaxed">Lampung Utara Dalam Cerita</p>
+            </div>
+        </a>
+        
+        <!-- Otomasi Indesign Input -->
+        <a href="https://lara.bpslampungutara.cloud" target="_blank" class="glass-card p-6 rounded-3xl flex items-start space-x-5 group">
+            <div class="flex-shrink-0 w-14 h-14 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                <i class="fas fa-book-open text-2xl"></i>
+            </div>
+            <div>
+                <h2 class="text-xl font-bold text-slate-800 mb-1">Otomasi Indesign</h2>
+                <p class="text-sm text-slate-500 leading-relaxed">Program Otomasi Input Data pada Indesign</p>
+            </div>
+        </a>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 text-center text-slate-400 text-sm">
+        <p>&copy; <span id="year"></span> BPS Kabupaten Lampung Utara</p>
+        <p class="mt-1">Penyedia Data Statistik Berkualitas untuk Indonesia Maju</p>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Staggered animation for cards
+        document.querySelectorAll('.glass-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                card.style.transition = 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 150 * index);
+        });
+    </script>
+</body>
+</html>
