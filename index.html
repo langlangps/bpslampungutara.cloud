@@ -1,158 +1,742 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="img/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Hub - BPS Lampung Utara</title>
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DigitalHub</title>
+    <link rel="icon" type="image/png" href="img/favicon.ico" />
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'sans-serif'],
+            },
+            colors: {
+              bpsBlue: {
+                50: '#f0f7ff',
+                100: '#e0effe',
+                500: '#0066ff',
+                600: '#0052cc',
+                900: '#0c2340',
+              },
+              bpsOrange: '#ff8c00',
+              bpsGreen: '#00cc66',
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              float: 'float 6s ease-in-out infinite',
+              glow: 'glow 2s ease-in-out infinite alternate',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-15px)' },
+              },
+              glow: {
+                '0%': { boxShadow: '0 0 10px rgba(0, 102, 255, 0.2)' },
+                '100%': { boxShadow: '0 0 25px rgba(0, 102, 255, 0.6)' },
+              },
+            },
+          },
+        },
+      };
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: radial-gradient(circle at top right, #e0f2fe, #f8fafc);
-            min-height: 100vh;
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            background: rgba(255, 255, 255, 0.95);
-        }
-
-        .bg-gradient-bps {
-            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-        }
-
-        .floating {
-            animation: floating 3s ease-in-out infinite;
-        }
-
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #0369a1, #0ea5e9);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+      /* Custom glowing backdrop & styles */
+      body {
+        background-color: #030712;
+        overflow-x: hidden;
+      }
+      .glass-panel {
+        background: rgba(15, 23, 42, 0.65);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .glass-panel:hover {
+        border-color: rgba(0, 102, 255, 0.4);
+        box-shadow: 0 0 30px rgba(0, 102, 255, 0.15);
+      }
+      .glow-orb {
+        filter: blur(100px);
+        opacity: 0.45;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #030712;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1e293b;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #0066ff;
+      }
     </style>
-</head>
-<body class="flex flex-col items-center justify-center p-4 md:p-8">
+  </head>
+  <body class="text-slate-100 font-sans min-h-screen relative selection:bg-bpsBlue-500 selection:text-white">
+    <!-- Background Elements -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+      <!-- Interactive Canvas for Particle Network -->
+      <canvas id="particleCanvas" class="w-full h-full opacity-60"></canvas>
 
-    <!-- Background Decoration -->
-    <div class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden opacity-50">
-        <div class="absolute -top-24 -left-24 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
-        <div class="absolute top-1/2 -right-24 w-80 h-80 bg-sky-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
+      <!-- Animated Glowing Orbs -->
+      <div class="absolute top-[10%] left-[5%] w-[350px] h-[350px] bg-indigo-600 rounded-full glow-orb animate-pulse-slow"></div>
+      <div class="absolute bottom-[15%] right-[5%] w-[450px] h-[450px] bg-blue-600 rounded-full glow-orb animate-float" style="animation-delay: 2s"></div>
+      <div class="absolute top-[40%] left-[40%] w-[250px] h-[250px] bg-teal-500 rounded-full glow-orb animate-pulse-slow" style="animation-duration: 6s"></div>
+
+      <!-- Cyber grid overlay -->
+      <div class="absolute inset-0 bg-[linear-gradient(to_right,#1f293708_1px,transparent_1px),linear-gradient(to_bottom,#1f293708_1px,transparent_1px)] bg-[size:24px_24px]"></div>
     </div>
 
-    <!-- Header Section -->
-    <header class="text-center mb-12 animate-fade-in">
-        <div class="flex justify-center mb-6">
-            <div class="w-20 h-20 bg-gradient-bps rounded-2xl flex items-center justify-center shadow-lg floating">
-                <i class="fas fa-database text-white text-3xl"></i>
+    <!-- Navigation -->
+    <nav class="relative z-10 border-b border-slate-800/80 bg-slate-950/75 backdrop-blur-md sticky top-0 transition-all duration-300">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo Brand -->
+          <div class="flex items-center space-x-3 cursor-pointer group">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-bpsBlue-500 to-teal-400 p-[2px] shadow-lg shadow-bpsBlue-500/20 transition-transform duration-300 group-hover:scale-110">
+              <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+                <!-- Custom SVG stylized BPS / Hub Logo -->
+                <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                </svg>
+              </div>
             </div>
+            <div>
+              <div class="flex items-center space-x-1.5">
+                <span class="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-300">DigitalHub</span>
+                <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-bpsBlue-500/10 text-bpsBlue-500 border border-bpsBlue-500/20">BPS</span>
+              </div>
+              <p class="text-[10px] text-slate-400 font-medium tracking-wider">KABUPATEN LAMPUNG UTARA</p>
+            </div>
+          </div>
+
+          <!-- Desktop Nav Links -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="#hero" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Beranda</a>
+            <a href="#layanan-utama" class="text-sm font-medium text-slate-300 hover:text-white transition-colors flex items-center gap-1">
+              Layanan
+              <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+            </a>
+            <a href="#kontak" class="text-sm font-medium text-slate-300 hover:text-white transition-colors">Hubungi Kami</a>
+          </div>
+
+          <!-- Right Action Button -->
+          <div class="hidden md:block">
+            <a href="#layanan-utama" class="inline-flex items-center justify-center px-4 py-2 rounded-xl text-xs font-semibold tracking-wider bg-slate-900 text-teal-400 border border-teal-500/30 hover:bg-teal-500/10 hover:border-teal-400 transition-all duration-300 shadow-md shadow-teal-950/20">
+              <i data-lucide="layout-grid" class="w-4 h-4 mr-1.5"></i>
+              PORTAL UTAMA
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden flex items-center">
+            <button id="mobileMenuBtn" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-900 transition-colors">
+              <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+          </div>
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold mb-3 tracking-tight">
-            Digital <span class="gradient-text">Hub</span>
-        </h1>
-        <p class="text-slate-600 text-lg font-medium">BPS Kabupaten Lampung Utara</p>
-        <div class="h-1 w-20 bg-blue-500 mx-auto mt-4 rounded-full"></div>
-    </header>
+      </div>
 
-    <!-- Links Grid -->
-    <main class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
-        
-        <!-- ASMARA -->
-        <a href="https://asmara.bpslampungutara.cloud" target="_blank" class="glass-card p-6 rounded-3xl flex items-start space-x-5 group">
-            <div class="flex-shrink-0 w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                <i class="fas fa-calendar-alt text-2xl"></i>
-            </div>
-            <div>
-                <h2 class="text-xl font-bold text-slate-800 mb-1">ASMARA</h2>
-                <p class="text-sm text-slate-500 leading-relaxed">Agenda Schedule Manager of BPS Lampung Utara</p>
-            </div>
-        </a>
+      <!-- Mobile Menu panel -->
+      <div id="mobileMenu" class="hidden md:hidden border-b border-slate-800 bg-slate-950/95 backdrop-blur-lg px-4 pt-2 pb-6 space-y-3 absolute w-full left-0 z-50">
+        <a href="#hero" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900">Beranda</a>
+        <a href="#layanan-utama" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900">Layanan Utama</a>
+        <a href="#statistik" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900">Statistik Layanan</a>
+        <a href="#kontak" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-300 hover:text-white hover:bg-slate-900">Hubungi Kami</a>
+        <div class="pt-2">
+          <a href="#layanan-utama" class="w-full flex items-center justify-center py-3 rounded-xl text-sm font-semibold bg-gradient-to-r from-bpsBlue-600 to-indigo-600 text-white hover:from-bpsBlue-500 hover:to-indigo-500 transition-all shadow-md shadow-bpsBlue-950/40">
+            <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
+            Akses Portal Digital
+          </a>
+        </div>
+      </div>
+    </nav>
 
-        <!-- SETARA -->
-        <a href="https://setara.bpslampungutara.cloud" target="_blank" class="glass-card p-6 rounded-3xl flex items-start space-x-5 group">
-            <div class="flex-shrink-0 w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                <i class="fas fa-newspaper text-2xl"></i>
+    <!-- Hero Section -->
+    <section id="hero" class="relative z-10 pt-16 pb-20 md:pt-28 md:pb-32 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <!-- Hero Left / Typography -->
+          <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+            <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full glass-panel border-slate-800 text-xs text-teal-400 font-semibold tracking-wider animate-pulse-slow">
+              <span class="flex h-2 w-2 relative">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+              </span>
             </div>
-            <div>
-                <h2 class="text-xl font-bold text-slate-800 mb-1">SETARA</h2>
-                <p class="text-sm text-slate-500 leading-relaxed">Scraper Berita Kabupaten Lampung Utara</p>
-            </div>
-        </a>
 
-        <!-- SI TARA -->
-        <a href="https://wa.me/6285366296035" target="_blank" class="glass-card p-6 rounded-3xl flex items-start space-x-5 group">
-            <div class="flex-shrink-0 w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center text-amber-600 group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                <i class="fas fa-comments text-2xl"></i>
-            </div>
-            <div>
-                <h2 class="text-xl font-bold text-slate-800 mb-1">SI TARA</h2>
-                <p class="text-sm text-slate-500 leading-relaxed">Konsultasi dan Tanya Data Lampung Utara</p>
-            </div>
-        </a>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1]">
+              Menghubungkan
+              <br class="hidden sm:inline" />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-teal-300 to-indigo-400">Data Statistik</span>
+              <br />
+              dengan Kemudahan.
+            </h1>
 
-        <!-- LARA -->
-        <a href="https://lara.bpslampungutara.cloud" target="_blank" class="glass-card p-6 rounded-3xl flex items-start space-x-5 group">
-            <div class="flex-shrink-0 w-14 h-14 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                <i class="fas fa-book-open text-2xl"></i>
-            </div>
-            <div>
-                <h2 class="text-xl font-bold text-slate-800 mb-1">LARA</h2>
-                <p class="text-sm text-slate-500 leading-relaxed">Lampung Utara Dalam Cerita</p>
-            </div>
-        </a>
-        
-        <!-- Otomasi Indesign Input -->
-        <a href="https://lara.bpslampungutara.cloud" target="_blank" class="glass-card p-6 rounded-3xl flex items-start space-x-5 group">
-            <div class="flex-shrink-0 w-14 h-14 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
-                <i class="fas fa-book-open text-2xl"></i>
-            </div>
-            <div>
-                <h2 class="text-xl font-bold text-slate-800 mb-1">Otomasi Indesign</h2>
-                <p class="text-sm text-slate-500 leading-relaxed">Program Otomasi Input Data pada Indesign</p>
-            </div>
-        </a>
+            <p class="text-slate-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+              Selamat datang di
+              <strong class="font-medium text-slate-200">DigitalHub</strong>
+              . Wadah integrasi seluruh platform digital hasil pengembangan BPS Kabupaten Lampung Utara.
+            </p>
 
-    </main>
+            <!-- Interactive Typing Ticker -->
+            <div class="h-10 flex items-center justify-center lg:justify-start space-x-2 text-slate-400 text-sm font-mono bg-slate-900/40 backdrop-blur border border-slate-800/60 max-w-md mx-auto lg:mx-0 py-2 px-4 rounded-xl">
+              <i data-lucide="terminal" class="w-4 h-4 text-teal-400"></i>
+              <span>status_misi:</span>
+              <span id="typingText" class="text-teal-400 font-semibold border-r-2 border-teal-400 pr-1"></span>
+            </div>
 
-    <!-- Footer -->
-    <footer class="mt-16 text-center text-slate-400 text-sm">
-        <p>&copy; <span id="year"></span> BPS Kabupaten Lampung Utara</p>
-        <p class="mt-1">Penyedia Data Statistik Berkualitas untuk Indonesia Maju</p>
+            <!-- Quick Navigation Anchors -->
+            <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <a
+                href="#layanan-utama"
+                class="group w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-2xl bg-gradient-to-r from-bpsBlue-600 to-indigo-600 hover:from-bpsBlue-500 hover:to-indigo-500 text-white font-semibold transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-bpsBlue-500/20"
+              >
+                Mulai Eksplorasi
+                <i data-lucide="arrow-down" class="w-5 h-5 ml-2 transition-transform group-hover:translate-y-1"></i>
+              </a>
+              <a href="#tentang" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-2xl glass-panel text-slate-300 hover:text-white font-semibold transition-all duration-300">Pelajari Selengkapnya</a>
+            </div>
+          </div>
+
+          <!-- Hero Right / Stylish Graphics / Quick Status Widget -->
+          <div class="lg:col-span-5 relative mt-8 lg:mt-0 flex justify-center">
+            <div class="relative w-full max-w-[420px] aspect-square animate-float">
+              <!-- Cybernetic Geometric Rings -->
+              <div class="absolute inset-0 rounded-full border border-dashed border-teal-500/25 animate-[spin_40s_linear_infinite]"></div>
+              <div class="absolute inset-4 rounded-full border border-double border-indigo-500/20 animate-[spin_20s_linear_infinite_reverse]"></div>
+              <div class="absolute inset-10 rounded-full bg-gradient-to-tr from-bpsBlue-600/10 to-teal-400/5 backdrop-blur-sm border border-slate-800"></div>
+
+              <!-- Mini Interactive Widget Card inside -->
+              <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                <!-- Floating BPS Logo Visual representation -->
+                <div class="w-20 h-20 rounded-2xl bg-slate-900 border border-teal-500/40 flex items-center justify-center shadow-lg shadow-teal-500/10 mb-6">
+                  <i data-lucide="activity" class="w-10 h-10 text-teal-400 animate-pulse"></i>
+                </div>
+                <span class="text-xs uppercase tracking-widest text-slate-500 font-bold">DigitalHub</span>
+                <div class="mt-4 space-y-1">
+                  <p class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-indigo-400">SISTEM TERPADU</p>
+                  <p class="text-xs text-slate-400">Lembaga statistik yang terpercaya, profesional, dan inovatif</p>
+                </div>
+
+                <!-- Interactive stats pill -->
+                <div class="mt-6 flex gap-3">
+                  <span class="px-3 py-1 rounded-full bg-slate-950/80 border border-slate-800 text-[11px] text-emerald-400 flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                    Live Portal
+                  </span>
+                  <span class="px-3 py-1 rounded-full bg-slate-950/80 border border-slate-800 text-[11px] text-teal-400">v3.2-Secure</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layanan Utama / Target Links Section -->
+    <section id="layanan-utama" class="relative z-10 py-24 bg-slate-950/40 border-y border-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <span class="text-xs font-semibold uppercase tracking-widest text-bpsBlue-500">INTEGRASI LAYANAN UTAMA</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Tautan Utama & Aplikasi Inovasi BPS</h2>
+        </div>
+
+        <!-- Focus Links Container (Grid) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
+          <!-- CARD 1: Jadwal Wawancara Rekrutmen Mitra -->
+          <div class="group relative rounded-3xl p-px bg-gradient-to-b from-slate-800 to-slate-950 transition-all duration-300 hover:from-teal-500 hover:to-indigo-500 shadow-xl overflow-hidden">
+            <!-- Internal glass container -->
+            <div class="relative bg-slate-950/90 rounded-[23px] p-6 sm:p-8 h-full flex flex-col justify-between transition-all duration-300 group-hover:bg-slate-950/70">
+              <!-- Glow effect -->
+              <div class="absolute -top-12 -right-12 w-32 h-32 bg-teal-500/10 rounded-full blur-2xl group-hover:bg-teal-500/20 transition-all"></div>
+
+              <div>
+                <!-- Header / Badge & Icon -->
+                <div class="flex items-center justify-between mb-8">
+                  <div class="w-14 h-14 rounded-2xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 group-hover:scale-110 transition-transform duration-300">
+                    <i data-lucide="user-check" class="w-7 h-7"></i>
+                  </div>
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span>
+                    Aktif & Terbaru
+                  </span>
+                </div>
+
+                <!-- Title & Info -->
+                <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-teal-300 transition-colors">Jadwal Wawancara Rekrutmen Mitra</h3>
+
+                <!-- Feature list -->
+                <div class="space-y-2 mb-8"></div>
+              </div>
+
+              <!-- Call to Action Link (Request 1) -->
+              <a
+                href="https://bpslampungutara.cloud/jadwal-wawancara"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full inline-flex items-center justify-center py-4 px-6 rounded-2xl bg-teal-500/10 text-teal-400 hover:bg-teal-500 hover:text-white border border-teal-500/30 hover:border-teal-400 font-semibold tracking-wide transition-all duration-300 group-hover:shadow-lg group-hover:shadow-teal-500/20"
+              >
+                Cek Jadwal Wawancara Saya
+                <i data-lucide="arrow-up-right" class="w-4 h-4 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- CARD 2: Aplikasi Inovasi BPS -->
+          <div class="group relative rounded-3xl p-px bg-gradient-to-b from-slate-800 to-slate-950 transition-all duration-300 hover:from-bpsBlue-500 hover:to-purple-500 shadow-xl overflow-hidden">
+            <!-- Internal glass container -->
+            <div class="relative bg-slate-950/90 rounded-[23px] p-6 sm:p-8 h-full flex flex-col justify-between transition-all duration-300 group-hover:bg-slate-950/70">
+              <!-- Glow effect -->
+              <div class="absolute -top-12 -right-12 w-32 h-32 bg-bpsBlue-500/10 rounded-full blur-2xl group-hover:bg-bpsBlue-500/20 transition-all"></div>
+
+              <div>
+                <!-- Header / Badge & Icon -->
+                <div class="flex items-center justify-between mb-8">
+                  <div class="w-14 h-14 rounded-2xl bg-bpsBlue-500/10 border border-bpsBlue-500/20 flex items-center justify-center text-bpsBlue-400 group-hover:scale-110 transition-transform duration-300">
+                    <i data-lucide="cpu" class="w-7 h-7"></i>
+                  </div>
+                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-bpsBlue-500/10 text-bpsBlue-400 border border-bpsBlue-500/25">
+                    <span class="w-1.5 h-1.5 rounded-full bg-bpsBlue-400 mr-1.5 animate-pulse"></span>
+                    Platform Terpadu
+                  </span>
+                </div>
+
+                <!-- Title & Info -->
+                <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-bpsBlue-300 transition-colors">Aplikasi Inovasi BPS Lampung Utara</h3>
+                <p class="text-slate-400 text-sm leading-relaxed mb-6 font-light">Hub terpusat yang merangkum rangkaian solusi inovasi teknologi, integrasi database, visualisasi data spasial wilayah, serta instrumen analisis statistik internal guna melayani instansi daerah & masyarakat luas.</p>
+
+                <!-- Feature list -->
+                <div class="space-y-2 mb-8">
+                  <div class="flex items-center text-xs text-slate-300">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-bpsBlue-400 mr-2 flex-shrink-0"></i>
+                    <span>Layanan visualisasi data yang responsif</span>
+                  </div>
+                  <div class="flex items-center text-xs text-slate-300">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-bpsBlue-400 mr-2 flex-shrink-0"></i>
+                    <span>Kemudahan integrasi data lintas sektor</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Call to Action Link (Request 2) -->
+              <a
+                href="https://bpslampungutara.cloud/innovation"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full inline-flex items-center justify-center py-4 px-6 rounded-2xl bg-bpsBlue-500/10 text-bpsBlue-400 hover:bg-bpsBlue-500 hover:text-white border border-bpsBlue-500/30 hover:border-bpsBlue-400 font-semibold tracking-wide transition-all duration-300 group-hover:shadow-lg group-hover:shadow-bpsBlue-500/20"
+              >
+                Masuk ke Aplikasi Inovasi
+                <i data-lucide="arrow-up-right" class="w-4 h-4 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tentang / Core Values -->
+    <section id="tentang" class="relative z-10 py-24" style="display: none">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <!-- Visual Infographic -->
+          <div class="relative flex justify-center lg:order-last">
+            <div class="w-full max-w-[450px] p-6 rounded-3xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-md relative overflow-hidden">
+              <div class="absolute top-0 right-0 w-24 h-24 bg-teal-500/5 rounded-full blur-2xl"></div>
+
+              <!-- Dynamic mock database UI -->
+              <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
+                <div class="flex items-center space-x-2">
+                  <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                  <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                  <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                <span class="text-xs font-mono text-slate-500">database_query_active</span>
+              </div>
+
+              <!-- Visual analytics simulation -->
+              <div class="space-y-4">
+                <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800/40">
+                  <div class="flex justify-between text-xs text-slate-400 mb-2">
+                    <span>Mitra Terdaftar Semester I</span>
+                    <span class="text-teal-400 font-semibold">92% Terintegrasi</span>
+                  </div>
+                  <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden">
+                    <div class="bg-gradient-to-r from-teal-500 to-indigo-500 h-full rounded-full" style="width: 92%"></div>
+                  </div>
+                </div>
+
+                <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800/40">
+                  <div class="flex justify-between text-xs text-slate-400 mb-2">
+                    <span>Kecepatan Respon Query Inovasi</span>
+                    <span class="text-bpsBlue-400 font-semibold">0.42ms</span>
+                  </div>
+                  <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden">
+                    <div class="bg-gradient-to-r from-bpsBlue-500 to-teal-400 h-full rounded-full" style="width: 98%"></div>
+                  </div>
+                </div>
+
+                <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800/40">
+                  <div class="flex justify-between text-xs text-slate-400 mb-2">
+                    <span>Tingkat Kepuasan Publik (IKM)</span>
+                    <span class="text-emerald-400 font-semibold">Sangat Baik (3.89/4)</span>
+                  </div>
+                  <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden">
+                    <div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-full rounded-full" style="width: 95%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stylized indicator -->
+              <div class="mt-6 p-4 rounded-xl bg-gradient-to-r from-indigo-950/60 to-slate-900/60 border border-indigo-500/20 text-center">
+                <span class="text-xs text-indigo-300 font-medium">Data Terverifikasi & Presisi Secara Nasional</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Text Content -->
+          <div class="space-y-6">
+            <span class="text-xs font-semibold uppercase tracking-widest text-teal-400">SIAPAKAH KAMI?</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Mengedepankan Efisiensi Informasi Melalui Teknologi</h2>
+            <p class="text-slate-400 leading-relaxed font-light">
+              Badan Pusat Statistik (BPS) Kabupaten Lampung Utara senantiasa bertransformasi melampaui metode rujukan tradisional. DigitalHub merupakan perwujudan ekosistem statistik modern yang memfasilitasi kebutuhan internal pemerintah daerah serta hak masyarakat dalam mengakses data publik
+              secara cepat, akurat, dan interaktif.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+              <div class="flex items-start space-x-3">
+                <div class="w-10 h-10 rounded-lg bg-teal-500/10 flex items-center justify-center text-teal-400 flex-shrink-0">
+                  <i data-lucide="shield-check" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm">Infrastruktur Aman</h4>
+                  <p class="text-xs text-slate-400 mt-1">Keamanan siber level tinggi untuk seluruh sistem dan platform.</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0">
+                  <i data-lucide="zap" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-white text-sm">Akses Instan</h4>
+                  <p class="text-xs text-slate-400 mt-1">Hapus proses birokrasi berbelit dengan inovasi digital satu pintu.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistik Hubungan Data / Counter Widget -->
+    <section id="statistik" class="relative z-10 py-20 bg-slate-950/50 border-t border-slate-900" style="display: none">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Stat Item 1 -->
+          <div class="glass-panel p-6 rounded-2xl text-center relative overflow-hidden group">
+            <div class="absolute -right-6 -bottom-6 w-20 h-20 bg-indigo-600/5 rounded-full blur-xl group-hover:bg-indigo-600/10 transition-all"></div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-white mb-2 font-mono">
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-400">10+</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-400 uppercase tracking-widest font-medium">Aplikasi Aktif</p>
+          </div>
+
+          <!-- Stat Item 2 -->
+          <div class="glass-panel p-6 rounded-2xl text-center relative overflow-hidden group">
+            <div class="absolute -right-6 -bottom-6 w-20 h-20 bg-teal-600/5 rounded-full blur-xl group-hover:bg-teal-600/10 transition-all"></div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-white mb-2 font-mono">
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-emerald-400">1K+</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-400 uppercase tracking-widest font-medium">Mitra Terdaftar</p>
+          </div>
+
+          <!-- Stat Item 3 -->
+          <div class="glass-panel p-6 rounded-2xl text-center relative overflow-hidden group">
+            <div class="absolute -right-6 -bottom-6 w-20 h-20 bg-amber-600/5 rounded-full blur-xl group-hover:bg-amber-600/10 transition-all"></div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-white mb-2 font-mono">
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">100%</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-400 uppercase tracking-widest font-medium">Akurasi Validasi</p>
+          </div>
+
+          <!-- Stat Item 4 -->
+          <div class="glass-panel p-6 rounded-2xl text-center relative overflow-hidden group">
+            <div class="absolute -right-6 -bottom-6 w-20 h-20 bg-rose-600/5 rounded-full blur-xl group-hover:bg-rose-600/10 transition-all"></div>
+            <div class="text-3xl sm:text-4xl font-extrabold text-white mb-2 font-mono">
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-purple-400">24/7</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-400 uppercase tracking-widest font-medium">Layanan Digital</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="kontak" class="relative z-10 border-t border-slate-900 bg-slate-950/80 pt-16 pb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-slate-900">
+          <!-- Col 1: Brand details -->
+          <div class="md:col-span-5 space-y-4">
+            <div class="flex items-center space-x-2">
+              <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-bpsBlue-500 to-teal-400 p-[1.5px]">
+                <div class="w-full h-full bg-slate-950 rounded-[7px] flex items-center justify-center">
+                  <svg class="w-4 h-4 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                  </svg>
+                </div>
+              </div>
+              <span class="text-lg font-bold text-white tracking-tight">DigitalHub</span>
+            </div>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">Gerbang Layanan Digital Statistik Resmi Badan Pusat Statistik Kabupaten Lampung Utara. Menyediakan data berkualitas untuk merencanakan masa depan daerah yang cerdas dan sejahtera.</p>
+            <div class="flex space-x-4 pt-2">
+              <a href="https://bpslampungutara.cloud" target="_blank" class="w-8 h-8 rounded-lg bg-slate-900 hover:bg-teal-500/10 text-slate-400 hover:text-teal-400 flex items-center justify-center transition-colors">
+                <i data-lucide="globe" class="w-4 h-4"></i>
+              </a>
+              <a href="mailto:bps1803@bps.go.id" class="w-8 h-8 rounded-lg bg-slate-900 hover:bg-teal-500/10 text-slate-400 hover:text-teal-400 flex items-center justify-center transition-colors">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Col 2: Hub Links (Direct Target Verification) -->
+          <div class="md:col-span-4 space-y-4">
+            <h4 class="text-sm font-semibold tracking-wider text-slate-200 uppercase">Akses Langsung</h4>
+            <ul class="space-y-2.5 text-xs text-slate-400">
+              <li>
+                <a href="https://bpslampungutara.cloud/jadwal-wawancara" target="_blank" rel="noopener noreferrer" class="hover:text-teal-400 transition-colors flex items-center group">
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5 mr-1.5 text-teal-500 group-hover:translate-x-0.5 transition-transform"></i>
+                  Jadwal Wawancara Rekrutmen
+                </a>
+              </li>
+              <li>
+                <a href="https://bpslampungutara.cloud/innovation" target="_blank" rel="noopener noreferrer" class="hover:text-bpsBlue-400 transition-colors flex items-center group">
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5 mr-1.5 text-bpsBlue-500 group-hover:translate-x-0.5 transition-transform"></i>
+                  Aplikasi Inovasi BPS LU
+                </a>
+              </li>
+              <li>
+                <a href="https://lampungutarakab.bps.go.id" target="_blank" class="hover:text-white transition-colors flex items-center group">
+                  <i data-lucide="chevron-right" class="w-3.5 h-3.5 mr-1.5 text-slate-600 group-hover:translate-x-0.5 transition-transform"></i>
+                  Website Resmi BPS Kab. Lampung Utara
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Contact Info -->
+          <div class="md:col-span-3 space-y-4">
+            <h4 class="text-sm font-semibold tracking-wider text-slate-200 uppercase">Kontak Kantor</h4>
+            <div class="space-y-3 text-xs text-slate-400">
+              <div class="flex items-start space-x-2">
+                <i data-lucide="map-pin" class="w-4 h-4 text-teal-400 flex-shrink-0 mt-0.5"></i>
+                <span>Jl. Soekarno Hatta No. 218, Kotabumi Selatan, Kabupaten Lampung Utara, Lampung 34511</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i data-lucide="phone" class="w-4 h-4 text-teal-400 flex-shrink-0"></i>
+                <span>WA SITARA (085366296035)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright and legal -->
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+          <p>© 2026 Badan Pusat Statistik Kabupaten Lampung Utara. All rights reserved.</p>
+          <div class="flex space-x-6">
+            <a href="#" class="hover:text-slate-300 transition-colors">Kebijakan Privasi</a>
+            <a href="#" class="hover:text-slate-300 transition-colors">Ketentuan Layanan</a>
+          </div>
+        </div>
+      </div>
     </footer>
 
+    <!-- JavaScript Animations & Interactions -->
     <script>
-        // Set current year
-        document.getElementById('year').textContent = new Date().getFullYear();
+      // Initialize Lucide Icons
+      lucide.createIcons();
 
-        // Staggered animation for cards
-        document.querySelectorAll('.glass-card').forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            setTimeout(() => {
-                card.style.transition = 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, 150 * index);
+      // 1. Mobile Menu Toggle Logic
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenuBtn.addEventListener('click', () => {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        if (isHidden) {
+          mobileMenu.classList.remove('hidden');
+        } else {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+
+      // Close mobile menu on clicking any link
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
         });
+      });
+
+      // 2. Typing Effect Logic
+      const sentences = ['Sinkronisasi database mitra statistik...', 'Memetakan inovasi pelayanan digital...', 'Menyajikan data Lampung Utara Satu Pintu...', 'Portal Terintegrasi Terverifikasi Nasional.'];
+      let sentenceIdx = 0;
+      let charIdx = 0;
+      let isDeleting = false;
+      const typingSpeed = 70;
+      const deletingSpeed = 35;
+      const delayBetweenSentences = 2000;
+      const typingEl = document.getElementById('typingText');
+
+      function typeEffect() {
+        const currentSentence = sentences[sentenceIdx];
+        if (isDeleting) {
+          typingEl.textContent = currentSentence.substring(0, charIdx - 1);
+          charIdx--;
+        } else {
+          typingEl.textContent = currentSentence.substring(0, charIdx + 1);
+          charIdx++;
+        }
+
+        if (!isDeleting && charIdx === currentSentence.length) {
+          isDeleting = true;
+          setTimeout(typeEffect, delayBetweenSentences);
+        } else if (isDeleting && charIdx === 0) {
+          isDeleting = false;
+          sentenceIdx = (sentenceIdx + 1) % sentences.length;
+          setTimeout(typeEffect, 500);
+        } else {
+          setTimeout(typeEffect, isDeleting ? deletingSpeed : typingSpeed);
+        }
+      }
+
+      // 3. HTML5 Canvas Particles System (Dynamic Interactive Nodes Backdrop)
+      const canvas = document.getElementById('particleCanvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      let mouse = { x: null, y: null, radius: 150 };
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        initParticles();
+      }
+
+      class Particle {
+        constructor(x, y, dx, dy, size) {
+          this.x = x;
+          this.y = y;
+          this.dx = dx;
+          this.dy = dy;
+          this.size = size;
+          this.color = 'rgba(20, 184, 166, 0.22)'; // Subtle teal
+        }
+
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        }
+
+        update() {
+          // Bounce edges
+          if (this.x + this.size > canvas.width || this.x - this.size < 0) this.dx = -this.dx;
+          if (this.y + this.size > canvas.height || this.y - this.size < 0) this.dy = -this.dy;
+
+          this.x += this.dx;
+          this.y += this.dy;
+
+          // Mouse interaction / push away effect
+          let diffX = mouse.x - this.x;
+          let diffY = mouse.y - this.y;
+          let distance = Math.sqrt(diffX * diffX + diffY * diffY);
+          if (distance < mouse.radius) {
+            let force = (mouse.radius - distance) / mouse.radius;
+            let dirX = diffX / distance;
+            let dirY = diffY / distance;
+            this.x -= dirX * force * 3;
+            this.y -= dirY * force * 3;
+          }
+
+          this.draw();
+        }
+      }
+
+      function initParticles() {
+        particles = [];
+        // Dynamically count particles based on screen size for optimum performance
+        const particleCount = Math.floor((canvas.width * canvas.height) / 15000);
+        for (let i = 0; i < particleCount; i++) {
+          let size = Math.random() * 2 + 1;
+          let x = Math.random() * (canvas.width - size * 2) + size;
+          let y = Math.random() * (canvas.height - size * 2) + size;
+          let dx = (Math.random() - 0.5) * 0.4;
+          let dy = (Math.random() - 0.5) * 0.4;
+          particles.push(new Particle(x, y, dx, dy, size));
+        }
+      }
+
+      function connectParticles() {
+        let maxDistance = 120;
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i; j < particles.length; j++) {
+            let dx = particles[i].x - particles[j].x;
+            let dy = particles[i].y - particles[j].y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < maxDistance) {
+              // Dynamic transparency based on distance
+              let opacity = (1 - distance / maxDistance) * 0.15;
+              ctx.strokeStyle = `rgba(99, 102, 241, ${opacity})`; // Indigo color connection
+              ctx.lineWidth = 0.8;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      function animateCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach((p) => p.update());
+        connectParticles();
+        requestAnimationFrame(animateCanvas);
+      }
+
+      // Event Listeners for Particle Motion
+      window.addEventListener('resize', resizeCanvas);
+      window.addEventListener('mousemove', (e) => {
+        mouse.x = e.x;
+        mouse.y = e.y;
+      });
+      window.addEventListener('mouseleave', () => {
+        mouse.x = null;
+        mouse.y = null;
+      });
+
+      // Initialize Page Interactions on Window Load
+      window.onload = function () {
+        // Start Canvas Background
+        resizeCanvas();
+        animateCanvas();
+
+        // Start Text Typing Ticker Loop
+        setTimeout(typeEffect, 1000);
+      };
     </script>
-</body>
+  </body>
 </html>
