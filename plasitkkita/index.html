@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlastikKita - Masa Depan Kemasan Pengiriman</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        futurism: {
+                            white: '#FFFFFF',
+                            slate: '#F8FAFC',
+                            orange: '#FF6B00',
+                            blue: '#00E5FF',
+                            darkblue: '#0A192F',
+                            green: '#10B981',
+                            darkgreen: '#065F46'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        tech: ['Space Grotesk', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neon-orange': '0 0 15px rgba(255, 107, 0, 0.4)',
+                        'neon-blue': '0 0 15px rgba(0, 229, 255, 0.4)',
+                        'neon-green': '0 0 15px rgba(16, 185, 129, 0.4)',
+                        'premium': '0 10px 30px -10px rgba(0,0,0,0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Glowing and Futuristic Background Gradients */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .dark-glass-card {
+            background: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 229, 255, 0.1);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #0A192F 0%, #FF6B00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-futuristic {
+            background: linear-gradient(135deg, #FF6B00 0%, #00E5FF 50%, #10B981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* Custom Dot Pattern Background */
+        .dot-pattern {
+            background-image: radial-gradient(rgba(0, 229, 255, 0.15) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 selection:bg-futurism-orange selection:text-white overflow-x-hidden">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
+            <nav class="glass-card rounded-2xl shadow-premium px-6 py-4 flex items-center justify-between border border-white/60">
+                <!-- Brand Logo -->
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <div class="relative w-10 h-10 bg-gradient-to-tr from-futurism-orange via-futurism-blue to-futurism-green rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-neon-orange transition-all duration-300 group-hover:rotate-12">
+                        <span>P</span>
+                    </div>
+                    <div>
+                        <span class="font-tech font-bold text-xl tracking-tight text-futurism-darkblue">Plastik<span class="text-futurism-orange">Kita</span></span>
+                        <p class="text-[9px] font-tech text-futurism-blue font-semibold tracking-widest uppercase">Future Pack</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <div class="hidden md:flex items-center space-x-8 font-medium">
+                    <a href="#home" class="text-slate-600 hover:text-futurism-orange transition-colors duration-200">Beranda</a>
+                    <a href="#products" class="text-slate-600 hover:text-futurism-blue transition-colors duration-200">Produk</a>
+                    <a href="#calculator" class="text-slate-600 hover:text-futurism-green transition-colors duration-200">Kalkulator</a>
+                    <a href="#about" class="text-slate-600 hover:text-futurism-orange transition-colors duration-200">Tentang Kami</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#contact" class="px-5 py-2.5 bg-gradient-to-r from-futurism-darkblue to-slate-900 text-white font-semibold rounded-xl hover:shadow-neon-blue transition-all duration-300 text-sm flex items-center gap-2">
+                        <span>Hubungi Kami</span>
+                        <i class="fa-solid fa-arrow-right text-futurism-blue"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden flex items-center p-2 text-slate-600 hover:text-futurism-orange focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars-staggered text-2xl" id="menu-icon"></i>
+                </button>
+            </nav>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-2">
+            <div class="glass-card rounded-2xl shadow-xl p-6 flex flex-col space-y-4 border border-white/60">
+                <a href="#home" class="mobile-link text-slate-700 font-semibold text-lg hover:text-futurism-orange py-2 border-b border-slate-100">Beranda</a>
+                <a href="#products" class="mobile-link text-slate-700 font-semibold text-lg hover:text-futurism-blue py-2 border-b border-slate-100">Produk</a>
+                <a href="#calculator" class="mobile-link text-slate-700 font-semibold text-lg hover:text-futurism-green py-2 border-b border-slate-100">Kalkulator</a>
+                <a href="#about" class="mobile-link text-slate-700 font-semibold text-lg hover:text-futurism-orange py-2 border-b border-slate-100">Tentang Kami</a>
+                <a href="#contact" class="mobile-link w-full py-3 text-center bg-gradient-to-r from-futurism-orange to-futurism-blue text-white font-bold rounded-xl shadow-lg">Pesan Sekarang</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-24 md:pt-40 md:pb-36 overflow-hidden dot-pattern min-h-screen flex items-center">
+        <!-- Floating Ambient Glows (Futuristic Theme Colors) -->
+        <div class="absolute top-1/4 left-1/10 w-72 h-72 bg-futurism-orange/10 rounded-full filter blur-[100px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/10 w-96 h-96 bg-futurism-blue/15 rounded-full filter blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/3 right-1/4 w-80 h-80 bg-futurism-green/10 rounded-full filter blur-[110px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Content Column -->
+                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                    <!-- Tech Tag -->
+                    <div class="inline-flex items-center space-x-2 bg-white/80 border border-slate-200/80 px-4 py-1.5 rounded-full shadow-sm">
+                        <span class="w-2.5 h-2.5 bg-futurism-orange rounded-full animate-ping"></span>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-slate-600">The New Era of Smart Eco-Packaging</span>
+                    </div>
+
+                    <!-- Main Catchy Title -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-futurism-darkblue font-tech leading-tight">
+                        Lindungi Produkmu Dengan <span class="text-transparent bg-clip-text bg-gradient-to-r from-futurism-orange via-futurism-blue to-futurism-green">Kemasan Futuristik</span>
+                    </h1>
+
+                    <!-- Description -->
+                    <p class="text-slate-600 text-lg md:text-xl font-normal max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Selamat datang di <strong class="text-futurism-darkblue">PlastikKita</strong>. Solusi revolusioner kemasan premium <span class="text-futurism-orange font-semibold">Bubble Mailer</span> & <span class="text-futurism-blue font-semibold">Poly Mailer</span> anti air, anti robek, dan ramah lingkungan untuk keamanan maksimal setiap pengiriman Anda.
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#products" class="w-full sm:w-auto px-8 py-4 bg-futurism-orange text-white font-bold rounded-xl shadow-neon-orange hover:bg-orange-600 hover:shadow-orange-500/50 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-basket-shopping text-lg"></i>
+                            <span>Jelajahi Produk</span>
+                        </a>
+                        <a href="#calculator" class="w-full sm:w-auto px-8 py-4 bg-white text-futurism-darkblue font-bold rounded-xl border-2 border-slate-200/80 hover:border-futurism-blue hover:text-futurism-blue hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-3 shadow-sm">
+                            <i class="fa-solid fa-calculator text-lg text-futurism-green"></i>
+                            <span>Kalkulasi Harga</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats -->
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-200/80 max-w-md mx-auto lg:mx-0 text-left">
+                        <div>
+                            <p class="text-2xl sm:text-3xl font-extrabold text-futurism-orange font-tech">0%</p>
+                            <p class="text-xs sm:text-sm text-slate-500">Resiko Sobek</p>
+                        </div>
+                        <div class="border-l border-slate-200 pl-6">
+                            <p class="text-2xl sm:text-3xl font-extrabold text-futurism-blue font-tech">100%</p>
+                            <p class="text-xs sm:text-sm text-slate-500">Anti Air (Waterproof)</p>
+                        </div>
+                        <div class="border-l border-slate-200 pl-6">
+                            <p class="text-2xl sm:text-3xl font-extrabold text-futurism-green font-tech">Eco</p>
+                            <p class="text-xs sm:text-sm text-slate-500">Material Ramah</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Visual Column (Futuristic Mailer Showcase Graphic) -->
+                <div class="lg:col-span-5 relative flex justify-center items-center">
+                    <div class="relative w-full max-w-md aspect-square flex items-center justify-center">
+                        <!-- Abstract Tech Background Rings -->
+                        <div class="absolute w-full h-full border border-dashed border-slate-200 rounded-full animate-[spin_60s_linear_infinite]"></div>
+                        <div class="absolute w-4/5 h-4/5 border border-futurism-blue/30 rounded-full animate-[spin_20s_linear_infinite_reverse]"></div>
+                        <div class="absolute w-3/5 h-3/5 bg-gradient-to-tr from-futurism-orange/5 to-futurism-green/5 rounded-full"></div>
+
+                        <!-- Main Product Card Concept (Styled Mailer Graphic with SVG overlays for crisp detail) -->
+                        <div class="relative w-4/5 bg-white rounded-3xl p-6 shadow-2xl border border-slate-200/80 scale-100 hover:scale-105 transition-transform duration-500 z-10">
+                            <!-- Floating Tag -->
+                            <span class="absolute -top-3 -right-3 px-3 py-1 bg-futurism-orange text-white text-[11px] font-bold rounded-lg tracking-wider uppercase shadow-neon-orange">Bestseller</span>
+                            
+                            <!-- Custom CSS/SVG Premium Mailer Mockup -->
+                            <div class="w-full h-56 bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl relative overflow-hidden flex items-center justify-center group mb-6">
+                                <!-- Inner Bubbles Effect Design for Bubble Mailer -->
+                                <div class="absolute inset-0 opacity-40 mix-blend-overlay pointer-events-none" style="background-image: radial-gradient(circle, #ccc 10%, transparent 11%); background-size: 16px 16px;"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent"></div>
+                                
+                                <!-- Sleek Futuristic Envelope Mockup Design -->
+                                <div class="w-48 h-36 bg-gradient-to-tr from-white via-slate-50 to-slate-100 rounded-lg shadow-lg border border-slate-300/50 flex flex-col justify-between p-4 relative overflow-hidden">
+                                    <div class="flex justify-between items-start">
+                                        <div class="w-8 h-8 rounded-full bg-futurism-orange/10 flex items-center justify-center">
+                                            <i class="fa-solid fa-shield-halved text-futurism-orange text-sm"></i>
+                                        </div>
+                                        <div class="h-2 w-16 bg-slate-200 rounded"></div>
+                                    </div>
+                                    
+                                    <!-- Metallic smart-logo on packet -->
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-[10px] font-tech font-bold tracking-wider text-slate-400">PLASTIKKITA</span>
+                                        <div class="h-1.5 w-8 bg-futurism-green rounded"></div>
+                                    </div>
+
+                                    <!-- Glow strip -->
+                                    <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-futurism-orange via-futurism-blue to-futurism-green"></div>
+                                </div>
+                            </div>
+
+                            <!-- Mockup Info -->
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm font-semibold text-slate-500">Kategori Unggulan</span>
+                                    <span class="text-xs font-semibold px-2 py-0.5 bg-futurism-green/10 text-futurism-green rounded-full">Waterproof</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-futurism-darkblue font-tech">Futuristic Bubble Mailer</h3>
+                                <div class="flex justify-between items-center pt-2 border-t border-slate-100">
+                                    <div>
+                                        <p class="text-xs text-slate-400">Harga Mulai</p>
+                                        <p class="text-lg font-extrabold text-futurism-orange font-tech">Rp 1.300 <span class="text-xs font-normal text-slate-500">/ pcs</span></p>
+                                    </div>
+                                    <a href="#products" class="w-10 h-10 rounded-full bg-slate-100 hover:bg-futurism-blue hover:text-white flex items-center justify-center transition-all duration-300">
+                                        <i class="fa-solid fa-chevron-right text-sm"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Decorative Floating Badges -->
+                        <div class="absolute -left-4 bottom-12 bg-white px-4 py-3 rounded-2xl shadow-xl flex items-center space-x-3 border border-slate-100 animate-bounce duration-1000 z-20">
+                            <div class="w-8 h-8 rounded-full bg-futurism-blue/10 flex items-center justify-center text-futurism-blue">
+                                <i class="fa-solid fa-droplet-slash"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-800">100% Anti Air</p>
+                                <p class="text-[10px] text-slate-400">Proteksi Kelembaban</p>
+                            </div>
+                        </div>
+
+                        <div class="absolute -right-8 top-16 bg-white px-4 py-3 rounded-2xl shadow-xl flex items-center space-x-3 border border-slate-100 animate-pulse duration-1000 z-20">
+                            <div class="w-8 h-8 rounded-full bg-futurism-green/10 flex items-center justify-center text-futurism-green">
+                                <i class="fa-solid fa-recycle"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-800">Eco-Friendly</p>
+                                <p class="text-[10px] text-slate-400">Bahan Dapat Didaur Ulang</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Value Proposition -->
+    <section class="py-16 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-futurism-orange/20 transition-all duration-300 hover:shadow-neon-orange group">
+                    <div class="w-12 h-12 rounded-xl bg-futurism-orange/10 flex items-center justify-center text-futurism-orange text-xl mb-6 group-hover:bg-futurism-orange group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-shield"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-tech text-futurism-darkblue mb-3">Keamanan Ekstra (Shockproof)</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Dilengkapi dengan bantalan bubble wrap futuristik berdensitas tinggi untuk meredam benturan ekstrem selama logistik.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-futurism-blue/20 transition-all duration-300 hover:shadow-neon-blue group">
+                    <div class="w-12 h-12 rounded-xl bg-futurism-blue/10 flex items-center justify-center text-futurism-blue text-xl mb-6 group-hover:bg-futurism-blue group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-lock"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-tech text-futurism-darkblue mb-3">Seal Perekat Ultra Kuat</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Teknologi perekat permanen sekali rekat. Mencegah pencurian barang karena amplop tidak bisa dibuka tanpa merusaknya.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-futurism-green/20 transition-all duration-300 hover:shadow-neon-green group">
+                    <div class="w-12 h-12 rounded-xl bg-futurism-green/10 flex items-center justify-center text-futurism-green text-xl mb-6 group-hover:bg-futurism-green group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-cloud-bolt"></i>
+                    </div>
+                    <h3 class="text-lg font-bold font-tech text-futurism-darkblue mb-3">Estetika Pengiriman Modern</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Meningkatkan prestise brand bisnis online Anda dengan kemasan rapi, bersih, dan memancarkan kepuasan unboxing yang premium.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Showcase Section -->
+    <section id="products" class="py-24 bg-slate-50 relative overflow-hidden">
+        <div class="absolute inset-0 dot-pattern pointer-events-none opacity-50"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-xs font-extrabold text-futurism-orange uppercase tracking-widest font-tech px-3 py-1 bg-futurism-orange/10 rounded-full">PlastikKita Premium Catalog</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-futurism-darkblue font-tech">Produk Unggulan Kami</h2>
+                <p class="text-slate-500 text-base">Kami memproduksi kemasan pengiriman premium dengan standar proteksi masa depan. Menawarkan varian Bubble Mailer dan Poly Mailer untuk kesempurnaan packing Anda.</p>
+            </div>
+
+            <!-- Product Interactive Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                
+                <!-- PRODUCT 1: Bubble Mailer -->
+                <div class="glass-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:shadow-2xl border border-white hover:border-futurism-orange/30 transition-all duration-300 group">
+                    <div>
+                        <!-- Interactive Product Label/Badge -->
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="px-3.5 py-1.5 bg-futurism-orange/15 text-futurism-orange text-xs font-bold rounded-full uppercase tracking-wider">Premium Bubble Shield</span>
+                            <div class="flex space-x-1">
+                                <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                            </div>
+                        </div>
+
+                        <!-- Product Image Box -->
+                        <div class="w-full aspect-[4/3] bg-gradient-to-tr from-slate-100 to-slate-200/50 rounded-2xl overflow-hidden relative mb-8 flex items-center justify-center">
+                            <!-- fallback design/elegant photo placeholder -->
+                            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=600&auto=format&fit=crop" 
+                                 alt="PlastikKita Bubble Mailer" 
+                                 class="w-full h-full object-cover mix-blend-multiply opacity-90 group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x450/eeeeee/333333?text=Premium+Bubble+Mailer';">
+                            <!-- Overlay protective design graphic overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-futurism-darkblue/40 to-transparent flex items-end p-6">
+                                <div class="text-white">
+                                    <p class="text-xs uppercase tracking-widest text-futurism-blue font-bold">Kategori Produk</p>
+                                    <p class="text-lg font-bold font-tech">Bubble Mailer</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Info -->
+                        <h3 class="text-2xl font-bold font-tech text-futurism-darkblue mb-3">Futuristic Bubble Mailer</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                            Gabungan amplop poli tebal bagian luar dengan bantalan *bubble wrap* tebal di bagian dalam. Memberikan perlindungan ganda dari tekanan eksternal, air, benturan keras, serta menghemat waktu lakban Anda secara instan.
+                        </p>
+
+                        <!-- Product Specifications list -->
+                        <ul class="space-y-2 mb-8">
+                            <li class="flex items-center text-sm text-slate-600 gap-2">
+                                <i class="fa-solid fa-circle-check text-futurism-green"></i>
+                                <span>Perekat Berteknologi Ultra-Seal (Anti-Theft)</span>
+                            </li>
+                            <li class="flex items-center text-sm text-slate-600 gap-2">
+                                <i class="fa-solid fa-circle-check text-futurism-green"></i>
+                                <span>Bahan Polietilena Murni (Tahan Sobek & Elastis)</span>
+                            </li>
+                            <li class="flex items-center text-sm text-slate-600 gap-2">
+                                <i class="fa-solid fa-circle-check text-futurism-green"></i>
+                                <span>Tampilan Doff Eksklusif yang Elegan</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Size Grid and Dynamic Selector -->
+                    <div>
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Pilihan Ukuran & Harga:</p>
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <!-- Size 1 Card -->
+                            <div class="p-4 rounded-xl border border-slate-200 bg-white hover:border-futurism-orange transition-all duration-300 cursor-pointer" onclick="selectPricing('bubble', '20x30')">
+                                <p class="text-xs text-slate-400 font-bold">Ukuran Compact</p>
+                                <p class="text-lg font-extrabold text-futurism-darkblue font-tech">20 x 30 cm</p>
+                                <p class="text-sm font-bold text-futurism-orange mt-1">Rp 1.300 <span class="text-xs text-slate-400 font-normal">/ pcs</span></p>
+                            </div>
+                            <!-- Size 2 Card -->
+                            <div class="p-4 rounded-xl border border-slate-200 bg-white hover:border-futurism-orange transition-all duration-300 cursor-pointer" onclick="selectPricing('bubble', '30x40')">
+                                <p class="text-xs text-slate-400 font-bold">Ukuran Large</p>
+                                <p class="text-lg font-extrabold text-futurism-darkblue font-tech">30 x 40 cm</p>
+                                <p class="text-sm font-bold text-futurism-orange mt-1">Rp 2.000 <span class="text-xs text-slate-400 font-normal">/ pcs</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Action buttons -->
+                        <div class="flex items-center gap-3">
+                            <button onclick="openOrderModal('Bubble Mailer')" class="flex-1 py-3 bg-futurism-darkblue text-white text-center rounded-xl font-bold hover:bg-slate-900 hover:shadow-neon-blue transition-all duration-300">Pesan Sekarang</button>
+                            <a href="#calculator" class="p-3 bg-slate-100 hover:bg-futurism-orange/10 text-slate-600 hover:text-futurism-orange rounded-xl transition-colors duration-200" title="Hitung Estimasi">
+                                <i class="fa-solid fa-calculator text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCT 2: Poly Mailer -->
+                <div class="glass-card rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:shadow-2xl border border-white hover:border-futurism-blue/30 transition-all duration-300 group">
+                    <div>
+                        <!-- Interactive Product Label/Badge -->
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="px-3.5 py-1.5 bg-futurism-blue/15 text-futurism-blue text-xs font-bold rounded-full uppercase tracking-wider">Eco Poly Protective</span>
+                            <div class="flex space-x-1">
+                                <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                                <i class="fa-solid fa-star text-amber-400 text-xs"></i>
+                            </div>
+                        </div>
+
+                        <!-- Product Image Box -->
+                        <div class="w-full aspect-[4/3] bg-gradient-to-tr from-slate-100 to-slate-200/50 rounded-2xl overflow-hidden relative mb-8 flex items-center justify-center">
+                            <!-- fallback design/elegant photo placeholder -->
+                            <img src="https://images.unsplash.com/photo-1607344645866-009c320c5ab8?q=80&w=600&auto=format&fit=crop" 
+                                 alt="PlastikKita Poly Mailer" 
+                                 class="w-full h-full object-cover mix-blend-multiply opacity-90 group-hover:scale-105 transition-transform duration-500"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x450/eeeeee/333333?text=Premium+Poly+Mailer';">
+                            <!-- Overlay protective design graphic overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-futurism-darkblue/40 to-transparent flex items-end p-6">
+                                <div class="text-white">
+                                    <p class="text-xs uppercase tracking-widest text-futurism-blue font-bold">Kategori Produk</p>
+                                    <p class="text-lg font-bold font-tech">Poly Mailer</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Info -->
+                        <h3 class="text-2xl font-bold font-tech text-futurism-darkblue mb-3">Eco Poly Mailer</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                            Kantong kemasan pengiriman plastik premium ultra elastis dengan ketahanan sobek tingkat tinggi. Dirancang khusus untuk mengemas pakaian, dokumen, box kemasan, maupun paket tanpa proteksi benturan ekstra dengan efisiensi biaya maksimal.
+                        </p>
+
+                        <!-- Product Specifications list -->
+                        <ul class="space-y-2 mb-8">
+                            <li class="flex items-center text-sm text-slate-600 gap-2">
+                                <i class="fa-solid fa-circle-check text-futurism-green"></i>
+                                <span>Perekat Instan Kuat Anti Bongkar Paksa</span>
+                            </li>
+                            <li class="flex items-center text-sm text-slate-600 gap-2">
+                                <i class="fa-solid fa-circle-check text-futurism-green"></i>
+                                <span>100% Anti Bocor & Menjaga Privasi Isi Paket</span>
+                            </li>
+                            <li class="flex items-center text-sm text-slate-600 gap-2">
+                                <i class="fa-solid fa-circle-check text-futurism-green"></i>
+                                <span>Ketebalan Optimal - Ringan Mengurangi Ongkir</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Size Grid and Dynamic Selector -->
+                    <div>
+                        <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Pilihan Ukuran & Harga:</p>
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <!-- Size 1 Card -->
+                            <div class="p-4 rounded-xl border border-slate-200 bg-white hover:border-futurism-blue transition-all duration-300 cursor-pointer" onclick="selectPricing('poly', '20x30')">
+                                <p class="text-xs text-slate-400 font-bold">Ukuran Compact</p>
+                                <p class="text-lg font-extrabold text-futurism-darkblue font-tech">20 x 30 cm</p>
+                                <p class="text-sm font-bold text-futurism-blue mt-1">Rp 1.300 <span class="text-xs text-slate-400 font-normal">/ pcs</span></p>
+                            </div>
+                            <!-- Size 2 Card -->
+                            <div class="p-4 rounded-xl border border-slate-200 bg-white hover:border-futurism-blue transition-all duration-300 cursor-pointer" onclick="selectPricing('poly', '30x40')">
+                                <p class="text-xs text-slate-400 font-bold">Ukuran Large</p>
+                                <p class="text-lg font-extrabold text-futurism-darkblue font-tech">30 x 40 cm</p>
+                                <p class="text-sm font-bold text-futurism-blue mt-1">Rp 2.000 <span class="text-xs text-slate-400 font-normal">/ pcs</span></p>
+                            </div>
+                        </div>
+
+                        <!-- Action buttons -->
+                        <div class="flex items-center gap-3">
+                            <button onclick="openOrderModal('Poly Mailer')" class="flex-1 py-3 bg-futurism-darkblue text-white text-center rounded-xl font-bold hover:bg-slate-900 hover:shadow-neon-blue transition-all duration-300">Pesan Sekarang</button>
+                            <a href="#calculator" class="p-3 bg-slate-100 hover:bg-futurism-blue/10 text-slate-600 hover:text-futurism-blue rounded-xl transition-colors duration-200" title="Hitung Estimasi">
+                                <i class="fa-solid fa-calculator text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- "More / Lihat Semua Produk" Section -->
+            <div class="mt-16 text-center">
+                <div class="inline-block p-[2px] rounded-2xl bg-gradient-to-r from-futurism-orange via-futurism-blue to-futurism-green hover:shadow-xl transition-all duration-300">
+                    <button onclick="toggleAllProductsModal()" class="px-8 py-4 bg-white hover:bg-slate-50 text-futurism-darkblue font-bold rounded-2xl transition-all duration-200 flex items-center gap-3">
+                        <span>Jelajahi Seluruh Model & Warna</span>
+                        <i class="fa-solid fa-arrow-right-long text-futurism-blue"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Order & Quote Calculator -->
+    <section id="calculator" class="py-24 bg-gradient-to-br from-futurism-darkblue to-[#071324] text-white relative overflow-hidden">
+        <!-- Tech grid decorative backdrop -->
+        <div class="absolute inset-0 dot-pattern pointer-events-none opacity-25"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-futurism-blue/10 rounded-full filter blur-[150px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left: Text Explainer -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold text-futurism-blue uppercase tracking-widest font-tech px-3 py-1 bg-futurism-blue/10 rounded-full">Automated Cost Estimator</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-tech">Kalkulator Harga Instan PlastikKita</h2>
+                    <p class="text-slate-300 leading-relaxed">
+                        Gunakan kalkulator berbasis kecerdasan visual kami untuk menghitung total estimasi pengeluaran kemasan secara instan. Hubungi kami langsung dengan spesifikasi pesanan Anda melalui satu tombol pintar.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 bg-white/5 p-4 rounded-xl border border-white/10">
+                            <i class="fa-solid fa-wallet text-futurism-orange text-lg"></i>
+                            <p class="text-sm text-slate-300"><strong class="text-white">Harga Transparan:</strong> Tidak ada biaya tersembunyi. Sesuai jumlah pesanan Anda.</p>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white/5 p-4 rounded-xl border border-white/10">
+                            <i class="fa-solid fa-truck-fast text-futurism-green text-lg"></i>
+                            <p class="text-sm text-slate-300"><strong class="text-white">Pengiriman Tercepat:</strong> Dukungan ekspedisi terpercaya ke seluruh Indonesia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Calculator Card -->
+                <div class="lg:col-span-7">
+                    <div class="dark-glass-card rounded-3xl p-6 sm:p-10 shadow-2xl border border-white/10">
+                        <h3 class="text-xl font-bold font-tech text-white mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-gears text-futurism-orange"></i>
+                            <span>Atur Konfigurasi Kemasan Anda</span>
+                        </h3>
+
+                        <form id="calc-form" class="space-y-6">
+                            <!-- Mailer Type Selector -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-3">Pilih Jenis Plastik:</label>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <label class="relative cursor-pointer">
+                                        <input type="radio" name="mailer_type" value="Bubble Mailer" checked class="sr-only peer" onchange="calculatePrice()">
+                                        <div class="p-4 rounded-xl bg-white/5 border border-white/10 text-center hover:bg-white/10 peer-checked:border-futurism-orange peer-checked:bg-futurism-orange/10 transition-all duration-200">
+                                            <i class="fa-solid fa-circle-nodes text-futurism-orange mb-2 block text-lg"></i>
+                                            <span class="text-sm font-bold">Bubble Mailer</span>
+                                        </div>
+                                    </label>
+                                    <label class="relative cursor-pointer">
+                                        <input type="radio" name="mailer_type" value="Poly Mailer" class="sr-only peer" onchange="calculatePrice()">
+                                        <div class="p-4 rounded-xl bg-white/5 border border-white/10 text-center hover:bg-white/10 peer-checked:border-futurism-blue peer-checked:bg-futurism-blue/10 transition-all duration-200">
+                                            <i class="fa-solid fa-layer-group text-futurism-blue mb-2 block text-lg"></i>
+                                            <span class="text-sm font-bold">Poly Mailer</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Size Selector -->
+                            <div>
+                                <label class="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-3">Pilih Ukuran Kemasan:</label>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <label class="relative cursor-pointer">
+                                        <input type="radio" name="mailer_size" value="20x30" checked class="sr-only peer" onchange="calculatePrice()">
+                                        <div class="p-4 rounded-xl bg-white/5 border border-white/10 text-center hover:bg-white/10 peer-checked:border-futurism-green peer-checked:bg-futurism-green/10 transition-all duration-200">
+                                            <p class="text-xs text-slate-400">Compact Size</p>
+                                            <p class="text-base font-bold font-tech">20 x 30 cm</p>
+                                            <p class="text-xs text-futurism-green font-semibold mt-1">Rp 1.300 / pcs</p>
+                                        </div>
+                                    </label>
+                                    <label class="relative cursor-pointer">
+                                        <input type="radio" name="mailer_size" value="30x40" class="sr-only peer" onchange="calculatePrice()">
+                                        <div class="p-4 rounded-xl bg-white/5 border border-white/10 text-center hover:bg-white/10 peer-checked:border-futurism-green peer-checked:bg-futurism-green/10 transition-all duration-200">
+                                            <p class="text-xs text-slate-400">Large Size</p>
+                                            <p class="text-base font-bold font-tech">30 x 40 cm</p>
+                                            <p class="text-xs text-futurism-green font-semibold mt-1">Rp 2.000 / pcs</p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Quantity Slider / Input -->
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <label class="text-xs font-bold text-slate-300 uppercase tracking-wider">Jumlah Pesanan (Pcs):</label>
+                                    <span class="px-3 py-1 bg-white/10 rounded text-sm font-bold font-tech text-futurism-blue" id="qty-badge">100 pcs</span>
+                                </div>
+                                <input type="range" id="qty-range" min="50" max="10000" step="50" value="100" class="w-full h-2 bg-white/10 rounded-lg appearance-none cursor-pointer accent-futurism-orange" oninput="updateQty(this.value)">
+                                <div class="flex justify-between text-[10px] text-slate-400 mt-2">
+                                    <span>Min: 50 pcs</span>
+                                    <span>5.000 pcs</span>
+                                    <span>Max: 10.000 pcs</span>
+                                </div>
+                            </div>
+
+                            <!-- Calculations Result Dashboard -->
+                            <div class="bg-white/5 rounded-2xl p-6 border border-white/10 space-y-3">
+                                <div class="flex justify-between text-sm text-slate-300">
+                                    <span>Harga per Pcs:</span>
+                                    <span class="font-bold text-white font-tech" id="unit-price-display">Rp 1.300</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-slate-300">
+                                    <span>Kuantitas:</span>
+                                    <span class="font-bold text-white font-tech" id="total-qty-display">100 pcs</span>
+                                </div>
+                                <div class="pt-3 border-t border-white/10 flex justify-between items-end">
+                                    <span class="text-base font-bold text-slate-300">Total Estimasi:</span>
+                                    <span class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-futurism-orange via-futurism-blue to-futurism-green font-tech" id="total-price-display">Rp 130.000</span>
+                                </div>
+                            </div>
+
+                            <!-- Send Quote Button (WhatsApp CTA Integration) -->
+                            <button type="button" onclick="sendWhatsAppOrder()" class="w-full py-4 bg-gradient-to-r from-futurism-orange to-futurism-green text-white font-bold rounded-2xl hover:shadow-neon-orange hover:opacity-95 transition-all duration-300 flex items-center justify-center gap-3">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                                <span>Pesan Via WhatsApp Secara Instan</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us (Tentang Kami) Section -->
+    <section id="about" class="py-24 bg-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left: Interactive Image Collage with futuristic framing -->
+                <div class="lg:col-span-6 relative flex justify-center">
+                    <div class="relative w-full max-w-lg aspect-square">
+                        <!-- Abstract glow backdrop -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-futurism-orange/10 via-futurism-blue/10 to-transparent rounded-3xl filter blur-3xl"></div>
+                        
+                        <!-- Primary Image Frame -->
+                        <div class="absolute top-4 left-4 w-[85%] h-[85%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white z-10">
+                            <img src="https://images.unsplash.com/photo-1607344645866-009c320c5ab8?q=80&w=600&auto=format&fit=crop" 
+                                 alt="PlastikKita Manufacturing" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x600/eeeeee/333333?text=About+PlastikKita';">
+                        </div>
+
+                        <!-- Secondary floating design accent badge (Orange and green gradient borders) -->
+                        <div class="absolute bottom-4 right-4 w-[50%] h-[50%] rounded-3xl overflow-hidden shadow-2xl border-4 border-white z-20 hidden sm:block">
+                            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=600&auto=format&fit=crop" 
+                                 alt="PlastikKita Quality Check" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/eeeeee/333333?text=Eco+Poly';">
+                        </div>
+
+                        <!-- Interactive Floating stats -->
+                        <div class="absolute top-1/2 -left-8 bg-futurism-darkblue text-white px-5 py-4 rounded-2xl shadow-2xl z-30 border border-white/10 hidden lg:block">
+                            <p class="text-3xl font-extrabold text-futurism-orange font-tech">5M+</p>
+                            <p class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Kemasan Terkirim</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: About us Story -->
+                <div class="lg:col-span-6 space-y-8">
+                    <div class="space-y-4">
+                        <span class="text-xs font-bold text-futurism-green uppercase tracking-widest font-tech px-3 py-1 bg-futurism-green/10 rounded-full">Revolutionizing Shipping Industry</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-futurism-darkblue font-tech">Tentang PlastikKita</h2>
+                        <h3 class="text-lg font-bold text-futurism-orange">Misi Kami: Melindungi Paket Anda, Menjaga Masa Depan Bumi</h3>
+                    </div>
+
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        Didirikan dengan semangat revolusi teknologi logistik, <strong class="text-futurism-darkblue">PlastikKita</strong> hadir sebagai manufaktur & penyedia kemasan pengiriman premium berbasis di Indonesia. Kami memahami bahwa keamanan produk dalam proses ekspedisi adalah kunci dari reputasi bisnis online Anda.
+                    </p>
+                    
+                    <p class="text-slate-600 leading-relaxed text-base">
+                        Melalui inovasi formula polimer termutakhir, kami melahirkan jajaran produk <span class="text-futurism-orange font-semibold">Bubble Mailer</span> dan <span class="text-futurism-blue font-semibold">Poly Mailer</span> dengan elastisitas superior, teknologi anti bocor absolut, serta perekat kuat anti-selundup. Komitmen kami juga didasarkan pada pengembangan bahan baku kemasan berkelanjutan yang lebih ramah bagi ekosistem planet bumi.
+                    </p>
+
+                    <!-- Feature checkmarks for About -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-futurism-orange/10 flex items-center justify-center text-futurism-orange">
+                                <i class="fa-solid fa-industry"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-slate-700">Manufaktur Sendiri</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-futurism-blue/10 flex items-center justify-center text-futurism-blue">
+                                <i class="fa-solid fa-vial-virus"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-slate-700">Lab Pengujian Ketat</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-futurism-green/10 flex items-center justify-center text-futurism-green">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-slate-700">Material Daur Ulang</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+                            <span class="text-sm font-semibold text-slate-700">Layanan CS Responsive</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact and Order CTA Section -->
+    <section id="contact" class="py-20 bg-slate-50 relative overflow-hidden border-t border-slate-200/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-3xl p-8 sm:p-12 shadow-2xl border border-white relative overflow-hidden">
+                <!-- Glowing futuristic background shape -->
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-futurism-orange/15 rounded-full filter blur-2xl"></div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                    <div class="lg:col-span-8 space-y-4">
+                        <h2 class="text-3xl font-bold font-tech text-futurism-darkblue">Siap Naik Kelas Bersama PlastikKita?</h2>
+                        <p class="text-slate-600 max-w-2xl">
+                            Jangan biarkan reputasi brand Anda runtuh karena kemasan yang rusak di tengah perjalanan ekspedisi. Pesan sekarang melalui WhatsApp untuk berkonsultasi mengenai kebutuhan khusus Anda secara gratis.
+                        </p>
+                        <div class="flex flex-wrap gap-6 pt-4 text-sm font-semibold text-slate-600">
+                            <span class="flex items-center gap-2">
+                                <i class="fa-solid fa-phone text-futurism-orange"></i>
+                                <span>+62 812-3456-7890</span>
+                            </span>
+                            <span class="flex items-center gap-2">
+                                <i class="fa-solid fa-envelope text-futurism-blue"></i>
+                                <span>info@plastikkita.com</span>
+                            </span>
+                            <span class="flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-futurism-green"></i>
+                                <span>Jakarta, Indonesia</span>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:col-span-4 flex justify-start lg:justify-end">
+                        <a href="https://wa.me/6281234567890?text=Halo%20PlastikKita,%20saya%20tertarik%20ingin%20memesan%20Bubble%20Mailer%20atau%20Poly%20Mailer%20terbaru." target="_blank" class="w-full lg:w-auto px-8 py-4 bg-gradient-to-r from-futurism-orange to-futurism-green text-white font-bold rounded-2xl shadow-neon-orange hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-2xl"></i>
+                            <span>Hubungi Customer Care</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-futurism-darkblue text-slate-400 py-12 relative overflow-hidden border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                
+                <!-- Col 1: Brand -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gradient-to-tr from-futurism-orange to-futurism-blue rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                            <span>P</span>
+                        </div>
+                        <span class="font-tech font-bold text-xl text-white tracking-tight">Plastik<span class="text-futurism-orange">Kita</span></span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Kami adalah produsen kemasan masa depan. Mengedepankan teknologi proteksi tinggi, keindahan kemasan, serta kelestarian ekosistem lingkungan.
+                    </p>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 font-tech">Menu Pintar</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#home" class="hover:text-futurism-orange transition-colors">Beranda</a></li>
+                        <li><a href="#products" class="hover:text-futurism-blue transition-colors">Katalog Produk</a></li>
+                        <li><a href="#calculator" class="hover:text-futurism-green transition-colors">Kalkulator Harga</a></li>
+                        <li><a href="#about" class="hover:text-futurism-orange transition-colors">Tentang Kami</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Products -->
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 font-tech">Katalog Kemasan</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#products" class="hover:text-futurism-orange transition-colors">Bubble Mailer Compact (20x30)</a></li>
+                        <li><a href="#products" class="hover:text-futurism-orange transition-colors">Bubble Mailer Large (30x40)</a></li>
+                        <li><a href="#products" class="hover:text-futurism-blue transition-colors">Poly Mailer Compact (20x30)</a></li>
+                        <li><a href="#products" class="hover:text-futurism-blue transition-colors">Poly Mailer Large (30x40)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Newsletter/Promo Tag -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider font-tech">Sertifikasi & Standar</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-[10px] text-slate-300 font-semibold uppercase">Waterproof</span>
+                        <span class="px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-[10px] text-slate-300 font-semibold uppercase">Eco-Plastics</span>
+                        <span class="px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-[10px] text-slate-300 font-semibold uppercase">Secure Adhesive</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Copyright and Social Icons -->
+            <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+                <p>&copy; 2026 PlastikKita. All rights reserved. Masa Depan Kemasan Pengiriman.</p>
+                
+                <div class="flex space-x-4">
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/5 hover:bg-futurism-orange hover:text-white flex items-center justify-center transition-all duration-300">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/5 hover:bg-futurism-blue hover:text-white flex items-center justify-center transition-all duration-300">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-white/5 hover:bg-futurism-green hover:text-white flex items-center justify-center transition-all duration-300">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ALL PRODUCTS EXPANDED MODAL -->
+    <div id="all-products-modal" class="fixed inset-0 z-50 overflow-y-auto hidden flex items-center justify-center p-4">
+        <!-- Backdrop blur -->
+        <div class="fixed inset-0 bg-slate-900/80 backdrop-blur-md transition-opacity" onclick="toggleAllProductsModal()"></div>
+        
+        <!-- Modal Content box -->
+        <div class="bg-white rounded-3xl max-w-4xl w-full p-6 sm:p-10 relative z-10 shadow-2xl border border-slate-100 max-h-[90vh] overflow-y-auto">
+            <button onclick="toggleAllProductsModal()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-slate-100 hover:bg-futurism-orange hover:text-white flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- Header -->
+            <div class="mb-8 space-y-2">
+                <span class="text-xs font-bold text-futurism-orange uppercase tracking-wider font-tech">Complete Collection</span>
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-futurism-darkblue font-tech">Seluruh Varian Produk PlastikKita</h3>
+                <p class="text-slate-500 text-sm">Pilih ukuran dan jenis mailer premium yang tepat untuk keamanan produk pengiriman Anda.</p>
+            </div>
+
+            <!-- Extended Product Grid Table -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-slate-200">
+                            <th class="pb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Nama Produk</th>
+                            <th class="pb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Tipe Pelindung</th>
+                            <th class="pb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Ukuran</th>
+                            <th class="pb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Harga per Unit</th>
+                            <th class="pb-4 text-xs font-bold text-slate-400 uppercase tracking-wider text-right">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-sm">
+                        <!-- Item 1 -->
+                        <tr class="hover:bg-slate-50/50 transition-colors">
+                            <td class="py-4 font-bold text-futurism-darkblue">Bubble Mailer Premium (Compact)</td>
+                            <td class="py-4"><span class="px-2.5 py-1 bg-futurism-orange/10 text-futurism-orange text-xs font-bold rounded-full">Bubble Shield</span></td>
+                            <td class="py-4 font-tech font-bold text-slate-600">20 x 30 cm</td>
+                            <td class="py-4 font-bold text-futurism-darkblue font-tech">Rp 1.300</td>
+                            <td class="py-4 text-right">
+                                <button onclick="quickSelectOrder('Bubble Mailer', '20x30', 1300)" class="px-4 py-2 bg-futurism-darkblue text-white rounded-lg text-xs font-bold hover:bg-futurism-orange transition-colors">Pilih</button>
+                            </td>
+                        </tr>
+                        <!-- Item 2 -->
+                        <tr class="hover:bg-slate-50/50 transition-colors">
+                            <td class="py-4 font-bold text-futurism-darkblue">Bubble Mailer Premium (Large)</td>
+                            <td class="py-4"><span class="px-2.5 py-1 bg-futurism-orange/10 text-futurism-orange text-xs font-bold rounded-full">Bubble Shield</span></td>
+                            <td class="py-4 font-tech font-bold text-slate-600">30 x 40 cm</td>
+                            <td class="py-4 font-bold text-futurism-darkblue font-tech">Rp 2.000</td>
+                            <td class="py-4 text-right">
+                                <button onclick="quickSelectOrder('Bubble Mailer', '30x40', 2000)" class="px-4 py-2 bg-futurism-darkblue text-white rounded-lg text-xs font-bold hover:bg-futurism-orange transition-colors">Pilih</button>
+                            </td>
+                        </tr>
+                        <!-- Item 3 -->
+                        <tr class="hover:bg-slate-50/50 transition-colors">
+                            <td class="py-4 font-bold text-futurism-darkblue">Eco Poly Mailer (Compact)</td>
+                            <td class="py-4"><span class="px-2.5 py-1 bg-futurism-blue/10 text-futurism-blue text-xs font-bold rounded-full">Poly Protection</span></td>
+                            <td class="py-4 font-tech font-bold text-slate-600">20 x 30 cm</td>
+                            <td class="py-4 font-bold text-futurism-darkblue font-tech">Rp 1.300</td>
+                            <td class="py-4 text-right">
+                                <button onclick="quickSelectOrder('Poly Mailer', '20x30', 1300)" class="px-4 py-2 bg-futurism-darkblue text-white rounded-lg text-xs font-bold hover:bg-futurism-blue transition-colors">Pilih</button>
+                            </td>
+                        </tr>
+                        <!-- Item 4 -->
+                        <tr class="hover:bg-slate-50/50 transition-colors">
+                            <td class="py-4 font-bold text-futurism-darkblue">Eco Poly Mailer (Large)</td>
+                            <td class="py-4"><span class="px-2.5 py-1 bg-futurism-blue/10 text-futurism-blue text-xs font-bold rounded-full">Poly Protection</span></td>
+                            <td class="py-4 font-tech font-bold text-slate-600">30 x 40 cm</td>
+                            <td class="py-4 font-bold text-futurism-darkblue font-tech">Rp 2.000</td>
+                            <td class="py-4 text-right">
+                                <button onclick="quickSelectOrder('Poly Mailer', '30x40', 2000)" class="px-4 py-2 bg-futurism-darkblue text-white rounded-lg text-xs font-bold hover:bg-futurism-blue transition-colors">Pilih</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Custom Spec Inquiry -->
+            <div class="mt-8 p-6 bg-slate-50 rounded-2xl border border-slate-150 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div>
+                    <h4 class="font-bold text-futurism-darkblue">Butuh Custom Ukuran atau Custom Cetak Logo?</h4>
+                    <p class="text-xs text-slate-500">Kami menerima pesanan kustom dengan kuantitas khusus.</p>
+                </div>
+                <a href="https://wa.me/6281234567890?text=Halo%20PlastikKita,%20saya%20ingin%20tanya%20mengenai%20layanan%20custom%20ukuran%20atau%20cetak%20logo%20brand%20saya." target="_blank" class="px-5 py-2.5 bg-futurism-green text-white font-bold rounded-xl text-xs hover:bg-emerald-600 transition-colors">Hubungi Sales Specialist</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICATION FLOATING TOAST -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-slate-900 text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center space-x-3 border border-white/10">
+            <div class="w-8 h-8 rounded-full bg-futurism-green/20 flex items-center justify-center text-futurism-green" id="toast-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div>
+                <p class="font-bold text-xs" id="toast-title">Notifikasi</p>
+                <p class="text-[11px] text-slate-300" id="toast-msg">Spesifikasi berhasil disesuaikan.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Logic scripts -->
+    <script>
+        // DOM Elements
+        const navbar = document.getElementById('navbar');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const toast = document.getElementById('toast');
+        const allProductsModal = document.getElementById('all-products-modal');
+
+        // Scroll Performance Optimization for Navbar
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.querySelector('nav').classList.add('shadow-2xl', 'py-3');
+                navbar.querySelector('nav').classList.remove('shadow-premium', 'py-4');
+            } else {
+                navbar.querySelector('nav').classList.remove('shadow-2xl', 'py-3');
+                navbar.querySelector('nav').classList.add('shadow-premium', 'py-4');
+            }
+        });
+
+        // Toggle Responsive Mobile Menu
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.className = 'fa-solid fa-bars-staggered text-2xl';
+            } else {
+                menuIcon.className = 'fa-solid fa-xmark text-2xl';
+            }
+        });
+
+        // Close Mobile Menu on navigation click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.className = 'fa-solid fa-bars-staggered text-2xl';
+            });
+        });
+
+        // Show Instant Toast Notification Custom Utility
+        function showToast(title, message, isError = false) {
+            const toastTitle = document.getElementById('toast-title');
+            const toastMsg = document.getElementById('toast-msg');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastTitle.textContent = title;
+            toastMsg.textContent = message;
+
+            if (isError) {
+                toastIcon.className = 'w-8 h-8 rounded-full bg-red-500/20 flex items-center justify-center text-red-500';
+                toastIcon.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>';
+            } else {
+                toastIcon.className = 'w-8 h-8 rounded-full bg-futurism-green/20 flex items-center justify-center text-futurism-green';
+                toastIcon.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+            }
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Pricing Interactive Action
+        function selectPricing(type, size) {
+            const sizeLabel = size === '20x30' ? 'Compact' : 'Large';
+            const price = size === '20x30' ? 1300 : 2000;
+            const formattedPrice = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(price);
+            
+            // Set form parameters in calculator
+            const form = document.getElementById('calc-form');
+            
+            // Auto select product type
+            const typeRadios = form.elements['mailer_type'];
+            for (let i = 0; i < typeRadios.length; i++) {
+                if (typeRadios[i].value.toLowerCase().includes(type)) {
+                    typeRadios[i].checked = true;
+                    break;
+                }
+            }
+
+            // Auto select size
+            const sizeRadios = form.elements['mailer_size'];
+            for (let i = 0; i < sizeRadios.length; i++) {
+                if (sizeRadios[i].value === size) {
+                    sizeRadios[i].checked = true;
+                    break;
+                }
+            }
+
+            // Sync calculation
+            calculatePrice();
+
+            // Smooth scroll to calculator
+            document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
+            
+            showToast('Konfigurator Sukses', `${type.toUpperCase()} ukuran ${size} (${sizeLabel}) terpilih. total harga disinkronkan.`);
+        }
+
+        // Dynamic pricing calculator script
+        function updateQty(val) {
+            document.getElementById('qty-badge').textContent = `${new Intl.NumberFormat('id-ID').format(val)} pcs`;
+            calculatePrice();
+        }
+
+        function calculatePrice() {
+            const form = document.getElementById('calc-form');
+            const mailerType = form.elements['mailer_type'].value;
+            const mailerSize = form.elements['mailer_size'].value;
+            const qty = parseInt(document.getElementById('qty-range').value);
+
+            // Establish pricing structure
+            // 20x30 = 1300
+            // 30x40 = 2000
+            const unitPrice = mailerSize === '20x30' ? 1300 : 2000;
+            const totalPrice = unitPrice * qty;
+
+            // Update UI elements
+            document.getElementById('unit-price-display').textContent = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(unitPrice);
+            document.getElementById('total-qty-display').textContent = `${new Intl.NumberFormat('id-ID').format(qty)} pcs`;
+            document.getElementById('total-price-display').textContent = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(totalPrice);
+        }
+
+        // Open WhatsApp order formulation script
+        function sendWhatsAppOrder() {
+            const form = document.getElementById('calc-form');
+            const mailerType = form.elements['mailer_type'].value;
+            const mailerSize = form.elements['mailer_size'].value;
+            const qty = document.getElementById('qty-range').value;
+            
+            const unitPrice = mailerSize === '20x30' ? 1300 : 2000;
+            const totalPrice = unitPrice * parseInt(qty);
+            const formattedTotal = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(totalPrice);
+
+            const text = `Halo PlastikKita, saya ingin melakukan pemesanan via Kalkulator Web:\n\n` +
+                         `• Jenis Produk: *${mailerType}*\n` +
+                         `• Dimensi Ukuran: *${mailerSize} cm*\n` +
+                         `• Jumlah/Kuantitas: *${qty} pcs*\n` +
+                         `• Estimasi Total: *${formattedTotal}*\n\n` +
+                         `Mohon diproses untuk pengiriman dan metode pembayaran selanjutnya. Terima kasih!`;
+
+            const encodedText = encodeURIComponent(text);
+            const waUrl = `https://wa.me/6281234567890?text=${encodedText}`;
+            window.open(waUrl, '_blank');
+        }
+
+        // Open quick select order and configure directly
+        function quickSelectOrder(type, size, price) {
+            toggleAllProductsModal();
+            const typeKey = type.toLowerCase().includes('bubble') ? 'bubble' : 'poly';
+            selectPricing(typeKey, size);
+        }
+
+        // Modal triggers
+        function toggleAllProductsModal() {
+            allProductsModal.classList.toggle('hidden');
+            if(!allProductsModal.classList.contains('hidden')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Direct Modal ordering button
+        function openOrderModal(productName) {
+            showToast('Konfigurasi Pembelian', `Mempersiapkan pesanan untuk ${productName}. Anda diarahkan ke kalkulator.`);
+            const typeKey = productName.toLowerCase().includes('bubble') ? 'bubble' : 'poly';
+            selectPricing(typeKey, '20x30');
+        }
+
+        // Init on window load
+        window.onload = function () {
+            calculatePrice();
+        }
+    </script>
+</body>
+</html>
