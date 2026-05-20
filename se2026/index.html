@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelatihan Petugas Sensus Ekonomi Tahun 2026</title>
+    
+    <!-- Google Fonts: Poppins (Futuristic and Clean) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fcfcfd;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fff3e0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ff9800;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e65100;
+        }
+
+        /* Glowing blobs in background */
+        .glow-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
+            animation: floatBlob 12s infinite alternate;
+        }
+
+        @keyframes floatBlob {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-40px) scale(1.15); }
+        }
+
+        /* Futuristic Glass Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 10px 30px -5px rgba(255, 110, 0, 0.08), 
+                        0 4px 6px -2px rgba(255, 110, 0, 0.03);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            background: rgba(255, 255, 255, 0.92);
+            border-color: rgba(255, 107, 0, 0.4);
+            box-shadow: 0 20px 40px -10px rgba(255, 107, 0, 0.25);
+        }
+
+        /* Wave pattern text background */
+        .text-neon-glow {
+            text-shadow: 0 0 15px rgba(255, 107, 0, 0.3);
+        }
+
+        /* Custom Pulse WhatsApp (Modernized) */
+        .pulse-wa-modern {
+            animation: pulse-wa-glow 2.5s infinite;
+        }
+
+        @keyframes pulse-wa-glow {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Canvas Particle container */
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="antialiased text-slate-800 relative flex flex-col justify-between">
+
+    <!-- Particle Background Canvas (Amber/Orange Economy Nodes) -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Glowing Background blobs (Futuristic light theme design) -->
+    <div class="glow-blob bg-orange-400 w-96 h-96 top-10 left-10"></div>
+    <div class="glow-blob bg-amber-300 w-[450px] h-[450px] bottom-10 right-10" style="animation-delay: -5s;"></div>
+    <div class="glow-blob bg-orange-300 w-80 h-80 top-1/2 left-1/3" style="animation-delay: -2s;"></div>
+
+    <!-- Main Container -->
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-10 flex-grow flex flex-col justify-center">
+
+        <!-- HEADER NAV: Dua Logo Berseberangan (BPS Lampung Utara & SE2026) -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-6 mb-12 pb-6 border-b border-orange-500/10">
+            <!-- Logo Kiri: BPS Kabupaten Lampung Utara -->
+            <!-- <div class="flex items-center justify-center sm:justify-start">
+                <img src="C:\Users\rainm\Downloads\BPS%20KABUPATEN%20LAMPUNG%20UTARA.png" 
+                     alt="Logo BPS Kabupaten Lampung Utara" 
+                     class="h-14 sm:h-16 md:h-20 object-contain drop-shadow-sm transition-transform duration-300 hover:scale-105"
+                     onerror="this.onerror=null; this.src='https://via.placeholder.com/300x80?text=BPS+LAMPUNG+UTARA';">
+            </div> -->
+            
+            <!-- Logo Kanan: Sensus Ekonomi 2026 -->
+            <!-- <div class="flex items-center justify-center sm:justify-end">
+                <img src="C:\Users\rainm\Downloads\BPS%20KABUPATEN%20LAMPUNG%20UTARA%20(1).png" 
+                     alt="Logo Sensus Ekonomi 2026" 
+                     class="h-16 sm:h-18 md:h-22 object-contain drop-shadow-md transition-transform duration-300 hover:scale-105"
+                     onerror="this.onerror=null; this.src='https://via.placeholder.com/300x120?text=SENSUS+EKONOMI+2026';">
+            </div> -->
+        </div>
+
+        <!-- Interactive Dashboard / Grid System -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- LEFT PANEL: Brand Identity, Title & Description -->
+            <div class="lg:col-span-5 flex flex-col justify-center space-y-6 text-center lg:text-left">
+                
+                <!-- Gelombang Active Badge -->
+                <div class="inline-block mx-auto lg:mx-0">
+                    <span class="inline-flex items-center px-4 py-1.5 rounded-full text-xs font-semibold bg-orange-100 text-orange-800 border border-orange-200 shadow-sm">
+                        <span class="w-2 h-2 bg-orange-500 rounded-full mr-2 animate-ping"></span>
+                        GELOMBANG 1 ACTIVE
+                    </span>
+                </div>
+
+                <!-- Main Title and Subtitles -->
+                <div class="space-y-4">
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-800 leading-tight">
+                        Pelatihan Petugas 
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500 text-neon-glow block mt-2">
+                            Sensus Ekonomi 2026
+                        </span>
+                    </h1>
+                    <div class="w-20 h-1 bg-gradient-to-r from-orange-500 to-amber-400 mx-auto lg:mx-0 rounded-full"></div>
+                    <p class="text-slate-500 text-sm sm:text-base max-w-md mx-auto lg:mx-0 leading-relaxed">
+                        Website Kumpulan link yang berisi akses panduan pelatihan petugas, link kelas digital, link administrasi dan evaluasi serta link group WhatsApp bagi seluruh petugas Sensus Ekonomi  di lingkungan BPS Kabupaten Lampung Utara.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- RIGHT PANEL: Action/Link Cards (Futuristic, highly readable lists) -->
+            <div class="lg:col-span-7 flex flex-col justify-center space-y-4">
+                
+                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest text-center lg:text-left mb-2 flex items-center justify-center lg:justify-start">
+                    <i class="fas fa-route mr-2 text-orange-500"></i> Portal Akses Cepat
+                </h3>
+
+                  <!-- Link 1: Materi Pelatihan -->
+                <a href="https://docs.google.com/document/d/1NpaieO24gexKB492u0J1F-LhDiLVqvgKxOQfVXuE1UY/edit?tab=t.0#heading=h.ql9lnj1mzp2b" target="_blank" rel="noopener noreferrer" 
+                   class="glass-card p-5 rounded-2xl flex items-center justify-between group cursor-pointer border border-orange-500/5">
+                    <div class="flex items-center space-x-5">
+                        <div class="w-14 h-14 shrink-0 rounded-xl bg-orange-100 flex items-center justify-center group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-inner">
+                            <i class="fas fa-folder-open text-2xl text-orange-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold text-orange-600 tracking-wider uppercase block mb-0.5">Akses Panduan</span>
+                            <h3 class="text-lg font-bold text-slate-800 group-hover:text-orange-600 transition-colors">Panduan</h3>
+                            <p class="text-xs text-slate-500">Dokumen pedoman  panduan pembelajaran Online</p>
+                        </div>
+                    </div>
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 group-hover:bg-orange-500/10 group-hover:text-orange-600 transition-all">
+                        <i class="fas fa-arrow-right text-slate-400 group-hover:text-orange-600 group-hover:translate-x-1 transition-all"></i>
+                    </div>
+                </a>
+
+                <!-- Link 2: LMS Classroom -->
+                <a href="https://gojags-classroom.bps.go.id/" target="_blank" rel="noopener noreferrer" 
+                   class="glass-card p-5 rounded-2xl flex items-center justify-between group cursor-pointer border border-orange-500/5">
+                    <div class="flex items-center space-x-5">
+                        <div class="w-14 h-14 shrink-0 rounded-xl bg-orange-100 flex items-center justify-center group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-inner">
+                            <i class="fas fa-chalkboard-teacher text-2xl text-orange-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold text-orange-600 tracking-wider uppercase block mb-0.5">E-Learning BPS</span>
+                            <h3 class="text-lg font-bold text-slate-800 group-hover:text-orange-600 transition-colors">LMS Classroom</h3>
+                            <p class="text-xs text-slate-500">Akses materi interaktif, unduh tugas harian, dan absensi kelas</p>
+                        </div>
+                    </div>
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 group-hover:bg-orange-500/10 group-hover:text-orange-600 transition-all">
+                        <i class="fas fa-arrow-right text-slate-400 group-hover:text-orange-600 group-hover:translate-x-1 transition-all"></i>
+                    </div>
+                </a>
+
+                <!-- Link 3: Pendaftaran GoJags -->
+                <a href="https://gojags-training.bps.go.id/" target="_blank" rel="noopener noreferrer" 
+                   class="glass-card p-5 rounded-2xl flex items-center justify-between group cursor-pointer border border-orange-500/5">
+                    <div class="flex items-center space-x-5">
+                        <div class="w-14 h-14 shrink-0 rounded-xl bg-amber-100 flex items-center justify-center group-hover:bg-amber-500 group-hover:text-white transition-all duration-300 shadow-inner">
+                            <i class="fas fa-user-plus text-2xl text-amber-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold text-amber-600 tracking-wider uppercase block mb-0.5">Registrasi Administrasi Peserta</span>
+                            <h3 class="text-lg font-bold text-slate-800 group-hover:text-amber-600 transition-colors">GoJags</h3>
+                            <p class="text-xs text-slate-500">Registrasi akun baru dan verifikasi keaktifan petugas pelatihan</p>
+                        </div>
+                    </div>
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 group-hover:bg-amber-500/10 group-hover:text-amber-600 transition-all">
+                        <i class="fas fa-arrow-right text-slate-400 group-hover:text-amber-600 group-hover:translate-x-1 transition-all"></i>
+                    </div>
+                </a>
+
+
+                <!-- Link 4: Group WhatsApp -->
+                <a href="https://chat.whatsapp.com/EZ5shJIuuBO7nGDsUHWnNS" target="_blank" rel="noopener noreferrer" 
+                   class="glass-card p-5 rounded-2xl flex items-center justify-between group cursor-pointer border border-green-500/10 pulse-wa-modern">
+                    <div class="flex items-center space-x-5">
+                        <div class="w-14 h-14 shrink-0 rounded-xl bg-emerald-100 flex items-center justify-center group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300 shadow-inner">
+                            <i class="fab fa-whatsapp text-3xl text-emerald-600 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold text-emerald-600 tracking-wider uppercase block mb-0.5">Komunikasi Instan</span>
+                            <h3 class="text-lg font-bold text-slate-800 group-hover:text-emerald-600 transition-colors">Grup WhatsApp Peserta</h3>
+                            <p class="text-xs text-slate-500">Diskusikan materi secara langsung dengan pengajar dan rekan seperjuangan</p>
+                        </div>
+                    </div>
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 group-hover:bg-emerald-500/10 group-hover:text-emerald-600 transition-all">
+                        <i class="fas fa-arrow-right text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-16 pt-8 border-t border-orange-500/10 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 space-y-4 md:space-y-0">
+            <div class="text-center md:text-left">
+                <p class="font-bold text-slate-700">&copy; 2026 Badan Pusat Statistik (BPS) Kabupaten Lampung Utara</p>
+                <p class="mt-0.5">Sensus Ekonomi 2026 - Menyediakan Informasi untuk Pembangunan berkelanjutan.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="https://www.lampungutarakab.bps.go.id/" target="_blank" class="hover:text-orange-500 transition-colors flex items-center"><i class="fas fa-globe mr-1.5"></i> Website BPS</a>
+                <!-- <a href="#" id="toggle-tips" class="hover:text-orange-500 transition-colors flex items-center cursor-pointer"><i class="fas fa-lightbulb mr-1.5"></i> Tips Pelatihan</a> -->
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Tips Modal Pop-up (Interactive custom feedback instead of alerts) -->
+    <div id="tips-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-white rounded-3xl p-6 max-w-sm w-full border border-orange-100 shadow-2xl transform scale-95 transition-all duration-300">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-bold text-slate-800 flex items-center"><i class="fas fa-info-circle mr-2 text-orange-500"></i> Tips Sukses Pelatihan</h3>
+                <button id="close-tips" class="text-slate-400 hover:text-slate-600"><i class="fas fa-times"></i></button>
+            </div>
+            <ul class="space-y-3 text-xs text-slate-600">
+                <li class="flex items-start"><span class="text-orange-500 mr-2">✦</span> Pastikan sudah log in ke Classroom sebelum mengakses tugas harian.</li>
+                <li class="flex items-start"><span class="text-orange-500 mr-2">✦</span> Download modul agar bisa dibaca kapan saja secara offline.</li>
+                <li class="flex items-start"><span class="text-orange-500 mr-2">✦</span> Aktif bertanya di grup WA jika menemui kuesioner yang membingungkan.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript logic -->
+    <script>
+        // 1. Particle Starfield Background Custom (Orange/Amber shades)
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                // Bright warm orange to soft amber colors
+                const colors = ['rgba(255,107,0,', 'rgba(255,160,0,', 'rgba(255,193,7,', 'rgba(253,126,20,'];
+                this.baseColor = colors[Math.floor(Math.random() * colors.length)];
+                this.size = Math.random() * 2 + 0.8;
+                this.speedX = Math.random() * 0.4 - 0.2;
+                this.speedY = Math.random() * 0.4 - 0.2;
+                this.opacity = Math.random() * 0.4 + 0.1;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Border wraps
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+
+            draw() {
+                ctx.fillStyle = `${this.baseColor}${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            let particleNum = (canvas.width * canvas.height) / 12000;
+            if (particleNum > 100) particleNum = 100; // performance limits
+            for (let i = 0; i < particleNum; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                // Draw connectivity paths
+                for (let j = i; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 150) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(255, 107, 0, ${0.06 - dist/2500})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+
+        window.onload = function() {
+            initParticles();
+            animate();
+        };
+
+        // 2. Custom Tips Modal Handling
+        const toggleTipsBtn = document.getElementById('toggle-tips');
+        const closeTipsBtn = document.getElementById('close-tips');
+        const tipsModal = document.getElementById('tips-modal');
+
+        if (toggleTipsBtn && tipsModal) {
+            toggleTipsBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                tipsModal.classList.remove('opacity-0', 'pointer-events-none');
+                tipsModal.firstElementChild.classList.remove('scale-95');
+                tipsModal.firstElementChild.classList.add('scale-100');
+            });
+        }
+
+        if (closeTipsBtn && tipsModal) {
+            closeTipsBtn.addEventListener('click', () => {
+                tipsModal.classList.add('opacity-0', 'pointer-events-none');
+                tipsModal.firstElementChild.classList.remove('scale-100');
+                tipsModal.firstElementChild.classList.add('scale-95');
+            });
+            // Click outside close
+            tipsModal.addEventListener('click', (e) => {
+                if (e.target === tipsModal) {
+                    closeTipsBtn.click();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
