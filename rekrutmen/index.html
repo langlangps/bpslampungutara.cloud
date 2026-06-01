@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengumuman Rekrutmen Tambahan Mitra Statistik BPS 2026</title>
+
+    <!-- Tailwind CSS untuk tata letak modern & responsif -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Poppins untuk kesan bersih, profesional, dan modern minimalis -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons untuk ikon minimalis -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+            /* Latar belakang abu-abu terang yang sangat bersih */
+            color: #1e293b;
+            /* Warna teks gelap yang nyaman di mata */
+        }
+
+        /* Desain kartu minimalis dengan bayangan lembut */
+        .minimal-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 20px -2px rgba(148, 163, 184, 0.12), 0 2px 8px -1px rgba(148, 163, 184, 0.08);
+        }
+
+        /* Tombol minimalis oranye profesional */
+        .btn-minimal-orange {
+            background-color: #ff6b00;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn-minimal-orange:hover {
+            background-color: #e05e00;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.2);
+        }
+
+        /* Kustomisasi scrollbar untuk kenyamanan visual */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Efek hover baris tabel yang lembut */
+        tbody tr {
+            transition: all 0.15s ease;
+        }
+
+        tbody tr:hover {
+            background-color: #f8fafc;
+        }
+    </style>
+</head>
+
+<body class="p-4 md:p-8 min-h-screen flex flex-col items-center justify-start">
+
+    <div class="w-full max-w-5xl mx-auto flex flex-col gap-6 mt-4 md:mt-8">
+
+        <!-- Bagian Header (Logo & Judul) -->
+        <header
+            class="text-center md:text-left flex flex-col md:flex-row items-center gap-4 border-b border-slate-200 pb-6">
+            <div
+                class="p-3.5 rounded-2xl bg-orange-50 border border-orange-100 flex items-center justify-center text-[#ff6b00]">
+                <i data-lucide="award" class="w-8 h-8"></i>
+            </div>
+            <div class="flex-1">
+                
+                <h1 class="text-xl md:text-2xl font-bold text-slate-800 leading-snug mt-1">
+                    Daftar Nama Peserta yang Lulus Rekrutmen Tambahan Mitra Statistik
+                </h1>
+                <p class="text-sm text-slate-500 font-medium mt-0.5">
+                    Badan Pusat Statistik Kabupaten Lampung Utara Tahun 2026
+                </p>
+            </div>
+        </header>
+
+        <main class="minimal-card rounded-2xl p-5 md:p-6 flex flex-col gap-6">
+
+            <!-- Kontrol Aksi: Input Pencarian & Tombol Unduh -->
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+
+                <!-- Input Pencarian -->
+                <div class="relative w-full sm:max-w-xs">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                        <i data-lucide="search" class="w-4 h-4"></i>
+                    </div>
+                    <input type="text" id="searchInput" placeholder="Cari berdasarkan nama atau kecamatan..."
+                        class="w-full pl-9 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-orange-500 focus:bg-white transition-all text-slate-700 placeholder-slate-400">
+                </div>
+
+                <!-- Tombol Unduh Surat -->
+                <a href="https://drive.google.com/drive/folders/1qe13WCvLvkQvPaX9wu31UxJZ-Q7EvfqS?usp=sharing"
+                    target="_blank" rel="noopener noreferrer"
+                    class="btn-minimal-orange w-full sm:w-auto text-white font-medium py-2.5 px-5 rounded-xl flex items-center justify-center gap-2 text-sm">
+                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                    Unduh Surat Pengumuman
+                </a>
+            </div>
+
+            <!-- Tabel Responsif (Overflow Auto) -->
+            <div class="border border-slate-100 rounded-xl overflow-hidden shadow-sm">
+                <div class="overflow-x-auto" style="max-height: 55vh;">
+                    <table class="w-full text-left border-collapse text-sm" id="dataTable">
+                        <thead class="bg-slate-50/70 sticky top-0 z-10 backdrop-blur-md border-b border-slate-200">
+                            <tr>
+                                <th class="p-4 font-semibold text-slate-600">Nama Peserta</th>
+                                <th class="p-4 font-semibold text-slate-600">Kecamatan</th>
+                                <th class="p-4 font-semibold text-slate-600">Status Penerimaan</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody" class="divide-y divide-slate-100 text-slate-700">
+                            <!-- Data akan dimuat melalui JavaScript -->
+                        </tbody>
+                    </table>
+
+                    <!-- Tampilan Jika Data Tidak Ditemukan -->
+                    <div id="noDataMessage" class="hidden flex-col items-center justify-center p-12 text-slate-400">
+                        <i data-lucide="search-code" class="w-12 h-12 mb-3 text-slate-300"></i>
+                        <p class="text-sm font-medium">Data yang Anda cari tidak ditemukan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status Info Minimalis -->
+            <div
+                class="flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-slate-400 border-t border-slate-100 pt-4 font-medium">
+                <div class="flex items-center gap-1.5">
+                    
+                </div>
+                <div>
+                    <span>Total Peserta Lolos: <strong id="totalDataCount" class="text-slate-700">0</strong></span>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Footer Sederhana -->
+        <footer class="text-center text-xs text-slate-400 mt-4 pb-8">
+            &copy; 2026 Badan Pusat Statistik Kabupaten Lampung Utara. 
+        </footer>
+    </div>
+
+    <script>
+        // Mengaktifkan ikon Lucide
+        lucide.createIcons();
+
+        // Data Peserta (Tetap dipertahankan agar tabel langsung terisi)
+        let pesertaData = [];   
+
+        const tableBody = document.getElementById('tableBody');
+        const searchInput = document.getElementById('searchInput');
+        const noDataMessage = document.getElementById('noDataMessage');
+        const dataTable = document.getElementById('dataTable');
+        const totalDataCount = document.getElementById('totalDataCount');
+
+        // Fungsi badge minimalis yang tidak mencolok
+        function getStatusBadge(status) {
+            let baseClasses = "px-2.5 py-1 rounded-lg text-xs font-medium border ";
+            if (status.toLowerCase().includes('cadangan')) {
+                return baseClasses + "bg-orange-50 text-orange-700 border-orange-100";
+            } else if (status.toLowerCase().includes('utama')) {
+                return baseClasses + "bg-blue-50 text-blue-700 border-blue-100";
+            } else {
+                return baseClasses + "bg-slate-50 text-slate-700 border-slate-200";
+            }
+        }
+
+        // Fungsi merender isi tabel dengan penyaringan
+        function renderTable(filterKeyword = "") {
+            tableBody.innerHTML = "";
+            let matchCount = 0;
+            const keyword = filterKeyword.toLowerCase().trim();
+
+            pesertaData.forEach(row => {
+                if (row.nama.toLowerCase().includes(keyword) ||
+                    row.kecamatan.toLowerCase().includes(keyword) ||
+                    row.status.toLowerCase().includes(keyword)) {
+
+                    matchCount++;
+                    const tr = document.createElement('tr');
+
+                    tr.innerHTML = `
+                        <td class="p-4 font-medium text-slate-800">${row.nama}</td>
+                        <td class="p-4 text-slate-500">${row.kecamatan}</td>
+                        <td class="p-4">
+                            <span class="${getStatusBadge(row.status)}">
+                                ${row.status}
+                            </span>
+                        </td>
+                    `;
+                    tableBody.appendChild(tr);
+                }
+            });
+
+            // Update informasi total data
+            totalDataCount.innerText = matchCount;
+
+            // Kontrol visibilitas pesan kosong
+            if (matchCount === 0) {
+                dataTable.classList.add('hidden');
+                noDataMessage.classList.remove('hidden');
+                noDataMessage.classList.add('flex');
+            } else {
+                dataTable.classList.remove('hidden');
+                noDataMessage.classList.add('hidden');
+                noDataMessage.classList.remove('flex');
+            }
+        }
+
+        async function muatDataPeserta() {
+            try {
+                const response = await fetch('data.json');
+                if (!response.ok) {
+                    throw new Error(`Gagal memuat file JSON (Status: ${response.status})`);
+                }
+                
+                // Isi variabel pesertaData dengan data dari JSON
+                pesertaData = await response.json();
+                
+                // Tampilkan tabel pertama kali setelah data berhasil diambil
+                renderTable();
+            } catch (error) {
+                console.error("Waduh, gagal mengambil data:", error);
+            }
+        }
+
+        // Jalankan fungsi pencarian setiap ada perubahan ketikan
+        searchInput.addEventListener('input', (e) => {
+            renderTable(e.target.value);
+        });
+
+        // Tampilkan tabel saat pertama kali dibuka
+        muatDataPeserta();
+
+    </script>
+</body>
+
+</html>
