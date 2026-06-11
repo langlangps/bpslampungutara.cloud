@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NGIBAR BNI 11 JUNI 2026</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #fff7f0, #ffffff);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 900px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 24px;
+        padding: 40px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 35px;
+      }
+
+      .header h1 {
+        color: #ff6b00;
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .header p {
+        color: #666;
+        font-size: 1rem;
+      }
+
+      .button-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 18px;
+      }
+
+      .survey-btn {
+        border: none;
+        cursor: pointer;
+        padding: 18px 22px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, #ff7b00, #ff9d2e);
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.25s ease;
+        box-shadow: 0 6px 16px rgba(255, 123, 0, 0.25);
+      }
+
+      .survey-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 24px rgba(255, 123, 0, 0.35);
+      }
+
+      .survey-btn:active {
+        transform: translateY(0);
+      }
+
+      .footer {
+        margin-top: 25px;
+        text-align: center;
+        color: #999;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 600px) {
+        .card {
+          padding: 25px;
+        }
+
+        .header h1 {
+          font-size: 1.6rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="header">
+          <h1>#NGIBAR SENSUS EKONOMI 2026</h1>
+          <p>Pilih cabang untuk membuka formulir survei</p>
+        </div>
+
+        <div class="button-grid" id="buttonContainer"></div>
+
+        <div class="footer">Badan Pusat Statistik</div>
+      </div>
+    </div>
+
+    <script>
+      const links = {
+        'BNI Bukit Kemuning<br>(Pin : 123456)': 'https://esurvey.bps.go.id/h/s/Taq68asL7g686qv9aV9XOeI6KLcfEsf_TTP.7sc8OJCK5VMuEA7cG',
+        'BNI Bunga Mayang<br>(Pin : 123456)': 'https://esurvey.bps.go.id/h/s/ty45wLi3p0ob_4bYgFL2F.0IVpNtRqx1uyaHsLsAtzW_Etv40JmRK',
+        'BNI Liwa<br>(Pin : 181818)': 'https://esurvey.bps.go.id/h/s/8OTAnLdHO9tk3upWmUobHeGHk6B6iEq-SRHYz6G1IACjDdVsIcPca',
+        'BNI Dayamurni<br>(Pin : 123456)': 'https://esurvey.bps.go.id/h/s/qSd5SNPZVA22e1mSaHxJ2Oakc_Dnyg7Psfxqo044e2xSa9h-Y2nge',
+        'BNI Kotabumi<br>(Pin : 123456)': 'https://esurvey.bps.go.id/h/s/kK2XPahHYdJvqIsd3iCNYeaaUhyQ08YHlt-6PfSudmGdlBDIVypru',
+        'BNI Krui<br>(Pin : 123456)': 'https://esurvey.bps.go.id/h/s/TgSfQx2_lKbD4E6DRjyZe-woYFYAsarF1vYMuUYEBVl-0ILokjhc2',
+      };
+
+      const container = document.getElementById('buttonContainer');
+
+      Object.entries(links).forEach(([name, url]) => {
+        const button = document.createElement('button');
+
+        button.className = 'survey-btn';
+        button.innerHTML = `🏦 ${name}`;
+
+        button.onclick = () => {
+          window.open(url, '_blank');
+        };
+
+        container.appendChild(button);
+      });
+    </script>
+  </body>
+</html>
