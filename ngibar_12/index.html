@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NGIBAR BPJS 12 JUNI 2026</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #fff7f0, #ffffff);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 900px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 24px;
+        padding: 40px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 35px;
+      }
+
+      .header h1 {
+        color: #ff6b00;
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .header p {
+        color: #666;
+        font-size: 1rem;
+      }
+
+      .button-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 18px;
+      }
+
+      .survey-btn {
+        border: none;
+        cursor: pointer;
+        padding: 18px 22px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, #ff7b00, #ff9d2e);
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.25s ease;
+        box-shadow: 0 6px 16px rgba(255, 123, 0, 0.25);
+      }
+
+      .survey-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 24px rgba(255, 123, 0, 0.35);
+      }
+
+      .survey-btn:active {
+        transform: translateY(0);
+      }
+
+      .footer {
+        margin-top: 25px;
+        text-align: center;
+        color: #999;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 600px) {
+        .card {
+          padding: 25px;
+        }
+
+        .header h1 {
+          font-size: 1.6rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="header">
+          <h1>#NGIBAR SENSUS EKONOMI 2026</h1>
+          <p>Pilih cabang untuk membuka formulir survei</p>
+        </div>
+
+        <div class="button-grid" id="buttonContainer"></div>
+
+        <div class="footer">Badan Pusat Statistik</div>
+      </div>
+    </div>
+
+    <script>
+      const links = {
+        'SINERGI GULA NUSANTARA, PT': 'https://esurvey.bps.go.id/h/s/vgzNrox8Yjo9GsdVEUwb_eKsy0faZKIePJUt_dY0QG922Szo.i9xW',
+        'NAKAU, PT (PIN : 123456)': 'https://esurvey.bps.go.id/h/s/nY5z6y_SwH25B9xa1MUn_O5Zzd33v3YDpyo4j2ujE-XLEYLcxjHBm',
+        'MIN GOOK INDUSTRY KAYU, PT (PIN : 123456)': 'https://esurvey.bps.go.id/h/s/491rSQu3O1nrSXu9JUXXCO6luhu1c7biUJg8ntHvA0AzflQqM9tGS',
+        'PUNCAK MENARA HIJAU MAS, PT (PIN : 123456)': 'https://esurvey.bps.go.id/h/s/AD1vl.1Dh2NqZUU8GMp6jutN8AaZMeCHpDtWGoJwJBurB7Slsj3z2',
+        'BUDI DHARMA GODAM PERKASA, PT (PIN : 123456)': 'https://esurvey.bps.go.id/h/s/X266YWyi33M89kTBJy9b7uhMuKObhAHDgRcuj91pZ6EhMKCYt3EEO',
+        'PERKEBUNAN NUSANTARA VII, PT (PG BUNGAMAYANG)': 'https://esurvey.bps.go.id/h/s/Y0k3UJibMRN2Yo_AZTMZ-OFUq9_3wFx2CyHIUUccQta3O79Km2Uj-',
+        'JAYA AGRO MANDIRI, PT (PIN : 123456)': 'https://esurvey.bps.go.id/h/s/HVdHd3q5DIqNaKAN2AtY0eBQm8bd3rt2vxjSv7q95Zi8rruKiiF0y',
+      };
+
+      const container = document.getElementById('buttonContainer');
+
+      Object.entries(links).forEach(([name, url]) => {
+        const button = document.createElement('button');
+
+        button.className = 'survey-btn';
+        button.innerHTML = `🏦 ${name}`;
+
+        button.onclick = () => {
+          window.open(url, '_blank');
+        };
+
+        container.appendChild(button);
+      });
+    </script>
+  </body>
+</html>
