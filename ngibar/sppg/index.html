@@ -212,9 +212,6 @@
                             <div class="flex items-center gap-2">
                                 <span class="font-extrabold text-base sm:text-lg tracking-wide text-white">Link
                                     Pengisian SE2026</span>
-                                <span
-                                    class="bg-white text-orange-600 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider shadow-sm">82
-                                    SPPG</span>
                             </div>
                             <p class="text-xs text-orange-100 mt-0.5">Pilih Kecamatan, Desa, & SPPG untuk mengisi
                                 kuesioner CAWI</p>
@@ -564,6 +561,7 @@
         }
 
         const [sppgDatabase, KECAMATAN_LIST] = await loadData();
+        console.log(sppgDatabase);
         let selectedKecFilter = "ALL";
 
         // --- Render Navigator Pills ---
@@ -705,6 +703,12 @@
                                         <i class="fa-solid fa-school text-orange-500 mr-1.5 text-xs"></i>${unit.sppg}
                                     </h5>
                                 </div>
+
+                                <!-- ID SPPG -->
+                                <p class="text-xs text-slate-600 mb-1 flex items-start gap-1.5">
+                                    <i class="fa-solid fa-id-badge text-slate-400 text-xs mt-0.5 shrink-0"></i>
+                                    <span><strong>ID:</strong> ${unit.id || '-'}</span>
+                                </p>
 
                                 <!-- Alamat -->
                                 <p class="text-xs text-slate-600 mb-1 flex items-start gap-1.5">
