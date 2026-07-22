@@ -257,6 +257,37 @@
                     </div>
                 </div>
             </a>
+            
+            
+            <!-- LINK 2: Link Zoom -->
+            <a href="https://daftarhadir.web.bps.go.id/#/go/Y70iR" target="_blank"
+                onclick="playClickSound()"
+                class="group relative block w-full glass-card hover:bg-white text-slate-800 rounded-2xl p-4 sm:p-5 shadow-md hover:shadow-lg hover:border-bps-blue/40 transform hover:-translate-y-1 transition-all duration-300 border border-slate-200/80 overflow-hidden">
+                <div class="relative z-10 flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-bps-blue flex items-center justify-center shrink-0 text-white shadow-md shadow-blue-500/20 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-clipboard-user text-xl"></i>
+                        </div>
+                        <div class="text-left">
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="font-bold text-base sm:text-lg text-slate-900 group-hover:text-bps-blue transition-colors">Daftar Hadir</span>
+                                <span class="flex h-2 w-2 relative">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+                                </span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-0.5">Ruang Virtual Bimbingan & Pendampingan Bersama</p>
+                        </div>
+                    </div>
+                    <div
+                        class="w-9 h-9 rounded-full bg-slate-100 group-hover:bg-bps-blue group-hover:text-white flex items-center justify-center shrink-0 transition-all duration-300 text-slate-400">
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </div>
+                </div>
+            </a>
 
             <!-- LINK 3: Virtual Background (Opens Modal) -->
             <button onclick="openVbgModal(); playClickSound()"
@@ -282,7 +313,8 @@
             </button>
 
             <!-- LINK 4: Bahan -->
-            <a href="https://drive.google.com" target="_blank" onclick="playClickSound()"
+            <a href="https://drive.google.com/drive/folders/1jejqvYLknlZ5lNcQX_exXqFuY0X6ieif" target="_blank"
+                onclick="playClickSound()"
                 class="group relative block w-full glass-card hover:bg-white text-slate-800 rounded-2xl p-4 sm:p-5 shadow-md hover:shadow-lg hover:border-bps-blue/40 transform hover:-translate-y-1 transition-all duration-300 border border-slate-200/80 overflow-hidden">
                 <div class="relative z-10 flex items-center justify-between">
                     <div class="flex items-center space-x-4">
@@ -438,8 +470,6 @@
                 <div>
                     <label
                         class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1.5 flex items-center justify-between">
-                        <span><i class="fa-solid fa-compass text-orange-500 mr-1"></i> Navigator Kecamatan (23
-                            Kecamatan)</span>
                         <span id="activeKecCount" class="text-orange-600 font-extrabold">Semua (82 SPPG)</span>
                     </label>
                     <div class="flex gap-1.5 overflow-x-auto pb-2 scrollbar-none text-xs" id="kecNavigatorPills">
@@ -489,63 +519,19 @@
             <!-- Generated SVG Preview Canvas Box -->
             <div
                 class="relative w-full aspect-video rounded-2xl overflow-hidden border border-slate-200 shadow-inner bg-slate-900 mb-4 flex items-center justify-center group">
-                <!-- SVG Mock Background Graphic -->
-                <svg viewBox="0 0 800 450" class="w-full h-full object-cover" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#ffffff" />
-                            <stop offset="50%" stop-color="#f8fafc" />
-                            <stop offset="100%" stop-color="#e2e8f0" />
-                        </linearGradient>
-                        <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stop-color="#FF6B00" />
-                            <stop offset="100%" stop-color="#F59E0B" />
-                        </linearGradient>
-                        <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#0058A8" />
-                            <stop offset="100%" stop-color="#00A8E8" />
-                        </linearGradient>
-                    </defs>
-
-                    <!-- Background -->
-                    <rect width="800" height="450" fill="url(#bgGrad)" />
-
-                    <!-- Decorative Geometric Shapes -->
-                    <path d="M -50 -50 L 350 -50 L 200 500 L -50 500 Z" fill="url(#blueGrad)" opacity="0.08" />
-                    <path d="M 500 -50 L 850 -50 L 850 500 L 650 500 Z" fill="url(#orangeGrad)" opacity="0.12" />
-                    <circle cx="750" cy="80" r="120" fill="url(#orangeGrad)" opacity="0.15" />
-                    <circle cx="50" cy="380" r="160" fill="url(#blueGrad)" opacity="0.1" />
-
-                    <!-- Accent Wave Lines -->
-                    <path d="M 0 400 Q 200 370 400 410 T 800 380" stroke="#FF6B00" stroke-width="6" fill="none"
-                        opacity="0.8" />
-                    <path d="M 0 415 Q 200 385 400 425 T 800 395" stroke="#0058A8" stroke-width="6" fill="none"
-                        opacity="0.8" />
-
-                    <!-- Logo / Badge Graphic -->
-                    <rect x="50" y="40" width="160" height="40" rx="8" fill="#ffffff"
-                        filter="drop-shadow(0 2px 4px rgba(0,0,0,0.1))" />
-                    <text x="130" y="65" font-family="sans-serif" font-weight="bold" font-size="14" fill="#0058A8"
-                        text-anchor="middle">SPPG LAMPUNG UTARA</text>
-
-                    <!-- Center Banner Text -->
-                    <text x="400" y="190" font-family="sans-serif" font-weight="800" font-size="34" fill="#0058A8"
-                        text-anchor="middle">SENSUS EKONOMI 2026</text>
-                    <text x="400" y="235" font-family="sans-serif" font-weight="700" font-size="22" fill="#FF6B00"
-                        text-anchor="middle">#Ngibar - Ngisi Bareng</text>
-                    <text x="400" y="270" font-family="sans-serif" font-weight="500" font-size="14" fill="#64748B"
-                        text-anchor="middle">Mewujudkan Data Ekonomi Akurat & Terpercaya</text>
-                </svg>
+                
+                <img src="img/Virtual-Background-SE2026-LampungUtara.png" alt="Virtual Background SE2026 Lampung Utara"
+                    class="w-full h-full object-cover rounded-2xl shadow-inner border border-slate-100" />
 
                 <div
                     class="absolute inset-0 bg-slate-900/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span class="bg-white/90 text-slate-800 text-xs font-bold px-3 py-1.5 rounded-full shadow">Resolusi
-                        Tinggi 1080p</span>
+                    
                 </div>
             </div>
 
             <div class="flex items-center gap-3">
-                <a href="#" download="Virtual-Background-SE2026-LampungUtara.png" onclick="triggerDownload(event)"
+                <a href="img/Virtual-Background-SE2026-LampungUtara.png"
+                    download="img/Virtual-Background-SE2026-LampungUtara.png" onclick="triggerDownload(event)"
                     class="flex-1 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-center font-bold text-sm py-3 px-4 rounded-xl shadow-md shadow-orange-500/20 transition-all flex items-center justify-center gap-2">
                     <i class="fa-solid fa-download"></i> Unduh Virtual Background
                 </a>
@@ -887,6 +873,20 @@
             if (e) e.preventDefault();
             playClickSound();
             showToast('Mengunduh Virtual Background SE2026...');
+
+            // 1. Ambil URL & nama file target
+            const fileUrl = "img/Virtual-Background-SE2026-LampungUtara.png";
+            const fileName = "Virtual-Background-SE2026-LampungUtara.png";
+
+            // 2. Buat elemen <a> sementara untuk memicu download
+            const tempLink = document.createElement('a');
+            tempLink.href = fileUrl;
+            tempLink.download = fileName;
+            document.body.appendChild(tempLink);
+            tempLink.click();
+            document.body.removeChild(tempLink);
+
+            // 3. Tutup modal setelah delay
             setTimeout(() => {
                 closeVbgModal();
             }, 1200);
