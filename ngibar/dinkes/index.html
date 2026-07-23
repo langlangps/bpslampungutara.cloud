@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#NGIBAR - Instansi Kesehatan Lampung Utara</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                50: '#fff7ed',
+                100: '#ffedd5',
+                200: '#fed7aa',
+                300: '#fdba74',
+                400: '#fb923c',
+                500: '#f97316',
+                600: '#ea580c',
+                700: '#c2410c',
+              },
+              accent: {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                700: '#0369a1',
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+      @keyframes pulseGlow {
+        0%,
+        100% {
+          box-shadow: 0 0 15px rgba(249, 115, 22, 0.3);
+        }
+        50% {
+          box-shadow: 0 0 25px rgba(249, 115, 22, 0.6);
+        }
+      }
+      .animate-float {
+        animation: float 4s ease-in-out infinite;
+      }
+      .pulse-glow {
+        animation: pulseGlow 3s infinite;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #f1f5f9;
+        border-radius: 8px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 8px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 237, 213, 0.8);
+      }
+      .card-hover {
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .card-hover:hover {
+        transform: translateY(-4px) scale(1.01);
+        box-shadow:
+          0 12px 24px -6px rgba(249, 115, 22, 0.15),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-white">
+    <!-- Top Decorative Banner -->
+    <div class="bg-gradient-to-r from-brand-600 via-brand-500 to-accent-600 text-white text-xs py-1.5 px-4 text-center font-medium shadow-inner flex items-center justify-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+      <span>Sensus Ekonomi 2026 • Kabupaten Lampung Utara:</span>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-orange-100 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo & Brand Title -->
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-500 to-amber-400 flex items-center justify-center text-white shadow-md shadow-brand-500/20 transform hover:rotate-6 transition-transform cursor-pointer" onclick="playSound('pop')">
+              <i data-lucide="activity" class="w-7 h-7 stroke-[2.5]"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="bg-brand-100 text-brand-700 text-xs font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider border border-brand-200">#NGIBAR</span>
+                <span class="text-xs font-semibold text-accent-600 bg-accent-50 px-2 py-0.5 rounded-md">BPS Lampung Utara</span>
+              </div>
+              <h1 class="text-lg sm:text-xl font-bold text-slate-900 tracking-tight leading-tight">Ngisi Bareng Sensus Ekonomi</h1>
+              <p class="text-xs text-slate-500 hidden sm:block">
+                Self Enumeration
+                <strong>Instansi Kesehatan</strong>
+                Kabupaten Lampung Utara
+              </p>
+            </div>
+          </div>
+
+          <!-- Action Buttons / Nav Items -->
+          <div class="hidden md:flex items-center gap-2">
+            <a
+              href="https://drive.google.com/open?id=1atr-nDCIb6yv3MkOOSK9jfQP2Fq5NvcR"
+              target="_blank"
+              rel="noopener noreferrer"
+              onclick="playSound('click')"
+              class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-brand-50 hover:text-brand-600 transition-all border border-slate-200 hover:border-brand-200"
+            >
+              <i data-lucide="folder-down" class="w-4 h-4 text-brand-500"></i>
+              <span>Materi dan Dokumentasi</span>
+            </a>
+            <a
+              href="https://daftarhadir.web.bps.go.id/#/go/__zIg"
+              target="_blank"
+              rel="noopener noreferrer"
+              onclick="playSound('click')"
+              class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-brand-50 hover:text-brand-600 transition-all border border-slate-200 hover:border-brand-200"
+            >
+              <i data-lucide="clipboard-check" class="w-4 h-4 text-emerald-500"></i>
+              <span>Daftar Hadir</span>
+            </a>
+
+            <!-- Sound Toggle -->
+            <button id="soundToggle" onclick="toggleSound()" title="Efek Suara UI" class="p-2 rounded-xl text-slate-500 hover:text-brand-600 hover:bg-slate-100 transition-all ml-1 border border-slate-200">
+              <i data-lucide="volume-2" class="w-4 h-4" id="soundIcon"></i>
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="flex items-center gap-2 md:hidden">
+            <button id="soundToggleMobile" onclick="toggleSound()" class="p-2 rounded-xl text-slate-600 bg-slate-100">
+              <i data-lucide="volume-2" class="w-4 h-4"></i>
+            </button>
+            <button
+              onclick="
+                toggleMobileMenu();
+                playSound('click');
+              "
+              class="p-2.5 rounded-xl text-slate-700 bg-slate-100 hover:bg-slate-200 transition-all"
+            >
+              <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 py-3 space-y-2">
+        <a
+          href="https://drive.google.com/open?id=1atr-nDCIb6yv3MkOOSK9jfQP2Fq5NvcR"
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="
+            toggleMobileMenu();
+            playSound('click');
+          "
+          class="w-full text-left px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-brand-50 flex items-center gap-3"
+        >
+          <i data-lucide="folder-down" class="w-4 h-4 text-brand-500"></i>
+          <span>Materi dan Dokumentasi</span>
+        </a>
+
+        <a
+          href="https://daftarhadir.web.bps.go.id/#/go/__zIg"
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="
+            toggleMobileMenu();
+            playSound('click');
+          "
+          class="w-full text-left px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 hover:bg-brand-50 flex items-center gap-3"
+        >
+          <i data-lucide="clipboard-check" class="w-4 h-4 text-emerald-500"></i>
+          <span>Daftar Hadir</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+
+    <!-- Main Content Grid -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Sidebar Navigation (Jenis Instansi Filter) -->
+        <aside class="w-full lg:w-72 shrink-0">
+          <div class="sticky top-28 space-y-4">
+            <div class="bg-white rounded-2xl p-5 border border-slate-200/80 shadow-sm">
+              <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2">
+                  <i data-lucide="filter" class="w-4 h-4 text-brand-500"></i>
+                  Jenis Instansi
+                </h3>
+                <button
+                  onclick="
+                    resetCategoryFilter();
+                    playSound('click');
+                  "
+                  class="text-[11px] font-semibold text-accent-600 hover:text-accent-700 hover:underline"
+                >
+                  Reset
+                </button>
+              </div>
+
+              <!-- Categories List Buttons -->
+              <div id="categoryContainer" class="space-y-1.5 max-h-[60vh] lg:max-h-none overflow-y-auto custom-scrollbar pr-1">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Listing Area -->
+        <div class="flex-1 min-w-0 space-y-6">
+          <!-- Search & Status Control Bar -->
+          <div class="sticky top-4 z-20 bg-white rounded-2xl p-4 border border-slate-200/80 shadow-sm flex flex-col sm:flex-row gap-3 items-center justify-between">
+            <!-- Search Input -->
+            <div class="relative w-full sm:w-80 md:w-96">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                <i data-lucide="search" class="w-4 h-4"></i>
+              </div>
+              <input
+                type="text"
+                id="searchInput"
+                oninput="handleSearch(this.value)"
+                placeholder="Cari nama instansi..."
+                class="w-full pl-10 pr-9 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 focus:outline-none transition-all placeholder:text-slate-400 font-medium"
+              />
+              <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600">
+                <i data-lucide="x" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- Search Count Indicator -->
+            <div class="flex items-center justify-between w-full sm:w-auto text-xs font-semibold text-slate-500">
+              <span id="activeFilterBadge" class="bg-slate-100 text-slate-700 px-3 py-1.5 rounded-lg border border-slate-200">
+                Menampilkan:
+                <strong id="displayedCount" class="text-brand-600">0</strong>
+                Instansi
+              </span>
+            </div>
+            <!-- Date Filter Widget -->
+            <div class="bg-gradient-to-br from-brand-50 to-amber-50/50 rounded-2xl p-4 border border-brand-100 text-xs">
+              <div class="font-bold text-brand-800 mb-2 flex items-center gap-1.5">
+                <i data-lucide="clock" class="w-3.5 h-3.5 text-brand-600"></i>
+                <span>Filter Tanggal Ngibar</span>
+              </div>
+              <select id="dateFilterSelect" onchange="handleDateFilterChange(this.value)" class="w-full bg-white border border-brand-200 text-slate-700 rounded-xl px-3 py-2 font-medium focus:ring-2 focus:ring-brand-500 focus:outline-none">
+                <option value="ALL">Semua Tanggal (23-29 Juli)</option>
+                <option value="23 Juli 2026">23 Juli 2026</option>
+                <option value="24 Juli 2026">24 Juli 2026</option>
+                <option value="25 Juli 2026">25 Juli 2026</option>
+                <option value="26 Juli 2026">26 Juli 2026</option>
+                <option value="27 Juli 2026">27 Juli 2026</option>
+                <option value="28 Juli 2026">28 Juli 2026</option>
+                <option value="29 Juli 2026">29 Juli 2026</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Cards Container (Grouped by Date) -->
+          <div id="cardsGroupContainer" class="space-y-8">
+            <!-- Dynamic Cards Rendered Here -->
+          </div>
+
+          <!-- Empty Search State -->
+          <div id="emptyState" class="hidden bg-white rounded-3xl p-12 text-center border border-dashed border-slate-300">
+            <div class="w-16 h-16 bg-orange-50 text-brand-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <i data-lucide="search-x" class="w-8 h-8"></i>
+            </div>
+            <h3 class="text-base font-bold text-slate-800 mb-1">Instansi Tidak Ditemukan</h3>
+            <p class="text-xs text-slate-500 max-w-sm mx-auto mb-4">Coba sesuaikan kata kunci pencarian atau ubah filter jenis instansi di sebelah kiri.</p>
+            <button
+              onclick="
+                resetAllFilters();
+                playSound('click');
+              "
+              class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-brand-600 bg-brand-50 rounded-xl hover:bg-brand-100 transition-colors"
+            >
+              <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+              <span>Reset Semua Filter</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Modal: Materi dan Dokumentasi -->
+    <div id="materiModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
+      <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-slate-100 animate-float">
+        <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center">
+              <i data-lucide="folder-down" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 text-base">Materi & Dokumentasi</h3>
+              <p class="text-xs text-slate-500">Panduan Sensus Ekonomi CAWI 2026</p>
+            </div>
+          </div>
+          <button onclick="closeModal('materiModal')" class="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <div class="py-4 space-y-3">
+          <a
+            href="#"
+            onclick="
+              showToast('Mengunduh Buku Panduan CAWI...');
+              playSound('pop');
+              return false;
+            "
+            class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 hover:bg-brand-50/60 border border-slate-200/80 hover:border-brand-200 transition-all group"
+          >
+            <div class="flex items-center gap-3">
+              <i data-lucide="file-text" class="w-5 h-5 text-brand-500"></i>
+              <div>
+                <div class="text-xs font-bold text-slate-800 group-hover:text-brand-600">Buku Panduan Pengisian CAWI.pdf</div>
+                <div class="text-[11px] text-slate-400">PDF • 3.2 MB</div>
+              </div>
+            </div>
+            <i data-lucide="download" class="w-4 h-4 text-slate-400 group-hover:text-brand-600"></i>
+          </a>
+
+          <a
+            href="#"
+            onclick="
+              showToast('Membuka Video Tutorial YouTube...');
+              playSound('pop');
+              return false;
+            "
+            class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 hover:bg-accent-50/60 border border-slate-200/80 hover:border-accent-200 transition-all group"
+          >
+            <div class="flex items-center gap-3">
+              <i data-lucide="video" class="w-5 h-5 text-accent-500"></i>
+              <div>
+                <div class="text-xs font-bold text-slate-800 group-hover:text-accent-600">Video Tutorial Pengisian Instansi Kesehatan</div>
+                <div class="text-[11px] text-slate-400">YouTube Video • 8 Menit</div>
+              </div>
+            </div>
+            <i data-lucide="external-link" class="w-4 h-4 text-slate-400 group-hover:text-accent-600"></i>
+          </a>
+
+          <a
+            href="#"
+            onclick="
+              showToast('Mengunduh Slide Sosialisasi...');
+              playSound('pop');
+              return false;
+            "
+            class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 hover:bg-amber-50/60 border border-slate-200/80 hover:border-amber-200 transition-all group"
+          >
+            <div class="flex items-center gap-3">
+              <i data-lucide="presentation" class="w-5 h-5 text-amber-500"></i>
+              <div>
+                <div class="text-xs font-bold text-slate-800 group-hover:text-amber-600">Slide Paparan Kick-Off #NGIBAR.pptx</div>
+                <div class="text-[11px] text-slate-400">PPTX • 5.8 MB</div>
+              </div>
+            </div>
+            <i data-lucide="download" class="w-4 h-4 text-slate-400 group-hover:text-amber-600"></i>
+          </a>
+        </div>
+
+        <div class="pt-2 text-right">
+          <button onclick="closeModal('materiModal')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs rounded-xl transition-colors">Tutup</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal: Daftar Hadir -->
+    <div id="presensiModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
+      <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-100">
+        <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+              <i data-lucide="clipboard-check" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 text-base">Presensi Kehadiran</h3>
+              <p class="text-xs text-slate-500">Konfirmasi kehadiran sesi #NGIBAR</p>
+            </div>
+          </div>
+          <button onclick="closeModal('presensiModal')" class="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <form onsubmit="handlePresensiSubmit(event)" class="py-4 space-y-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Nama Petugas / Penanggung Jawab</label>
+            <input type="text" required placeholder="Contoh: Dr. Herman Suherman" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-500 focus:outline-none" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Nama Instansi Kesehatan</label>
+            <input type="text" required placeholder="Contoh: RSUD Ryacudu Kotabumi" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-500 focus:outline-none" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Nomor WhatsApp Active</label>
+            <input type="tel" required placeholder="08xxxxxxxxxx" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-brand-500 focus:outline-none" />
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl transition-colors shadow-md shadow-emerald-600/20">Kirim Presensi Kehadiran</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal: Surat Undangan -->
+    <div id="undanganModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
+      <div class="bg-white rounded-3xl max-w-xl w-full p-6 shadow-2xl border border-slate-100">
+        <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center">
+              <i data-lucide="mail" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 text-base">Surat Undangan Resmi</h3>
+              <p class="text-xs text-slate-500">Nomor: B-042/BPS/1803/07/2026</p>
+            </div>
+          </div>
+          <button onclick="closeModal('undanganModal')" class="p-1.5 text-slate-400 hover:text-slate-600 rounded-lg">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+        <div class="py-4 space-y-3">
+          <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 text-xs text-slate-700 leading-relaxed space-y-2">
+            <p class="font-bold text-slate-900">Kepada Yth. Pimpinan Instansi Kesehatan Se-Kabupaten Lampung Utara</p>
+            <p>
+              Dalam rangka pelaksanaan Sensus Ekonomi 2026, Badan Pusat Statistik Kabupaten Lampung Utara mengundang seluruh instansi kesehatan (Rumah Sakit, Klinik, Puskesmas, Bidan, Dokter, Apotek, Laboratorium) untuk berpartisipasi dalam pendataan mandiri Computer Assisted Web Interviewing (CAWI)
+              melalui program
+              <strong>#NGIBAR</strong>
+              .
+            </p>
+            <p class="text-brand-700 font-semibold">📍 Jadwal Pelaksanaan: 23 s.d. 29 Juli 2026 secara Online.</p>
+          </div>
+        </div>
+
+        <div class="flex justify-end gap-2 pt-2">
+          <button onclick="closeModal('undanganModal')" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs rounded-xl">Batal</button>
+          <button
+            onclick="
+              showToast('Unduh Surat Undangan PDF...');
+              playSound('pop');
+              closeModal('undanganModal');
+            "
+            class="px-4 py-2 bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs rounded-xl shadow-md shadow-brand-500/20 flex items-center gap-2"
+          >
+            <i data-lucide="download" class="w-4 h-4"></i>
+            <span>Unduh Surat PDF</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900 text-white text-xs font-semibold px-4 py-3 rounded-2xl shadow-xl flex items-center gap-2 border border-slate-700">
+      <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+      <span id="toastMsg">Notifikasi</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200/80 py-6 mt-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500">
+        <p class="font-semibold text-slate-700 mb-1">#NGIBAR - Ngisi Bareng Sensus Ekonomi 2026</p>
+        <p>Badan Pusat Statistik Kabupaten Lampung Utara • 23-29 Juli 2026</p>
+      </div>
+    </footer>
+
+    <script>
+      /* Modern Web Audio Synthesizer for UI sound effects without external files */
+      let soundEnabled = true;
+      let audioCtx = null;
+
+      function getAudioContext() {
+        if (!audioCtx) {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          if (AudioContext) {
+            audioCtx = new AudioContext();
+          }
+        }
+        if (audioCtx && audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        return audioCtx;
+      }
+
+      function playSound(type = 'click') {
+        if (!soundEnabled) return;
+        try {
+          const ctx = getAudioContext();
+          if (!ctx) return;
+
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+
+          const now = ctx.currentTime;
+
+          if (type === 'click') {
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(600, now);
+            osc.frequency.exponentialRampToValueAtTime(200, now + 0.04);
+            gain.gain.setValueAtTime(0.15, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + 0.04);
+            osc.start(now);
+            osc.stop(now + 0.04);
+          } else if (type === 'pop') {
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(300, now);
+            osc.frequency.exponentialRampToValueAtTime(700, now + 0.08);
+            gain.gain.setValueAtTime(0.2, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
+            osc.start(now);
+            osc.stop(now + 0.08);
+          }
+        } catch (e) {
+          console.log('Audio not allowed yet');
+        }
+      }
+
+      function toggleSound() {
+        soundEnabled = !soundEnabled;
+        const icon = document.getElementById('soundIcon');
+        if (soundEnabled) {
+          icon.setAttribute('data-lucide', 'volume-2');
+          showToast('Efek Suara UI: Aktif');
+          playSound('pop');
+        } else {
+          icon.setAttribute('data-lucide', 'volume-x');
+          showToast('Efek Suara UI: Diberhentikan');
+        }
+        lucide.createIcons();
+      }
+
+      /* Standard Category Definitions with counts */
+      const CATEGORIES = [
+        { id: 'ALL', name: 'Semua Instansi', targetCount: 160, icon: 'layout-grid', color: 'slate' },
+        { id: 'Rumah Sakit', name: 'Rumah Sakit', targetCount: 4, icon: 'hospital', color: 'rose' },
+        { id: 'Klinik', name: 'Klinik', targetCount: 43, icon: 'cross', color: 'orange' },
+        { id: 'Puskesmas', name: 'Puskesmas', targetCount: 27, icon: 'building-2', color: 'emerald' },
+        { id: 'Praktik Perawat', name: 'Praktik Perawat', targetCount: 13, icon: 'user-check', color: 'sky' },
+        { id: 'Praktik Bidan', name: 'Praktik Bidan', targetCount: 33, icon: 'heart-pulse', color: 'amber' },
+        { id: 'OPD', name: 'OPD', targetCount: 1, icon: 'landmark', color: 'indigo' },
+        { id: 'Apotek', name: 'Apotek', targetCount: 19, icon: 'pill', color: 'purple' },
+        { id: 'Laboratorium', name: 'Laboratorium', targetCount: 1, icon: 'flask-conical', color: 'teal' },
+        { id: 'Praktik Dokter', name: 'Praktik Dokter', targetCount: 19, icon: 'stethoscope', color: 'blue' },
+      ];
+
+      const DATES = ['24 Juli 2026', '27 Juli 2026', '28 Juli 2026', '29 Juli 2026'];
+
+      /* Master Data Store & Fallback Data Generator */
+      let rawData = [];
+      let activeCategory = 'ALL';
+      let searchQuery = '';
+      let selectedDateFilter = 'ALL';
+
+      function generateFallbackData() {
+        const data = [];
+        let idCounter = 1000;
+
+        const categoryConfigs = [
+          { type: 'Rumah Sakit', count: 4, prefix: ['RSUD Ryacudu Kotabumi', 'RS Candimas Medical Center', 'RS Handayani Kotabumi', 'RS Medika Kotabumi'] },
+          { type: 'Klinik', count: 43, prefix: ['Klinik Medika Utama', 'Klinik Sehat Bersama', 'Klinik Mitra Medika', 'Klinik Pratama Rawat Inap', 'Klinik Sentosa Lampung', 'Klinik Ibu dan Anak'] },
+          { type: 'Puskesmas', count: 27, prefix: ['Puskesmas Kotabumi II', 'Puskesmas Abung Selatan', 'Puskesmas Sungkai Selatan', 'Puskesmas Tanjung Raja', 'Puskesmas Abung Barat', 'Puskesmas Abung Semuli'] },
+          { type: 'Praktik Perawat', count: 13, prefix: ['Praktik Perawat Mandiri Ahmad', 'Praktik Perawat Supriadi', 'Praktik Perawat Budi Santoso', 'Praktik Perawat Eko Wahyudi'] },
+          { type: 'Praktik Bidan', count: 33, prefix: ['Bidan Mandiri Ny. Siti', 'Bidan Mandiri Ny. Anita', 'Bidan Mandiri Ny. Rahmawati', 'Bidan Mandiri Ny. Sri Rejeki', 'Bidan Mandiri Ny. Dewani'] },
+          { type: 'OPD', count: 1, prefix: ['Dinas Kesehatan Kabupaten Lampung Utara'] },
+          { type: 'Apotek', count: 19, prefix: ['Apotek Kimia Farma Kotabumi', 'Apotek Sehat Utama', 'Apotek Lampung Medika', 'Apotek K-24 Kotabumi', 'Apotek Sumber Sehat'] },
+          { type: 'Laboratorium', count: 1, prefix: ['Laboratorium Kesehatan Daerah (Labkesda) Lampung Utara'] },
+          { type: 'Praktik Dokter', count: 19, prefix: ['Praktik Dokter Spesialis dr. Hendra, Sp.A', 'Praktik dr. Andi Wijaya', 'Praktik dr. Maya Febriana', 'Praktik dr. Rian Pratama'] },
+        ];
+
+        categoryConfigs.forEach((config) => {
+          for (let i = 1; i <= config.count; i++) {
+            const baseName = config.prefix[(i - 1) % config.prefix.length];
+            const suffix = config.count > config.prefix.length ? ` ${Math.ceil(i / config.prefix.length)}` : '';
+            const namaInstansi = `${baseName}${suffix}`.trim();
+            const assignedDate = DATES[(idCounter + i) % DATES.length];
+
+            data.push({
+              nama: namaInstansi,
+              jenis_instansi: config.type,
+              tanggal_ngibar: assignedDate,
+              link_cawi: `https://sensus.bps.go.id/cawi/instansi/${idCounter++}`,
+            });
+          }
+        });
+
+        return data;
+      }
+
+      /* Initialize and Fetch JSON Data */
+      async function initData() {
+        try {
+          // Attempts to fetch JSON file from data/instansi.json
+          const response = await fetch('data/instansi.json');
+          if (!response.ok) throw new Error('File not found');
+          rawData = await response.json();
+          console.log('Data loaded successfully from data/instansi.json');
+        } catch (err) {
+          console.warn('Fallback to generated mock data (for iframe preview / standalone runner)');
+          rawData = generateFallbackData();
+        }
+
+        renderCategories();
+        renderCards();
+        updateTotalStat();
+      }
+
+      function updateTotalStat() {
+        document.getElementById('totalInstansiStat').innerText = rawData.length;
+      }
+
+      function renderCategories() {
+        const container = document.getElementById('categoryContainer');
+        container.innerHTML = '';
+
+        CATEGORIES.forEach((cat) => {
+          let count = 0;
+          if (cat.id === 'ALL') {
+            count = rawData.length;
+          } else {
+            count = rawData.filter((item) => item.jenis_instansi === cat.id).length;
+          }
+
+          const isActive = activeCategory === cat.id;
+          const btn = document.createElement('button');
+          btn.onclick = () => {
+            activeCategory = cat.id;
+            playSound('click');
+            renderCategories();
+            renderCards();
+          };
+
+          btn.className = `w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all ${isActive ? 'bg-brand-500 text-white shadow-md shadow-brand-500/20 translate-x-1' : 'bg-slate-50 hover:bg-orange-50/80 text-slate-700 hover:text-brand-600'}`;
+
+          btn.innerHTML = `
+                    <div class="flex items-center gap-2.5 min-w-0">
+                        <i data-lucide="${cat.icon}" class="w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-slate-400'}"></i>
+                        <span class="truncate">${cat.name}</span>
+                    </div>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold ${isActive ? 'bg-white/20 text-white' : 'bg-slate-200/80 text-slate-600'}">${count}</span>
+                `;
+
+          container.appendChild(btn);
+        });
+
+        lucide.createIcons();
+      }
+
+      function getFilteredAndSortedData() {
+        return rawData
+          .filter((item) => {
+            // Filter Category
+            const matchCat = activeCategory === 'ALL' || item.jenis_instansi === activeCategory;
+
+            // Filter Search Query
+            const query = searchQuery.toLowerCase().trim();
+            const matchSearch = !query || item.nama.toLowerCase().includes(query) || item.jenis_instansi.toLowerCase().includes(query);
+
+            // Filter Date
+            const matchDate = selectedDateFilter === 'ALL' || item.tanggal_ngibar === selectedDateFilter;
+
+            return matchCat && matchSearch && matchDate;
+          })
+          .sort((a, b) => a.nama.localeCompare(b.nama, 'id', { sensitivity: 'base' })); // Strict A-Z sorting
+      }
+
+      function renderCards() {
+        const container = document.getElementById('cardsGroupContainer');
+        const emptyState = document.getElementById('emptyState');
+        const filteredData = getFilteredAndSortedData();
+
+        document.getElementById('displayedCount').innerText = filteredData.length;
+
+        if (filteredData.length === 0) {
+          container.innerHTML = '';
+          emptyState.classList.remove('hidden');
+          return;
+        } else {
+          emptyState.classList.add('hidden');
+        }
+
+        // Group by tanggal_ngibar
+        const grouped = {};
+        filteredData.forEach((item) => {
+          if (!grouped[item.tanggal_ngibar]) {
+            grouped[item.tanggal_ngibar] = [];
+          }
+          grouped[item.tanggal_ngibar].push(item);
+        });
+
+        // Sort dates chronologically based on DATES array
+        const sortedDates = Object.keys(grouped).sort((a, b) => DATES.indexOf(a) - DATES.indexOf(b));
+
+        container.innerHTML = '';
+
+        sortedDates.forEach((dateStr) => {
+          const itemsInGroup = grouped[dateStr];
+
+          const groupSection = document.createElement('section');
+          groupSection.className = 'space-y-4';
+
+          // Date Group Header Banner
+          const groupHeader = document.createElement('div');
+          groupHeader.className = 'sticky top-20 z-20 bg-slate-50/95 backdrop-blur py-2.5 px-4 rounded-2xl border border-slate-200/80 flex items-center justify-between shadow-xs';
+          groupHeader.innerHTML = `
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-brand-100 text-brand-600 flex items-center justify-center font-bold">
+                            <i data-lucide="calendar" class="w-4 h-4"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-slate-800">${dateStr}</h4>
+                            <span class="text-[11px] text-slate-500">${itemsInGroup.length} Instansi Terjadwal</span>
+                        </div>
+                    </div>
+                    <span class="text-[11px] font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-full border border-brand-200">#NGIBAR Hari Ke-${DATES.indexOf(dateStr) + 1}</span>
+                `;
+
+          groupSection.appendChild(groupHeader);
+
+          // Cards Grid
+          const grid = document.createElement('div');
+          grid.className = 'grid grid-cols-1 md:grid-cols-2 gap-4';
+
+          itemsInGroup.forEach((item) => {
+            const card = document.createElement('div');
+            card.className = 'glass-card rounded-2xl p-4 flex flex-col justify-between space-y-3 card-hover border border-orange-100/80';
+
+            // Get badge style by type
+            const badgeStyle = getCategoryBadgeStyle(item.jenis_instansi);
+
+            card.innerHTML = `
+                        <div class="space-y-2">
+                            <div class="flex items-start justify-between gap-2">
+                                <span class="px-2.5 py-1 rounded-lg text-[10px] font-bold tracking-wide uppercase ${badgeStyle}">
+                                    ${item.jenis_instansi}
+                                </span>
+                                <span class="text-[11px] font-medium text-slate-400 flex items-center gap-1">
+                                    <i data-lucide="clock" class="w-3 h-3"></i>
+                                    ${item.tanggal_ngibar}
+                                </span>
+                            </div>
+
+                            <h5 class="font-bold text-slate-900 text-sm leading-snug line-clamp-2 hover:text-brand-600 transition-colors">
+                                ${highlightMatch(item.nama, searchQuery)}
+                            </h5>
+                        </div>
+
+                        <div class="pt-2 border-t border-slate-100 flex items-center justify-between gap-2">
+                            <div class="text-[11px] text-slate-500 truncate">
+                                Sensus Ekonomi Lampung Utara
+                            </div>
+                            <a href="${item.link_cawi}" target="_blank" onclick="playSound('pop');" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-brand-500 to-amber-500 hover:from-brand-600 hover:to-amber-600 transition-all shadow-sm shadow-brand-500/20 active:scale-95 shrink-0">
+                                <span>Buka CAWI</span>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    `;
+
+            grid.appendChild(card);
+          });
+
+          groupSection.appendChild(grid);
+          container.appendChild(groupSection);
+        });
+
+        lucide.createIcons();
+      }
+
+      /* Helper Badge Styling */
+      function getCategoryBadgeStyle(type) {
+        switch (type) {
+          case 'Rumah Sakit':
+            return 'bg-rose-100 text-rose-700 border border-rose-200';
+          case 'Klinik':
+            return 'bg-orange-100 text-orange-700 border border-orange-200';
+          case 'Puskesmas':
+            return 'bg-emerald-100 text-emerald-700 border border-emerald-200';
+          case 'Praktik Perawat':
+            return 'bg-sky-100 text-sky-700 border border-sky-200';
+          case 'Praktik Bidan':
+            return 'bg-amber-100 text-amber-700 border border-amber-200';
+          case 'OPD':
+            return 'bg-indigo-100 text-indigo-700 border border-indigo-200';
+          case 'Apotek':
+            return 'bg-purple-100 text-purple-700 border border-purple-200';
+          case 'Laboratorium':
+            return 'bg-teal-100 text-teal-700 border border-teal-200';
+          case 'Praktik Dokter':
+            return 'bg-blue-100 text-blue-700 border border-blue-200';
+          default:
+            return 'bg-slate-100 text-slate-700';
+        }
+      }
+
+      /* Search Highlight Helper */
+      function highlightMatch(text, query) {
+        if (!query.trim()) return text;
+        const reg = new RegExp(`(${query.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')})`, 'gi');
+        return text.replace(reg, '<mark class="bg-amber-200 text-amber-900 rounded px-0.5">$1</mark>');
+      }
+
+      /* Event Handlers */
+      function handleSearch(val) {
+        searchQuery = val;
+        const clearBtn = document.getElementById('clearSearchBtn');
+        if (val) {
+          clearBtn.classList.remove('hidden');
+        } else {
+          clearBtn.classList.add('hidden');
+        }
+        renderCards();
+      }
+
+      function clearSearch() {
+        document.getElementById('searchInput').value = '';
+        searchQuery = '';
+        document.getElementById('clearSearchBtn').classList.add('hidden');
+        playSound('click');
+        renderCards();
+      }
+
+      function handleDateFilterChange(val) {
+        selectedDateFilter = val;
+        playSound('click');
+        renderCards();
+      }
+
+      function resetCategoryFilter() {
+        activeCategory = 'ALL';
+        renderCategories();
+        renderCards();
+      }
+
+      function resetAllFilters() {
+        activeCategory = 'ALL';
+        searchQuery = '';
+        selectedDateFilter = 'ALL';
+        document.getElementById('searchInput').value = '';
+        document.getElementById('dateFilterSelect').value = 'ALL';
+        document.getElementById('clearSearchBtn').classList.add('hidden');
+        renderCategories();
+        renderCards();
+      }
+
+      /* Modal Controllers */
+      function openModal(id) {
+        document.getElementById(id).classList.remove('hidden');
+      }
+
+      function closeModal(id) {
+        document.getElementById(id).classList.add('hidden');
+        playSound('click');
+      }
+
+      function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+      }
+
+      function handlePresensiSubmit(e) {
+        e.preventDefault();
+        playSound('pop');
+        closeModal('presensiModal');
+        showToast('Presensi Berhasil Dikirim! Terima kasih.');
+        e.target.reset();
+      }
+
+      /* Toast Popup Notification */
+      function showToast(msg) {
+        const toast = document.getElementById('toast');
+        document.getElementById('toastMsg').innerText = msg;
+        toast.classList.remove('translate-y-20', 'opacity-0');
+
+        setTimeout(() => {
+          toast.classList.add('translate-y-20', 'opacity-0');
+        }, 3000);
+      }
+
+      /* Boot initial data stream on load */
+      window.onload = function () {
+        initData();
+      };
+    </script>
+  </body>
+</html>

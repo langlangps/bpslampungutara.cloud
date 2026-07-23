@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Link CAWI Belum Dibuat - #NGIBAR Sensus Ekonomi 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Plus Jakarta Sans', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                50: '#fff7ed',
+                100: '#ffedd5',
+                500: '#f97316',
+                600: '#ea580c',
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gradient-to-br from-orange-50 via-slate-50 to-sky-50 text-slate-800 font-sans min-h-screen flex items-center justify-center p-4 antialiased">
+    <div class="max-w-md w-full bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-orange-100 shadow-xl text-center space-y-6 relative overflow-hidden">
+      <!-- Decorative Glow Blur Background Elements -->
+      <div class="absolute -top-12 -right-12 w-32 h-32 bg-brand-500/10 rounded-full blur-2xl pointer-events-none"></div>
+      <div class="absolute -bottom-12 -left-12 w-32 h-32 bg-sky-500/10 rounded-full blur-2xl pointer-events-none"></div>
+
+      <!-- Event Badge Header -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-brand-600 text-xs font-extrabold uppercase tracking-wider border border-orange-200">
+        <span class="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span>
+        <span>#NGIBAR 2026</span>
+      </div>
+
+      <!-- Warning Icon Illustration -->
+      <div class="w-20 h-20 bg-gradient-to-tr from-amber-100 to-orange-100 text-brand-600 rounded-3xl flex items-center justify-center mx-auto shadow-inner transform hover:rotate-6 transition-transform duration-300">
+        <i data-lucide="link-2-off" class="w-10 h-10 stroke-[2]"></i>
+      </div>
+
+      <!-- Main Title & Description -->
+      <div class="space-y-2">
+        <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight">Link CAWI Belum Dibuat</h1>
+        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">Mohon maaf, tautan pendataan CAWI untuk instansi ini belum tersedia atau sedang dalam proses penyusunan oleh tim BPS Kabupaten Lampung Utara.</p>
+      </div>
+
+      <!-- Info Box Note -->
+      <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200/80 text-left text-xs text-slate-600 space-y-1.5">
+        <div class="font-bold text-slate-800 flex items-center gap-1.5">
+          <i data-lucide="info" class="w-4 h-4 text-sky-500 shrink-0"></i>
+          <span>Informasi Tambahan:</span>
+        </div>
+        <p>Silakan hubungi panitia kegiatan atau periksa kembali jadwal pengisian instansi Anda pada portal utama #NGIBAR.</p>
+      </div>
+
+      <!-- Action Button -->
+      <div class="pt-2">
+        <a href="/ngibar/dinkes" class="inline-flex items-center justify-center gap-2 w-full py-3 px-5 rounded-2xl text-xs font-bold text-white bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 transition-all shadow-md shadow-brand-500/20 active:scale-95">
+          <i data-lucide="arrow-left" class="w-4 h-4"></i>
+          <span>Kembali ke Halaman Utama</span>
+        </a>
+      </div>
+
+      <!-- Footer Caption -->
+      <p class="text-[11px] text-slate-400 font-medium">Badan Pusat Statistik Kabupaten Lampung Utara</p>
+    </div>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
