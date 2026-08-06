@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#NGIBAR - Sensus Ekonomi 2026</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        bpsOrange: '#F26522',
+                        bpsBlue: '#0054A6',
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FAFAFA;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Glassmorphism Panel */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.05);
+        }
+
+        /* Fade In Up Animations with staggered delays */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+        .delay-600 { animation-delay: 600ms; }
+
+        /* Button click effect */
+        .btn-clicked {
+            transform: scale(0.97);
+            transition: transform 0.1s ease;
+        }
+
+        /* Subtle background pattern */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0,0,0,0.02) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(0,0,0,0.02) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="min-h-screen relative flex items-center justify-center p-4 overflow-x-hidden font-sans text-gray-800">
+
+    <!-- Background Decorators -->
+    <div class="fixed inset-0 z-0 bg-grid pointer-events-none"></div>
+    <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none flex justify-center items-center">
+        <div class="absolute top-[-10%] left-[-10%] w-72 h-72 bg-bpsOrange/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+        <div class="absolute top-[20%] right-[-10%] w-72 h-72 bg-bpsBlue/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob" style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-[-10%] left-[20%] w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob" style="animation-delay: 4s;"></div>
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="z-10 w-full max-w-md mx-auto">
+        <div class="glass-panel rounded-[2rem] p-6 sm:p-8 animate-fade-in">
+            
+            <!-- Logos Section -->
+            <div class="flex justify-center items-center gap-5 mb-8 animate-fade-in delay-100">
+                <!-- Logo BPS -->
+                <img src="img/logo-bps.png" 
+                     alt="Logo BPS" 
+                     class="h-14 sm:h-16 w-auto object-contain drop-shadow-sm hover:scale-105 transition-transform duration-300">
+                
+                <div class="h-12 w-px bg-gray-200"></div>
+
+                <!-- Logo SE2026 (Stylized representation) -->
+                <img src="img/logo-se2026.png" 
+                     alt="Logo Sensus" 
+                     class="h-12 sm:h-14 w-auto object-contain drop-shadow-sm hover:scale-105 transition-transform duration-300">
+            </div>
+
+            <!-- Titles & Information -->
+            <div class="text-center mb-8 animate-fade-in delay-200">
+                <h1 class="text-4xl font-black mb-1 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-bpsOrange to-bpsBlue">
+                    #NGIBAR
+                </h1>
+                <h2 class="text-[1.1rem] sm:text-xl font-bold text-gray-800 mb-2 leading-tight">
+                    Ngisi Bareng Sensus Ekonomi 2026
+                </h2>
+                <p class="text-sm text-gray-500 font-medium px-2">
+                    Seluruh BUMDES Kabupaten Lampung Utara
+                </p>
+                
+                <div class="mt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50/80 border border-blue-100 text-bpsBlue text-xs sm:text-sm font-semibold shadow-sm backdrop-blur-sm">
+                    <i class="far fa-calendar-alt"></i> 7 Agustus 2026
+                </div>
+            </div>
+
+            <!-- Links Section -->
+            <div class="space-y-3.5">
+                
+                <!-- Link 1: Zoom (Nuansa Biru) -->
+                <a target="_blank" rel="noopener noreferrer" href="https://us06web.zoom.us/j/84727661038?pwd=nT6ZR2L8gBM3YUw2KPiOnj4hGrUatU.1" onclick="handleLinkClick(event, this, 'Zoom')" class="animate-fade-in delay-300 relative flex items-center p-3 sm:p-4 bg-white/90 rounded-2xl border border-gray-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] hover:shadow-lg hover:border-bpsBlue transition-all duration-300 group overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative z-10 flex-shrink-0 w-12 h-12 bg-blue-50 text-bpsBlue rounded-xl flex items-center justify-center text-xl group-hover:bg-bpsBlue group-hover:text-white transition-colors duration-300 shadow-sm">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="relative z-10 ml-4 flex-grow">
+                        <h3 class="font-bold text-gray-800 group-hover:text-bpsBlue transition-colors text-sm sm:text-base">Link Zoom Meeting</h3>
+                        <p class="text-[11px] sm:text-xs text-gray-500 mt-0.5">Bergabung ke ruang virtual</p>
+                    </div>
+                    <div class="relative z-10 w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-bpsBlue group-hover:text-white transition-colors">
+                        <i class="fas fa-chevron-right text-xs"></i>
+                    </div>
+                </a>
+
+                <!-- Link 2: Daftar Hadir (Nuansa Oranye) -->
+                <a target="_blank" rel="noopener noreferrer" href="https://daftarhadir.web.bps.go.id/#/go/MJe6W" onclick="handleLinkClick(event, this, 'Kehadiran')" class="animate-fade-in delay-400 relative flex items-center p-3 sm:p-4 bg-white/90 rounded-2xl border border-gray-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] hover:shadow-lg hover:border-bpsOrange transition-all duration-300 group overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-r from-orange-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative z-10 flex-shrink-0 w-12 h-12 bg-orange-50 text-bpsOrange rounded-xl flex items-center justify-center text-xl group-hover:bg-bpsOrange group-hover:text-white transition-colors duration-300 shadow-sm">
+                        <i class="fas fa-clipboard-user"></i>
+                    </div>
+                    <div class="relative z-10 ml-4 flex-grow">
+                        <h3 class="font-bold text-gray-800 group-hover:text-bpsOrange transition-colors text-sm sm:text-base">Daftar Hadir</h3>
+                        <p class="text-[11px] sm:text-xs text-gray-500 mt-0.5">Isi absensi peserta kegiatan</p>
+                    </div>
+                    <div class="relative z-10 w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-bpsOrange group-hover:text-white transition-colors">
+                        <i class="fas fa-chevron-right text-xs"></i>
+                    </div>
+                </a>
+
+                <!-- Link 3: Pengisian SE2026 (Nuansa Biru) -->
+                <a href="#" onclick="handleLinkClick(event, this, 'Form SE2026')" class="animate-fade-in delay-500 relative flex items-center p-3 sm:p-4 bg-white/90 rounded-2xl border border-gray-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] hover:shadow-lg hover:border-bpsBlue transition-all duration-300 group overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative z-10 flex-shrink-0 w-12 h-12 bg-blue-50 text-bpsBlue rounded-xl flex items-center justify-center text-xl group-hover:bg-bpsBlue group-hover:text-white transition-colors duration-300 shadow-sm">
+                        <i class="fas fa-laptop-file"></i>
+                    </div>
+                    <div class="relative z-10 ml-4 flex-grow">
+                        <h3 class="font-bold text-gray-800 group-hover:text-bpsBlue transition-colors text-sm sm:text-base">Link Pengisian SE2026</h3>
+                        <p class="text-[11px] sm:text-xs text-gray-500 mt-0.5">Akses form Sensus Ekonomi</p>
+                    </div>
+                    <div class="relative z-10 w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-bpsBlue group-hover:text-white transition-colors">
+                        <i class="fas fa-chevron-right text-xs"></i>
+                    </div>
+                </a>
+
+                <!-- Link 4: Materi & Dokumentasi (Nuansa Oranye) -->
+                <a href="#" onclick="handleLinkClick(event, this, 'Materi')" class="animate-fade-in delay-600 relative flex items-center p-3 sm:p-4 bg-white/90 rounded-2xl border border-gray-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] hover:shadow-lg hover:border-bpsOrange transition-all duration-300 group overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-r from-orange-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative z-10 flex-shrink-0 w-12 h-12 bg-orange-50 text-bpsOrange rounded-xl flex items-center justify-center text-xl group-hover:bg-bpsOrange group-hover:text-white transition-colors duration-300 shadow-sm">
+                        <i class="fas fa-folder-open"></i>
+                    </div>
+                    <div class="relative z-10 ml-4 flex-grow">
+                        <h3 class="font-bold text-gray-800 group-hover:text-bpsOrange transition-colors text-sm sm:text-base">Materi & Dokumentasi</h3>
+                        <p class="text-[11px] sm:text-xs text-gray-500 mt-0.5">Unduh panduan dan foto</p>
+                    </div>
+                    <div class="relative z-10 w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-bpsOrange group-hover:text-white transition-colors">
+                        <i class="fas fa-chevron-right text-xs"></i>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- Footer -->
+            <div class="mt-8 text-center animate-fade-in delay-600">
+                <p class="text-xs text-gray-400 font-medium">
+                    &copy; 2026 BPS Kabupaten Lampung Utara<br>
+                    <span class="text-[10px] mt-1 block">Data Mencerdaskan Bangsa</span>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- JavaScript untuk Suara dan Animasi Klik -->
+    <script>
+        // Inisialisasi AudioContext untuk suara click yang minimalis (synthesized sound, tanpa file eksternal)
+        let audioCtx;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        function playClickSound() {
+            if (!audioCtx) return;
+            
+            // Lanjutkan state audio jika di-suspend oleh browser
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+
+            // Membuat suara "pop/tick" yang elegan
+            const oscillator = audioCtx.createOscillator();
+            const gainNode = audioCtx.createGain();
+
+            oscillator.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+
+            oscillator.type = 'sine';
+            
+            // Pitch turun dengan cepat untuk efek "tick"
+            oscillator.frequency.setValueAtTime(800, audioCtx.currentTime);
+            oscillator.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.05);
+
+            // Volume mengecil dengan cepat
+            gainNode.gain.setValueAtTime(0.15, audioCtx.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+
+            oscillator.start();
+            oscillator.stop(audioCtx.currentTime + 0.05);
+        }
+
+        // Fungsi yang dipanggil saat link diklik
+        function handleLinkClick(event, element, linkName) {
+            
+            initAudio();
+            playClickSound();
+            
+            // Tambahkan animasi klik (scale down sebentar)
+            element.classList.add('btn-clicked');
+            
+            setTimeout(() => {
+                element.classList.remove('btn-clicked');
+                // Logika navigasi diletakkan disini. 
+                // Contoh: window.open('https://link-tujuan.com', '_blank');
+                console.log(`Mengalihkan ke halaman: ${linkName}`);
+            }, 150);
+        }
+
+        // Inisialisasi audio pada interaksi pertama user (Syarat autoplay policy browser)
+        document.body.addEventListener('touchstart', initAudio, { once: true });
+        document.body.addEventListener('click', initAudio, { once: true });
+    </script>
+</body>
+</html>
