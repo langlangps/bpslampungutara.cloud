@@ -1,0 +1,1394 @@
+[
+    {
+        "kec": "BUKIT KEMUNING",
+        "desa": "TANJUNG BARU",
+        "nama": "BUM DESA AMAN JAYA TANJUNG BARU",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/T_d3_mgm0O9-cOEw825otunw0in69r63EQnrrxIoQK8CGnhvA29tK"
+    },
+    {
+        "kec": "BUKIT KEMUNING",
+        "desa": "SUKA MENANTI",
+        "nama": "BUM DESA SUKMA JAYA SUKA MENANTI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/xyQW5idTjrJEYMtwWTlSYelXgje7kqR4bnRDoyI9tqQWWY0LDxfn2"
+    },
+    {
+        "kec": "BUKIT KEMUNING",
+        "desa": "MUARA AMAN",
+        "nama": "BUM DESA MUARA JAYA MUARA AMAN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/x8Uu59lCdgQIwu_zh7wgpOzeChk8d_vbQ_bldRReJMozdqYSbvVDG"
+    },
+    {
+        "kec": "BUKIT KEMUNING",
+        "desa": "TANJUNG BARU TIMUR",
+        "nama": "BUM DESA AL BAROKAH TANJUNG BARU TIMUR",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/-XvcJidp3EcPatRLIR9vq-7c6u0w83EXUrs5Cg0fIKbT4GdIdNV3G"
+    },
+    {
+        "kec": "BUKIT KEMUNING",
+        "desa": "DWIKORA",
+        "nama": "BUM DESA SEJAHTERA DWIKORA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/dar4-spW92VBETi9outXce7cc2jM3nRSUeLe7KG6YEk4mov2Z-Emy"
+    },
+    {
+        "kec": "BUKIT KEMUNING",
+        "desa": "SIDO MULYO",
+        "nama": "BUM DESA SIDOJAYA SEJAHTERA SIDO MULYO",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/OFarrP6T6oVun03gvsdiLON5sgDNWwJyrlKteMdjnvndy9mcnWDqC"
+    },
+    {
+        "kec": "KOTABUMI",
+        "desa": "TALANG BOJONG",
+        "nama": "BUM DESA BOJONG SEJAHTERA TALANG BOJONG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/8MLyDwcxzNVzpDkxGti7He6tJHjm-iooHdfReV9Y18bPgU-Bm95wC"
+    },
+    {
+        "kec": "KOTABUMI",
+        "desa": "SUMBER ARUM",
+        "nama": "BUM DESA SUMBER MAKMUR SUMBER ARUM",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/5smEa1xct5zrZOmm26mODOvdydUgxgqVP4EhBFZJs_tkh3Dd3nA3q"
+    },
+    {
+        "kec": "SUNGKAI SELATAN",
+        "desa": "BUMI RATU",
+        "nama": "BUM DESA MAKMUR SEJAHTERA BUMI RATU",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/JK1vIsNeQUodi3JUfiiDde-QDACaTl0EPox2e_mSR0j4CIFT4Kj6i"
+    },
+    {
+        "kec": "SUNGKAI SELATAN",
+        "desa": "LABUHAN RATU PASAR",
+        "nama": "BUM DESA BERNALD LABUHAN RATU MAJU",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/7o6AXZzlwaKosG-R5fCmtOCXqeMAHoz8gIkk64n6mu1dKfQcIKC1C"
+    },
+    {
+        "kec": "SUNGKAI SELATAN",
+        "desa": "SINAR GALIH",
+        "nama": "BUM DESA JAYA BERSAMA SINAR GALIH",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/aNRr7dnAnsx3xgnDgwfbBOCZ3jjgOnjk7R2DwxTTOPia1gf8lcXRK"
+    },
+    {
+        "kec": "SUNGKAI SELATAN",
+        "desa": "LABUHAN RATU KAMPUNG",
+        "nama": "BUM DESA MITRA USAHA LABUHAN RATU KAMPUNG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/iEWCjM3CO52yAO_YCZtlgeEpQ-uoygoMKYt1rwArHUn1T4lmcbwFy"
+    },
+    {
+        "kec": "SUNGKAI SELATAN",
+        "desa": "GEDUNG KETAPANG",
+        "nama": "BUM DESA GEDUNG KARYA GEDUNG KETAPANG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/2uKlxSQnJhkpORMEutoMkeD8zCMWF1uwUFWkAmGzFag1WJk11rMLy"
+    },
+    {
+        "kec": "SUNGKAI SELATAN",
+        "desa": "KOTA AGUNG",
+        "nama": "BUM DESA BINA USAHA BERSAMA KOTA AGUNG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/9wiM1Kbwzm-8zws6E6TMXepLGRm_QlrF3uakK9HSbN29l4Xfs6TD6"
+    },
+    {
+        "kec": "SUNGKAI SELATAN",
+        "desa": "KETAPANG",
+        "nama": "BUM DESA MANDIRI KETAPANG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/2bewXHh2tgpySuxhubpg1eJIuSPOk1_qTr_b6pBTzQKYmdki6jIYW"
+    },
+    {
+        "kec": "SUNGKAI SELATAN",
+        "desa": "BANJAR KETAPANG",
+        "nama": "BUM DESA MAJU JAYA BANJAR KETAPANG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/k0AD7Ch2ZNdkIdm25mCIdOTOTL_ZssPRE8DR4WWfop90JVZ2XT6i-"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "KARANG WARINGIN",
+        "nama": "BUM DESA SEJAHTERA BERSAMA KARANG WARINGIN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/Q0bR95xryn3EKiAEGnL1Puh9DXaoytTe7aVU7IpxjhF3KhcC-05DO"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "SUKA SARI",
+        "nama": "BUM DESA TUNAS HARAPAN SUKA SARI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/ShTymtOBM-tUicE9eeMvVeLqL2Nvio3-K863nqglQbbbUEqZegjD6"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "SINAR JAYA",
+        "nama": "BUM DESA JAYA MANDIRI SINAR JAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/WlEDz1oswFA-30JUz3PyNO79-Hu7lQDTPZAksZthYioZL4-HwgP4W"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "MEKAR JAYA",
+        "nama": "BUM DESA BAROKAH ABADI MEKAR JAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/rWVfxT_ewPfdlTG5NTZ6D-A1ESCI-3EuCmg-P4kJ-4kvwTSJqFDK2"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "TANJUNG RAJA",
+        "nama": "BUM DESA SERASAN TANJUNG RAJA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/5EdFTmZoUX-PBUkImY570-YCLj-WLj9TzIiJukRK_wuovgESICdaO"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "TANJUNG RIANG",
+        "nama": "BUM DESA SUMBER URIP ABADI TANJUNG RIANG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/VFI14fZLFTwy1ScYlqZ4xOHZGErcG1B3GWZ84CRrm7IZeLgVXbEX2"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "KEMALA RAJA",
+        "nama": "BUM DESA SURYA KEMALA KEMALA RAJA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/KCkSKAyqgWV_5oxZySsICOhuSSck955qE4ztqUVfDYa3aos-8C2q2"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "SINDANG MARGA",
+        "nama": "BUM DESA SERASAN SINDANG MARGA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/UIvuxQ_H2OAUhyozwZpRw-hBnoTSsyy31oA9uizzfb95JUgqboTAS"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "GUNUNG KATON",
+        "nama": "BUM DESA SEJAHTERA GUNUNG KATON",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/Pp53AUOCVxwWzUQV72ujaehuEVWNkAAQGyrLXwZt7ISjubCTiB_p-"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "SUKA MULYA",
+        "nama": "BUM DESA TUNAS HARAPAN MULIA SUKA MULYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/10_X10hX744RASduk1qTeOWYXulj5R7TAUxkjOVvCwjDpT5pE1qNS"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "TANJUNG BERINGIN",
+        "nama": "BUM DESA TUNAS BANGSA TANJUNG BERINGIN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/zix5f5o9z4zk_vXbFJFKFefZm3ud0YiYc-kRKFFuQWWQ6kbafSSPW"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "PRIANGAN BARU",
+        "nama": "BUM DESA MAKMUR SEJAHTERA PRIANGAN BARU",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/zeYvqu5-K_wV-OrLmIG7JeVvb6gVuWOV09DUrNICAtmWsfUMNWY5a"
+    },
+    {
+        "kec": "ABUNG TIMUR",
+        "desa": "BUMI AGUNG MARGA",
+        "nama": "BUM DESA BUMI KENCANA BUMI AGUNG MARGA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/v8X61b4mqqOB1UHnJqhyPeY6pSVghb8RnbJVfVJKDr89yVCmluuvm"
+    },
+    {
+        "kec": "ABUNG TIMUR",
+        "desa": "PUNGGUK LAMA",
+        "nama": "BUM DESA SEJAHTERA PUNGGUK LAMA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/ju4gOJTn-SoMgewzvhoFu-OSDVxMDawrB4dyfhX8h0JIwXrJd0QVm"
+    },
+    {
+        "kec": "ABUNG TIMUR",
+        "desa": "GEDUNG NYAPAH",
+        "nama": "BUM DESA KEMALO BUMI GHAYO GEDUNG NYAPAH",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/mm3UtG4qFtRNgh3PwE2A0Ocb5nnm3dv_Wj9KKm4afM-94h_9ZtvOm"
+    },
+    {
+        "kec": "ABUNG TIMUR",
+        "desa": "PENAGAN RATU",
+        "nama": "BUM DESA MENANGO AJI PENAGAN RATU",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/9EIvBdrXJ7KunkfhAD_2huxxnbmMJfdoefFyHvmZ9ieHb_SAizsZO"
+    },
+    {
+        "kec": "ABUNG TIMUR",
+        "desa": "PERADUAN WARAS",
+        "nama": "BUM DESA MANDIRI SEJAHTERA PERADUAN WARAS",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/dv99_3nWHgj4XLGqTcR9au82ylLfh-csF6IhM2QKt-nG2SgWN6rYG"
+    },
+    {
+        "kec": "ABUNG TIMUR",
+        "desa": "SURAKARTA",
+        "nama": "BUM DESA TUAH JEJAMO SURAKARTA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/c_i1vv7RFB_l4g2G2JfAqOT6gbgEXAJH7WwIieitHAuchEKwELUcC"
+    },
+    {
+        "kec": "ABUNG TIMUR",
+        "desa": "REJO MULYO",
+        "nama": "BUM DESA BINA USAHA REJO MULYO",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/LUG-Ow69Pv2qiDpCto92LeiwVdVVBP5yJabRu2q6DPXbT9mD__n2K"
+    },
+    {
+        "kec": "ABUNG TIMUR",
+        "desa": "BUMI JAYA",
+        "nama": "BUM DESA TUNAS JAYA BUMI JAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/ue-yAMHeEnxRdLeX5tpr9-VDS83Jbqu1MAAOURsBJVCiwVExsLMS-"
+    },
+    {
+        "kec": "ABUNG TIMUR",
+        "desa": "PAPAN REJO",
+        "nama": "BUM DESA PUJA KESUMA PAPAN REJO",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/ZhQ6f_TS5LYkGtSLvxdKPOTJtCv0pTyGtGUZtjuzHYPLNTt3QQ3yW"
+    },
+    {
+        "kec": "ABUNG BARAT",
+        "desa": "TANJUNG HARTA",
+        "nama": "BUM DESA RAGAM JAYA TANJUNG HARTA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/gtS0qL7GzGMfOaIYhCfUYejWsd60kLOFKY0z-cnWVUeJ2y5CHPylC"
+    },
+    {
+        "kec": "ABUNG BARAT",
+        "desa": "HUJAN MAS",
+        "nama": "BUM DESA USAHABERSAMA HUJAN MAS",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/hBoknWbjbPc80D4zG6fRT-SCmZ39nnvXrDIxdZJaY9vXVNBVbd1iy"
+    },
+    {
+        "kec": "ABUNG BARAT",
+        "desa": "BUMI NABUNG",
+        "nama": "BUM DESA ABUNG RAYA ABADI BUMI NABUNG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/1EBW31x1tbfU1ZMlFP6-eu6290on-aa5Vdzy9AgcRAWGbln18D6Ke"
+    },
+    {
+        "kec": "HULU SUNGKAI",
+        "desa": "GEDUNG RAJA",
+        "nama": "BUM DESA TUNAS BARU GEDUNG RAJA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/SMMZZcDgvCMZzVUn3xC-veXYknGKvEF5_rA24uSmFspmFLzej5BIy"
+    },
+    {
+        "kec": "HULU SUNGKAI",
+        "desa": "GEDUNG NEGARA",
+        "nama": "BUM DESA KARYA BERSAMA GEDUNG NEGARA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/NlQCp4ZPLddoeYUG-RM3TuhbuokGv0UkB8FCi-f9JKWC_cT_556oa"
+    },
+    {
+        "kec": "HULU SUNGKAI",
+        "desa": "TULUNG BUYUT",
+        "nama": "BUM DESA SEJAHTERA BERSAMA TULUNG BUYUT",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/wZBKGWgh3UL4HviYWvexROCvysyVK3RlQjZpSDSZ0tE5XM-KyshiC"
+    },
+    {
+        "kec": "SUNGKAI TENGAH",
+        "desa": "NEGARA BUMI",
+        "nama": "BUM DESA SINAR JAYA NEGARA BUMI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/d4Mn9-JeiTZz2VEnwnWZye9M2bxpov4kKH8llKtOZqu2cmmUiKfdS"
+    },
+    {
+        "kec": "SUNGKAI TENGAH",
+        "desa": "NEGERI CAMPANG JAYA",
+        "nama": "BUM DESA JAYA BERSAMA NEGERI CAMPANG JAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/vDiLTlAfRE7GMh9JdNwL6evBtWphyOoHuBTvxjG5j-WhCcg1DHeTy"
+    },
+    {
+        "kec": "SUNGKAI TENGAH",
+        "desa": "PAMPANG TANGGUK JAYA",
+        "nama": "BUM DESA SUKSES MANDIRI PAMPANG TANGGUK JAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/uM9txVnyJ-Sh7IdGIwJ59el1yLfWfQyR_Lpu9J00OQp5VFx2fBifi"
+    },
+    {
+        "kec": "SUNGKAI TENGAH",
+        "desa": "NEGERI GALIH REJO",
+        "nama": "BUM DESA RAGOM BERSAMA NEGERI GALIH REJO",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/ezd9yiE2mUQlyOJzRBKbD-7niXFEUxg8T-Z0yh438awggWr9nKpEG"
+    },
+    {
+        "kec": "SUNGKAI TENGAH",
+        "desa": "MEKAR SARI",
+        "nama": "BUM DESA SEKAR MAKMUR MEKAR SARI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/TUgj74OtuimOqqoCHPtc5-uVMAizzaUNAP-FoFl570iZnXvcf4dMe"
+    },
+    {
+        "kec": "ABUNG PEKURUN",
+        "desa": "SINAR GUNUNG",
+        "nama": "BUM DESA SINAR MAKMUR SINAR GUNUNG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/SvH5BssoJqtxKdYJ6jtEJ-rGlCp3tvOpvI2TfPJ5ExL68MmkTcrWO"
+    },
+    {
+        "kec": "ABUNG PEKURUN",
+        "desa": "CAMPANG GIJUL",
+        "nama": "BUM DESA MAKMUR JAYA CAMPANG GIJUL",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/c41m-J5qtMY-kdpSuiGl_OXTh4zKNFh-oVc8kLdEV-VVWttWHfW72"
+    },
+    {
+        "kec": "ABUNG PEKURUN",
+        "desa": "PEKURUN",
+        "nama": "BUM DESA MEKAR JAYA PEKURUN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/VB9YqRchVYRGJvYqo5KdXOz2AScgNoYzDPqracLRijQrWcCB2HuoK"
+    },
+    {
+        "kec": "ABUNG TIMUR",
+        "desa": "SIDOMUKTI",
+        "nama": "BUM DESA TUNAS MUKTI SIDOMUKTI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/M0Hr374ZgqcrP4RzEcm4pOkf-lfOeedVEwwFsF2MClZdh4ROvWdKG"
+    },
+    {
+        "kec": "BUKIT KEMUNING",
+        "desa": "TANJUNG WARAS",
+        "nama": "BUM DESA WARAS JAYA TANJUNG WARAS",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/PxW0KzSsrq9XsPuXj6fMAeIj_ljCSLh5HLBZDhT2GN3wDm9B4l4Ge"
+    },
+    {
+        "kec": "KOTABUMI",
+        "desa": "BOJONG BARAT",
+        "nama": "BUM DESA MEKAR MAJU BOJONG BARAT",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/yluws_4N035mL-kbo28prO0SJMy1f-X1M0VWWXkgEOR08Vh3aQR8a"
+    },
+    {
+        "kec": "KOTABUMI",
+        "desa": "KOTABUMI TENGAH BARAT",
+        "nama": "BUM DESA KARYA BERSAMA KOTABUMI TENGAH BARAT",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/cgnPsWyf8AGCsTgKans79ezGZ98eWFsNH4OkegAkKP9c-ZZRMOPjG"
+    },
+    {
+        "kec": "SUNGKAI SELATAN",
+        "desa": "KARANG REJO I",
+        "nama": "BUM DESA BUMI RAHARJO KARANG REJO I",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/GwIfc9t5KBUjW02axoJSu-E2p-0f32Yo622hgjXPKP6rCOYZOYXES"
+    },
+    {
+        "kec": "SUNGKAI SELATAN",
+        "desa": "SIDODADI",
+        "nama": "BUM DESA CIPTA KARYA SIDODADI MANDIRI SIDODADI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/oBM5z8_o0_3uJK21SsUKvuavzxZc7i8mtaHMv3xNz-4PrpBs3OiSy"
+    },
+    {
+        "kec": "SUNGKAI SELATAN",
+        "desa": "GUNUNG LABUHAN",
+        "nama": "BUM DESA M.ARDIJAYA GUNUNG LABUHAN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/G38rq6anTdIMzvktKdTqge_cDocQRzhVy5ldZAuTnDZ2uA6G_hcgG"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "MERAMBUNG",
+        "nama": "BUM DESA MANDIRI MERAMBUNG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/2x7K9keDB_39A_YldRTJQuCIaa5QdfRcdri9m-dnbBae5MIqWMmmC"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "SINDANG AGUNG",
+        "nama": "BUM DESA AGUNG JAYA SEJAHTERA SINDANG AGUNG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/H3y6bUFrDLFQNVg86mzi5e0buEVGBImLWIWvVgAmDiYYiChoIlh-a"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "SRI MENANTI",
+        "nama": "BUM DESA SRI MAKMUR SRI MENANTI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/63cmurSkSAPG_kwElaFfIe-oXobGSCbkE18WCE1PX1Zt2X8BAhlJy"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "TULUNG BALAK",
+        "nama": "BUM DESA SEPUYANG TULUNG BALAK",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/v8UHfHORMW66EpS82_IsZez581DdQQ7_MT85s7HsdBafd2Y98pwK6"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "ULAK ATA",
+        "nama": "BUM DESA KARYA SEJAHTERA ULAK ATA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/tYLhhHFrTF2Q2dO915SjZuY31iKHuNWFHEpKecGvoqAe3V-xGYMNS"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "SIDO MULYO",
+        "nama": "BUM DESA BINA MAKMUR SIDO MULYO",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/jE9vbe-H9wlm6d8CM_R06e8YrY_x4sAJbm1ivFO5cfNV9RhiMjWF6"
+    },
+    {
+        "kec": "TANJUNG RAJA",
+        "desa": "SINAR MULYA",
+        "nama": "BUM DESA USAHA BERSAMA SINAR MULYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/aMrSiIELi7z89a8MDwQnn-Csn8MjLwapz_frvDaEm8e3aWwiukx9u"
+    },
+    {
+        "kec": "ABUNG TIMUR",
+        "desa": "BANJAR AGUNG",
+        "nama": "BUM DESA BISA BANJAR AGUNG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/AHE5X76D62GTQMAmGItgn-73V3ypuN9Zd67Oep6wLUt2RfzWhNk6G"
+    },
+    {
+        "kec": "ABUNG TIMUR",
+        "desa": "SUMBER AGUNG",
+        "nama": "BUM DESA MAJU BERSAMA SUMBER AGUNG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/WmiUxSOWXK9dYBRGu3o1-e3Qrj8du-grRQ6h6OYBIGh5qUaUuHytW"
+    },
+    {
+        "kec": "ABUNG BARAT",
+        "desa": "OGAN LIMA",
+        "nama": "BUM DESA TUNAS OGAN OGAN LIMA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/7T8ed27SWRg9h97QKuKn9uGFa1Hxs6aONTrSalkFUF0_sbgnJP-_y"
+    },
+    {
+        "kec": "ABUNG BARAT",
+        "desa": "SIMPANG AGUNG",
+        "nama": "BUM DESA ABUNG JAYA SIMPANG AGUNG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/TBkBhXlY0g4zBp3QDVOxxegJm3FF-_TSqFHbLgFEb60KlO2E55Uga"
+    },
+    {
+        "kec": "ABUNG BARAT",
+        "desa": "KAMPLAS",
+        "nama": "BUM DESA KAMPLAS MAKMUR KAMPLAS",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/I53rFhPNb1e1SQGz5IlBluxOMtbgwMvACzfeR7WXrbZl__9L3mapK"
+    },
+    {
+        "kec": "ABUNG BARAT",
+        "desa": "CAHAYA NEGERI",
+        "nama": "BUM DESA CAHAYA PERUBAHAN CAHAYA NEGERI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/EARE-ScXMXn6o0j4rO_TDe-4YE7WeFn19d_mFpi_l4RNHpEDirSr6"
+    },
+    {
+        "kec": "ABUNG BARAT",
+        "desa": "PENGARINGAN",
+        "nama": "BUM DESA MANDIRI JAYA PENGARINGAN",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG BARAT",
+        "desa": "BUMI MANDIRI",
+        "nama": "BUM DESA TIGA JARI BUMI MANDIRI",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG SELATAN",
+        "desa": "KALIBALANGAN",
+        "nama": "BUM DESA BOLAT SAI KALIBALANGAN",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG SELATAN",
+        "desa": "CANDI MAS",
+        "nama": "BUM DESA MAKMUR SENTOSA CANDI MAS",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG SELATAN",
+        "desa": "KEMBANG TANJUNG",
+        "nama": "BUM DESA KARYA MANDIRI KEMBANG TANJUNG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/M35Rma1D_pbbona2oRT2XeDn02fuNSR3utfd880HjMpmO3H-Q8OBS"
+    },
+    {
+        "kec": "ABUNG SELATAN",
+        "desa": "KEMBANG GADING",
+        "nama": "BUM DESA FAJAR GADING LESTARI KEMBANG GADING",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG SELATAN",
+        "desa": "RATU ABUNG",
+        "nama": "BUM DESA BAROKAH RATU ABUNG",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG SELATAN",
+        "desa": "BANDAR KAGUNGAN RAYA",
+        "nama": "BUM DESA AGUNG RAYA BANDAR KAGUNGAN RAYA",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG SELATAN",
+        "desa": "KEMALO ABUNG",
+        "nama": "BUM DESA KARYA BAROKAH KEMALO ABUNG",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG SELATAN",
+        "desa": "CABANG ABUNG RAYA",
+        "nama": "BUM DESA ABUNG RAYA CABANG ABUNG RAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/VsIlGwQHF8KcuM5RuHPnGOJ953Cd4zcGzzbv57tKxe-ojITIypplS"
+    },
+    {
+        "kec": "ABUNG SELATAN",
+        "desa": "WAY LUNIK",
+        "nama": "BUM DESA MAKMUR SEJAHTERA WAY LUNIK",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "SUNGKAI UTARA",
+        "desa": "PADANG RATU",
+        "nama": "BUM DESA PANCASONA PADANG RATU",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "SUNGKAI UTARA",
+        "desa": "BATU RAJA",
+        "nama": "BUM DESA TUNAS JAYA BATU RAJA",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "SUNGKAI UTARA",
+        "desa": "KOTA NEGARA",
+        "nama": "BUM DESA SEMENGUK KOTA NEGARA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/BWD_FYTZwUo8cd_VdDBrVOoJJjHHWKcczEbwn7KoSjoweWeI6ksw2"
+    },
+    {
+        "kec": "SUNGKAI UTARA",
+        "desa": "BANGUN JAYA",
+        "nama": "BUM DESA SIMPATI JAYA BANGUN JAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/yOhASIFC0WNySraFtjP41e3InbC2WmgMptYIX4viCwwKoM5T9BxIK"
+    },
+    {
+        "kec": "SUNGKAI UTARA",
+        "desa": "BARU RAHARJA",
+        "nama": "BUM DESA CAKRA BUANA BARU RAHARJA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/lEyCrZanmuFB7ehmBhpqaejdTCknTNShI9dk9WFnmhs3u7x1hhFKq"
+    },
+    {
+        "kec": "KOTABUMI UTARA",
+        "desa": "MADUKORO",
+        "nama": "BUM DESA MANDIRI BUMI CEMERLANG MADUKORO",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/YPJnyCSjoA0sfS_iLfjtMOR4MM0vwTcBhUCTKQ9TT4mfbniwEgvna"
+    },
+    {
+        "kec": "KOTABUMI UTARA",
+        "desa": "KALI CINTA",
+        "nama": "BUM DESA MULTI GUNA KALI CINTA",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "KOTABUMI UTARA",
+        "desa": "TALANG JALI",
+        "nama": "BUM DESA JAYA MAKMUR TALANG JALI",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "KOTABUMI UTARA",
+        "desa": "BANJAR WANGI",
+        "nama": "BUM DESA BERKAH MANDIRI BERSAMA BANJAR WANGI",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "KOTABUMI SELATAN",
+        "desa": "BANDAR PUTIH",
+        "nama": "BUM DESA BANDAR ASRI SEJAHTERA BANDAR PUTIH",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/v0PANIUcmuEVWLPbVjkWBut-LHGFLiNU5LUGBR4dTwM9-ObawzhKW"
+    },
+    {
+        "kec": "KOTABUMI SELATAN",
+        "desa": "JERANGKANG",
+        "nama": "BUM DESA MELATI JERANGKANG",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG TENGAH",
+        "desa": "GUNUNG BESAR",
+        "nama": "BUM DESA GUNUNG BESAR SEJAHTERA GUNUNG BESAR",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG TENGAH",
+        "desa": "GUNUNG GIJUL",
+        "nama": "BUM DESA CITRA MANDIRI GIJUL GUNUNG GIJUL",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG TINGGI",
+        "desa": "SUKA MARGA",
+        "nama": "BUM DESA KESUMA SUKA MARGA",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG SEMULI",
+        "desa": "SEMULI JAYA",
+        "nama": "BUM DESA BHUWANA MANDIRI SEMULI JAYA",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG SEMULI",
+        "desa": "GUNUNG KERAMAT",
+        "nama": "BUM DESA MAJU MAKMUR GUNUNG KERAMAT",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/_52HYag1K-ebo6t5wnt0yuGpxV-qiImBSJKFY9D8pKo_-hPn1tXXa"
+    },
+    {
+        "kec": "ABUNG SEMULI",
+        "desa": "GUNUNG SARI",
+        "nama": "BUM DESA SRI MAKMUR GUNUNG SARI",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG SURAKARTA",
+        "desa": "BANDAR ABUNG",
+        "nama": "BUM DESA MAJU JAYA BANDAR ABUNG",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG SURAKARTA",
+        "desa": "BUMI RESTU",
+        "nama": "BUM DESA RESTU TUNGGAL BUMI RESTU",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "MUARA SUNGKAI",
+        "desa": "BANDAR AGUNG",
+        "nama": "BUM DESA ABADI JAYA SENTOSA BANDAR AGUNG",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "MUARA SUNGKAI",
+        "desa": "KARANG SARI",
+        "nama": "BUM DESA KARYA MANDIRI KARANG SARI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/rfPZM7IiorDTJuzIsAe1FOOb3ux9xj15tx83KrzMU1t9RhGVdR2Ru"
+    },
+    {
+        "kec": "MUARA SUNGKAI",
+        "desa": "NEGERI RATU",
+        "nama": "BUM DESA BINTANG ALAM MANDIRI NEGERI RATU",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/30El3PkpyI_oL2p3eeWDw-YmTr3ABELQm4AQQhfpugPHyeXjfsPli"
+    },
+    {
+        "kec": "BUNGA MAYANG",
+        "desa": "KOTA NAPAL",
+        "nama": "BUM DESA SIGER MAS KOTA NAPAL",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "BUNGA MAYANG",
+        "desa": "SUKADANA UDIK",
+        "nama": "BUM DESA SUKA MULYA SUKADANA UDIK",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "BUNGA MAYANG",
+        "desa": "SUKA MAJU",
+        "nama": "BUM DESA HARAPAN MAJU SUKA MAJU",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/KrTdKV8J5LfjuF8ku14AJOncYEqIA6mVyd2XI-A040N0SAbR07G2e"
+    },
+    {
+        "kec": "HULU SUNGKAI",
+        "desa": "BONGLAI TENGAH",
+        "nama": "BUM DESA KARYA BAKTI BONGLAI TENGAH",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/WwWbJdcLOHa1P8dcaVwHFOe17wbFNF_J9JJ2CnTUk1DXyE1z2nLJK"
+    },
+    {
+        "kec": "HULU SUNGKAI",
+        "desa": "LUBUK RUKAM",
+        "nama": "BUM DESA TUNAS MANDIRI LUBUK RUKAM",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/1bmbN5HltHYImXhB_OUq0eB-stNCUX-_xiogeVdTwFDPbGj3ENxS6"
+    },
+    {
+        "kec": "SUNGKAI TENGAH",
+        "desa": "BATU NANGKOP",
+        "nama": "BUM DESA MAJU BERSAMA BATU NANGKOP",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/GRR_PKNn-jm6_zkq0lHVLOdXxVjbXOlSTbmwKmMc68YNYYCEkmT5G"
+    },
+    {
+        "kec": "SUNGKAI TENGAH",
+        "desa": "MELUNGUN RATU",
+        "nama": "BUM DESA UTAMA KARYA MELUNGUN RATU",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "SUNGKAI TENGAH",
+        "desa": "RATU JAYA",
+        "nama": "BUM DESA TUNAS JAYA RATU JAYA",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG PEKURUN",
+        "desa": "NYAPAH BANYU",
+        "nama": "BUM DESA NYAPAH MENDAKI NYAPAH BANYU",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/KwibvMjuEBLHxTqWAAJb3OaTOH0DN1Gw6aCA0gmeyjAhmAe1j9yKq"
+    },
+    {
+        "kec": "ABUNG PEKURUN",
+        "desa": "SUMBER TANI",
+        "nama": "BUM DESA KARYA BERJAYA SUMBER TANI",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG PEKURUN",
+        "desa": "PEKURUN UDIK",
+        "nama": "BUM DESA KARYA MAJU PEKURUN UDIK",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "SUNGKAI JAYA",
+        "desa": "CEMPAKA",
+        "nama": "BUM DESA CEMPAKA MANDIRI CEMPAKA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/BWD_FYTZwUo8cd_VdDBrVOoJJjHHWKcczEbwn7KoSjoweWeI6ksw2"
+    },
+    {
+        "kec": "SUNGKAI JAYA",
+        "desa": "SUKA JAYA",
+        "nama": "BUM DESA LAMPUNG JAYA SUKA JAYA",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "SUNGKAI JAYA",
+        "desa": "NEGARA AGUNG",
+        "nama": "BUM DESA ANEGA JAYA NEGARA AGUNG",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "SUNGKAI JAYA",
+        "desa": "CEMPAKA BARAT",
+        "nama": "BUM DESA SUMBER SEJAHTERA CEMPAKA BARAT",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/I39dgzt81JZplcpLqKwhFuyKpLkMLD1wz37_ngyY_uvv0C7sey4u-"
+    },
+    {
+        "kec": "SUNGKAI JAYA",
+        "desa": "CEMPAKA TIMUR",
+        "nama": "BUM DESA TIMUR BERJAYA CEMPAKA TIMUR",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/985MZzUh7J1ElEEOB5pf-OF6Shq_rYAsgUvA1iOpOqatoyjdnvuAi"
+    },
+    {
+        "kec": "SUNGKAI BARAT",
+        "desa": "KUBU HITU",
+        "nama": "BUM DESA TUNGGAL JAYA KUBU HITU",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/AeP2_hNdtRlCTZrSfoG50OoJfVl2eeM0CpWVCNJ_5nylT-g0bR2w-"
+    },
+    {
+        "kec": "SUNGKAI BARAT",
+        "desa": "COMOK SINAR JAYA",
+        "nama": "BUM DESA SINARJAYA COMOK SINAR JAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/vKVdkh_VBw7t42pPg9zdP-0EeU1p5fZRumCPh2ppezX_XLxKrJ17G"
+    },
+    {
+        "kec": "SUNGKAI BARAT",
+        "desa": "WAY ISEM",
+        "nama": "BUM DESA KARYA MAJU WAY ISEM",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG KUNANG",
+        "desa": "BERINGIN",
+        "nama": "BUM DESA GALANG USAHA BERINGIN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/c-7YI-TcJy96UiTLbO14buwLLVpsPif4zQpszitdpMhM59gwDka4a"
+    },
+    {
+        "kec": "ABUNG KUNANG",
+        "desa": "SABUK INDAH",
+        "nama": "BUM DESA REZEKI SABUK INDAH",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/1diL736cfnGmMtxqDyHsz-hsprmY0gwJ2qI-U9zR9LU5Q-kZU3Nq6"
+    },
+    {
+        "kec": "ABUNG KUNANG",
+        "desa": "BINDU",
+        "nama": "BUM DESA JAYA SINERGI BINDU",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "ABUNG KUNANG",
+        "desa": "WAY PERANCANG",
+        "nama": "BUM DESA BANGKIT WAY PERANCANG",
+        "link": "\/ngibar\/bumdes\/not-found.html"
+    },
+    {
+        "kec": "BLAMBANGAN PAGAR",
+        "desa": "BLAMBANGAN",
+        "nama": "BUM DESA MARGA NYUNYAI BLAMBANGAN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/QGayhHcI21wbrOz9krGU7uK-0PN92PfK6UGZHgGyOaffCqaUk_SsC"
+    },
+    {
+        "kec": "ABUNG TENGAH",
+        "desa": "SRI BANDUNG",
+        "nama": "BUM DESA BUMI SRIREJEKI SRI BANDUNG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/-d_UL_PlhEoO3ZPLd7drZekow3czIPnwa5m9joMv2onN7k6DnE1DC"
+    },
+    {
+        "kec": "ABUNG TENGAH",
+        "desa": "SUBIK",
+        "nama": "BUM DESA BINA USAHA MANDIRI SUBIK",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/sBx0Jwf-aze_tfd2zSW3Eefvv_DV6COd8Bet4ZB4RqdQ6HZyA87HW"
+    },
+    {
+        "kec": "ABUNG TENGAH",
+        "desa": "GUNUNG SADAR",
+        "nama": "BUM DESA SEJAHTERA GUNUNG SADAR",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/93cx1v_ItJbdkhBZhqGPHOqq1-ALYAmamkhOVYflDT_oUePvkdlhS"
+    },
+    {
+        "kec": "ABUNG TENGAH",
+        "desa": "PEKURUN BARAT",
+        "nama": "BUM DESA TIGA SERANKAI PEKURUN BARAT",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/sEK4wcYUMNkreotJubdNZOqEV15SVBVh56KestpNmx9zLEO4kcKCm"
+    },
+    {
+        "kec": "ABUNG TENGAH",
+        "desa": "PEKURUN SELATAN",
+        "nama": "BUM DESA BUMI DESA PEKURUN SELATAN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/Ob_ZtGp-ELab-QFybwdyw-1soqymGmak3PjUgvGj3N-mLpZbRD476"
+    },
+    {
+        "kec": "ABUNG TENGAH",
+        "desa": "PEKURUN UTARA",
+        "nama": "BUM DESA SAMPURNA PEKURUN UTARA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/BXC_h8TU0lH5pTJHNZnNnu0DRX_PHRUhXvnL0PF1TegvY50ZPwImq"
+    },
+    {
+        "kec": "ABUNG TINGGI",
+        "desa": "ULAK RENGAS",
+        "nama": "BUM DESA SERASAN SEKUNDANG ULAK RENGAS",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/bsEPBj_oPpgNBY92eW25buRJyKHG4KYN5yHyuT4RjE4sL0bn4Y8Pa"
+    },
+    {
+        "kec": "ABUNG TINGGI",
+        "desa": "MUARA DUA",
+        "nama": "BUM DESA SEJURAI MUARA DUA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/5b2kUfQ8_9jV3JQiVhljtunViArf2Ymh5_Qj7rnD-1VEw4ijXvQlW"
+    },
+    {
+        "kec": "ABUNG TINGGI",
+        "desa": "PULAU PANGGUNG",
+        "nama": "BUM DESA SEGANTI SETUNGGUAN PULAU PANGGUNG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/aj4i8CdUT113jDqwhkMn0Of7c4-DyKmvedehNjP5bh3TVUpy9IC6G"
+    },
+    {
+        "kec": "ABUNG TINGGI",
+        "desa": "SEKIPI",
+        "nama": "BUM DESA RUKUN DAMAI SEKIPI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/a9Hl4A-kMpQAyCfe0vgHD-u9wW1mw2uzAnGx8pGVJvhBpCro8EW1u"
+    },
+    {
+        "kec": "ABUNG TINGGI",
+        "desa": "SIDO KAYO",
+        "nama": "BUM DESA KAMPUNG NILA SIDO KAYO",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/aUplrgnHFzdfS2cSAnZa6exRTviV2fxzvGZ7dq46z7KDNkM4YdX9i"
+    },
+    {
+        "kec": "ABUNG TINGGI",
+        "desa": "SUKA MAJU",
+        "nama": "BUM DESA MAJU SEJAHTERA SUKA MAJU",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/_A8i4V3zxKvUgZIdkkiwoeEFGG3Gc-dY8Xim_XUvQ9HJ3lKEAWXDC"
+    },
+    {
+        "kec": "ABUNG TINGGI",
+        "desa": "KEBUN DALAM",
+        "nama": "BUM DESA SEJAHTERA KEBUN DALAM",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/qVemrl5GLsndud6I-5QrfetORbzgTNZSwxg41X7aMrX_fYKczFUcK"
+    },
+    {
+        "kec": "ABUNG SEMULI",
+        "desa": "SUKA MAJU",
+        "nama": "BUM DESA BINA MAJU MANDIRI SUKA MAJU",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/LrGTaq-4w9n8HWFwAurzleOZvaJ_7PJhs2OVrsIyci9OqPF9EiYr2"
+    },
+    {
+        "kec": "ABUNG SEMULI",
+        "desa": "SEMULI RAYA",
+        "nama": "BUM DESA ANGKASA MANDIRI SEMULI RAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/21AbFsldfcshSRZt0NY3DuH-K-uGcY85eHW8va6Vkpi0dHRP10D3-"
+    },
+    {
+        "kec": "ABUNG SEMULI",
+        "desa": "PAPAN ASRI",
+        "nama": "BUM DESA MAJU MANDIRI PAPAN ASRI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/mlr4edWb7AswxLWAN7pJ4-UPq6RuCu-gGmU1EADHWdIVfMJ0SIc4u"
+    },
+    {
+        "kec": "ABUNG SEMULI",
+        "desa": "SIDO RAHAYU",
+        "nama": "BUM DESA RAHAYU SIDO RAHAYU",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/gqkHgjBPW21VVa9ZhVElIO9PbesZzAuokNc0Bj6L53hDuea4JbxOS"
+    },
+    {
+        "kec": "ABUNG SURAKARTA",
+        "desa": "TATAKARYA",
+        "nama": "BUM DESA KARYA JAYA TATAKARYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/qra3VfH5MstXcgLFx8TtpezfDFmc1w1jrSBRipu8Jqz_BYa6WII5-"
+    },
+    {
+        "kec": "ABUNG SURAKARTA",
+        "desa": "BANGUN SARI",
+        "nama": "BUM DESA KARYA SENTOSA BANGUN SARI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/oxgJ8UfskaB5N1yDej3xcOcpdIt3IRVyKVOCN2Aqu58uE881EM5aa"
+    },
+    {
+        "kec": "ABUNG SURAKARTA",
+        "desa": "PURBA SAKTI",
+        "nama": "BUM DESA PUTRA TANI PURBA SAKTI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/r0_8nvLNYTQMUcbDLz292uw6RZAX-ZTCzyE31zt3i5y5rEWglDmrS"
+    },
+    {
+        "kec": "ABUNG SURAKARTA",
+        "desa": "BUMI RAHARJA",
+        "nama": "BUM DESA TRI PUTRA BUMI RAHARJA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/V6ikpJS8nyeRf1cUNX3IyOi2BTWun2tN31q_7V3_TS6NbnvAN-lty"
+    },
+    {
+        "kec": "ABUNG SURAKARTA",
+        "desa": "BANDAR SAKTI",
+        "nama": "BUM DESA SUMBER REJEKI BANDASAKTI BANDAR SAKTI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/hvIMUgVrynzKow-SZfT8W-XRKnxFILXH-PyANiX4fMCPiKiyg6Rt2"
+    },
+    {
+        "kec": "ABUNG SURAKARTA",
+        "desa": "KARYA SAKTI",
+        "nama": "BUM DESA KARYA MITRA LESTARI KARYA SAKTI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/KDWBdVbzUnix8q68PtuMcOVLM_7hEs5GqTNUO02M5KOJ6ke95lrau"
+    },
+    {
+        "kec": "ABUNG SURAKARTA",
+        "desa": "SUKOHARJO",
+        "nama": "BUM DESA HARJO MAKMUR SUKOHARJO",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/oK9hCPklCBquHsTN0cvaretGKwcaGko3jaaYyRTMD6ig7C-XjaZMe"
+    },
+    {
+        "kec": "MUARA SUNGKAI",
+        "desa": "NEGERI UJUNG KARANG",
+        "nama": "BUM DESA MAKMUR MANDIRI NEGERI UJUNG KARANG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/bK0AM6C2uL39xoN2_kBM7eLcu85VTvJ7ZYkemF-9S2nAQzWOpbPSu"
+    },
+    {
+        "kec": "MUARA SUNGKAI",
+        "desa": "KARANG REJO II",
+        "nama": "BUM DESA MAKMUR JAYA KARANG REJO II",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/sSy3dCm51t3O26YNxRr3KuQsfyekhHdlAZrTb6nD1REIqpgMmD30y"
+    },
+    {
+        "kec": "MUARA SUNGKAI",
+        "desa": "KARANG SAKTI",
+        "nama": "BUM DESA SINAR SAKTI MANDIRI KARANG SAKTI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/ddbrrJeNS4Lur9sTd0ohkeA5IzzaxdZJHzApphDTc73HgN3xhF1Vy"
+    },
+    {
+        "kec": "MUARA SUNGKAI",
+        "desa": "KARANG MULYO",
+        "nama": "BUM DESA KARYA MULYA KARANG MULYO",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/U4_q5NbUYuAn9cmw6Fo3q-AhjXUKZGWVH08NqcUwre9q6-XxuB0YO"
+    },
+    {
+        "kec": "MUARA SUNGKAI",
+        "desa": "BANJAR NEGERI",
+        "nama": "BUM DESA JAYA PERKASA BANJAR NEGERI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/rcOho3fEFfP7fEANqFa42O8Bwat9k3Q_Y5NFNlxzBy5QZScngr7p6"
+    },
+    {
+        "kec": "MUARA SUNGKAI",
+        "desa": "BANJAR RATU",
+        "nama": "BUM DESA BAROKAH BANJAR RATU",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/eLKGLHD27zgqO2ybjTSaRexQzXUnLKK3qBC5uhe4WvITS1Uy5-If2"
+    },
+    {
+        "kec": "MUARA SUNGKAI",
+        "desa": "PAKUON AGUNG",
+        "nama": "BUM DESA MAKMUR SEJAHTERA PAKUON AGUNG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/EYqgHOlmNP7Rb7g2gUur0-3451uCkmh7dxN3qzyL3MDg5tNFp7np-"
+    },
+    {
+        "kec": "MUARA SUNGKAI",
+        "desa": "SUMBER AGUNG",
+        "nama": "BUM DESA MAKMUR JAYA SUMBER AGUNG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/vnGmSdazbDvchMVKKhD1veg6C4mOG26mG8YhHnHZZaftKdtHjn_oW"
+    },
+    {
+        "kec": "BUNGA MAYANG",
+        "desa": "NEGARA TULANG BAWANG",
+        "nama": "BUM DESA HELAU NEGARA TULANG BAWANG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/zKpV5HhA-1ssWvh559cxd-9cYjSmZ1ZO-3iAr-r3ye1sM7L5y1xA6"
+    },
+    {
+        "kec": "BUNGA MAYANG",
+        "desa": "TANAH ABANG",
+        "nama": "BUM DESA BUDI GUNA TANAH ABANG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/yeNBeIbnjkeKq0rMVzzGHuSxJ-AehOdRBY8jN-m6G0UEmwSA59sG-"
+    },
+    {
+        "kec": "BUNGA MAYANG",
+        "desa": "SUKADANA ILIR",
+        "nama": "BUM DESA MANDIRI SUKADANA ILIR",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/VNm_7v6KZlxtRRbugS-fJuYLbXjh9mXu-0Xr5PT1aTL-M3Zv0twLe"
+    },
+    {
+        "kec": "BUNGA MAYANG",
+        "desa": "HADUYANG RATU",
+        "nama": "BUM DESA PANCA KARYA HADUYANG RATU",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/EATJSzk0tFCnK_iz9t45_u1th-FWosAESFy24LtAexCiiYMDFwxPq"
+    },
+    {
+        "kec": "BUNGA MAYANG",
+        "desa": "ISO REJO",
+        "nama": "BUM DESA SINAR HARAPAN ISO REJO",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/xWCllHAvWCt_q_fxl8TVxOvvWFNkRaFAFz8noti1BKupX6pOiiQnW"
+    },
+    {
+        "kec": "BUNGA MAYANG",
+        "desa": "MULYO REJO II",
+        "nama": "BUM DESA SUKA MAKMUR MULYO REJO II",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/2n4CiWOAOuOCzUnFVydd-Ordp_WaQchXir3_hYagdqTTdimGS37y6"
+    },
+    {
+        "kec": "BUNGA MAYANG",
+        "desa": "TULANG BAWANG BARU",
+        "nama": "BUM DESA SAMI PUTRA TULANG BAWANG BARU",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/Mzy9Hzn2hl90KsJ8JOphr-2aqGlPw9aYLMGeqph_3WC19mrbhgQwS"
+    },
+    {
+        "kec": "BUNGA MAYANG",
+        "desa": "MULYO REJO I",
+        "nama": "BUM DESA MULYA ABADI MULYO REJO I",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/DUBbBJBP52fuAVhpfXBA7OskXkawEM1gMuXEEcgDUuypsLQED6bTS"
+    },
+    {
+        "kec": "HULU SUNGKAI",
+        "desa": "NEGERA KEMAKMURAN",
+        "nama": "BUM DESA KARYA MAKMUR NEGERA KEMAKMURAN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/9bY9m-f1W8xAEG4tYR2-OOrv_h6U0MwRjkftdgriQntcPTvubh74C"
+    },
+    {
+        "kec": "HULU SUNGKAI",
+        "desa": "TANJUNG HARAPAN",
+        "nama": "BUM DESA BINA KARYA HARAPAN TANJUNG HARAPAN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/4rOAF9pTkdFDBx4oj0SyjOg1b9VyDS6N9sT0mcht4L2bBd-flvVkG"
+    },
+    {
+        "kec": "HULU SUNGKAI",
+        "desa": "IBUL JAYA",
+        "nama": "BUM DESA JAYA BERSAMA IBUL JAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/a3pu4imdaidNId7r2Vr77eGrAaHbV2h7uF9uGZ6ADiOcKp2_GHHUi"
+    },
+    {
+        "kec": "HULU SUNGKAI",
+        "desa": "BERINGIN JAYA",
+        "nama": "BUM DESA HARAPAN JAYA BERINGIN JAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/FbXahLX06E4CsIO94deI6OB8uCYFD1ojzdb1RCvuKqH005fc2cLgC"
+    },
+    {
+        "kec": "HULU SUNGKAI",
+        "desa": "GEDUNG MAKRIFAT",
+        "nama": "BUM DESA MAKMUR ABADI GEDUNG MAKRIFAT",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/XOsGJubA5wFsH-38UcNIGefR6Grl2SV1fQGo5u-vCzp6r_ex1iPSa"
+    },
+    {
+        "kec": "ABUNG KUNANG",
+        "desa": "SABUK EMPAT",
+        "nama": "BUM DESA MAJU BERSAMA SABUK EMPAT",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/x56mYFmvnZb9sjwKt4aFJuJ8vvSV4QtXFGInXytqmb4sNZOt8I-ha"
+    },
+    {
+        "kec": "BLAMBANGAN PAGAR",
+        "desa": "PAGAR",
+        "nama": "BUM DESA MARGA KUNANG PAGAR",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/HmyZ5sxxf9jS1qomIdAek-Ba4cdWg5XdvyxeHLKaCKbX4Qy-5aLUy"
+    },
+    {
+        "kec": "BLAMBANGAN PAGAR",
+        "desa": "JAGANG",
+        "nama": "BUM DESA BERKAH SEJAHTERA JAGANG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/JHPNnMeiJ8H-k60WWvttju_FlHQSdL_XdnPgypJpFMCLRjn1xxUeC"
+    },
+    {
+        "kec": "BLAMBANGAN PAGAR",
+        "desa": "TANJUNG IMAN",
+        "nama": "BUM DESA BAROKAH JAYA TANJUNG IMAN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/cJ1j-z__t0ZLV5mRH1um6e_R3XZd7oVeDMNHOlSS3Gpm_0Cq3mU3K"
+    },
+    {
+        "kec": "BLAMBANGAN PAGAR",
+        "desa": "TULUNG SINGKIP",
+        "nama": "BUM DESA BINA KARYA TULUNG SINGKIP",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/w_nfkWN139jqeygn_WUTjuG1CYLdUvRGvdxQBu-fn93Y_hxJQCPy2"
+    },
+    {
+        "kec": "BLAMBANGAN PAGAR",
+        "desa": "PAGAR GADING",
+        "nama": "BUM DESA BINA MANDIRI PAGAR GADING",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/O5atnq-D5aSYgBjN-VFR9-2rTXEu4kW55XaepJ_Ay2oiI_-h8k-o6"
+    },
+    {
+        "kec": "BLAMBANGAN PAGAR",
+        "desa": "BURING KENCANA",
+        "nama": "BUM DESA PUTRA KENCANA BURING KENCANA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/tkk3BrQSP_tLLW1LxheWIuKB6VhKXfONA3ZVPZoz1sNu2yc-OlBmG"
+    },
+    {
+        "kec": "ABUNG BARAT",
+        "desa": "KISTANG",
+        "nama": "BUM DESA MAJU BERSAMA KISTANG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/dIizlteb6Ja5yK9PYC_etOe6F3vylz-viYCGwKBYJ5gkUDxOGiVzq"
+    },
+    {
+        "kec": "ABUNG BARAT",
+        "desa": "LEPANG BESAR",
+        "nama": "BUM DESA BERKAH JAYA LEPANG BESAR",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/_-Dhvvd9azI6G94DwepQxeBtVorcX6L0Ev9Nt5QzVaatkU-7Z1pVe"
+    },
+    {
+        "kec": "ABUNG BARAT",
+        "desa": "GUNUNG BETUAH",
+        "nama": "BUM DESA SETANGKAI GUNUNG BETUAH",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/mc_tMqPicf57s6PMEAYDiu-lFhI487nXhLRzmVXasuJv_pulm9sQu"
+    },
+    {
+        "kec": "ABUNG BARAT",
+        "desa": "WAY WAKAK",
+        "nama": "BUM DESA USAHA MAJU WAY WAKAK",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/Tw3BSmqCMp4khtMnHt9_zeZGOfxMhm-m0T6gchzY1WNyUhbwNhWB6"
+    },
+    {
+        "kec": "ABUNG BARAT",
+        "desa": "PEMATANG KASIH",
+        "nama": "BUM DESA BUWAI SAI PEMATANG KASIH",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/ZElin_VaRItv2ZWd4O_CAeJi5X6U4_-53RUwu4Rgw4wNrkkGt7s0O"
+    },
+    {
+        "kec": "ABUNG SELATAN",
+        "desa": "TRIMODADI",
+        "nama": "BUM DESA WIRA KARYA TRIMODADI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/JTFtvKdrGUHEwrZUriW_VuHfv293R_Wz7Way24r-YC3RcqPZcnH5a"
+    },
+    {
+        "kec": "ABUNG SELATAN",
+        "desa": "CABANG EMPAT",
+        "nama": "BUM DESA CABANG EMPAT MANDIRI CABANG EMPAT",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/HF_BLgctVtp1gJYzbPfCVeNWAW435ttVrSyHFr5LfHS6wt1YESyDy"
+    },
+    {
+        "kec": "ABUNG SELATAN",
+        "desa": "SINAR OGAN",
+        "nama": "BUM DESA SINAR KARYA SINAR OGAN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/o1HVj9pdDuDP4R9buewtROtH_wMjnTycZztD0asQmuGFfao-99WGu"
+    },
+    {
+        "kec": "ABUNG SELATAN",
+        "desa": "GILIH SUKANEGERI",
+        "nama": "BUM DESA GILIH MANDIRI GILIH SUKANEGERI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/BW5fwqLdnAC2N7vvaY-JFebJEeU2EWlneiAjczAg8MZeS1NbYQDZq"
+    },
+    {
+        "kec": "ABUNG SELATAN",
+        "desa": "ABUNG JAYO",
+        "nama": "BUM DESA MAJU JAYA ABUNG JAYO",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/spkrip1AFs2HuHI29-LJueiEjl9So7XUimq4HeS67j9DZtLACd68e"
+    },
+    {
+        "kec": "ABUNG SELATAN",
+        "desa": "BUMI RAYA",
+        "nama": "BUM DESA MEKAR SARI BUMI RAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/bPYOzIE3zOgBvA8wsDDtv-NTz5P0ohoiv_GPkg3ARIOYJYU-QvUoa"
+    },
+    {
+        "kec": "ABUNG SELATAN",
+        "desa": "KALIBENING RAYA",
+        "nama": "BUM DESA BENING JAYA KALIBENING RAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/wUzGtqo4-eNhFo8bMiVVsOcRrJr_oaE32WZAFl4cSnKBESL4PQ5Y6"
+    },
+    {
+        "kec": "SUNGKAI UTARA",
+        "desa": "OGAN JAYA",
+        "nama": "BUM DESA ISTIQOMAH OGAN JAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/hcPAnsbJZxtpFFl7NThOcunX2f08Sv5Dv8fD5x4dFNW-0u8IaW_bC"
+    },
+    {
+        "kec": "SUNGKAI UTARA",
+        "desa": "CIAMIS",
+        "nama": "BUM DESA ABDI AMANAH CIAMIS",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/XeGmmfI3hvupr3RbaK9MwugqHG-0R5TIWuWtCwnmoH9tgE-eIUdtu"
+    },
+    {
+        "kec": "SUNGKAI UTARA",
+        "desa": "NEGERI SAKTI",
+        "nama": "BUM DESA JAYA PRATAMA NEGERI SAKTI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/PqXCECm7TlW3LZaUbiki7-mGqqfGFAc6wy9ceY3YeO08Vxcnaf1J-"
+    },
+    {
+        "kec": "SUNGKAI UTARA",
+        "desa": "NEGERI RATU",
+        "nama": "BUM DESA BAROKAH JAYA NEGERI RATU",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/Mca6PcuuC54FoWq8ctssNOT-XL4SlM0LO6bc_5VVUOUFqnWNHhilC"
+    },
+    {
+        "kec": "SUNGKAI UTARA",
+        "desa": "NEGARA RATU",
+        "nama": "BUM DESA JAYA MANDIRI NEGARA RATU",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/zJ3QtTpJXSw-N72Tt4MACOYI40fdiBMqOwojdVaczmI-2ELPsnms6"
+    },
+    {
+        "kec": "SUNGKAI UTARA",
+        "desa": "GEDUNG BATIN",
+        "nama": "BUM DESA HARAPAN MAKMUR GEDUNG BATIN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/-OvBIzHf_JBdnsjx0SqweO4vkJaIv-VACSDmt3Jj6d1ch7cHww31a"
+    },
+    {
+        "kec": "SUNGKAI UTARA",
+        "desa": "NEGARA BATIN",
+        "nama": "BUM DESA NEGARA BATIN MAKMUR NEGARA BATIN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/o8KNVzCF5VNx-9CWKNxIZu9VKWtKVsLreNIEryKrxrgmUzff50YmG"
+    },
+    {
+        "kec": "SUNGKAI UTARA",
+        "desa": "HANAKAU JAYA",
+        "nama": "BUM DESA SUMBER REZEKI HANAKAU JAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/0Y67YG4I9YTKDYA2KnnUYuLKM6b0L2En-Mvx9jjAmkKijAUv7jxTm"
+    },
+    {
+        "kec": "SUNGKAI UTARA",
+        "desa": "NEGARA BATIN II",
+        "nama": "BUM DESA BUANA PUTRA NEGARA BATIN II",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/jNXE4iSCjHsJMn9BWO__4-nhzeaTdWphmmPPY4VV6Z83_5GgP-q6a"
+    },
+    {
+        "kec": "SUNGKAI UTARA",
+        "desa": "KOTA NEGARA ILIR",
+        "nama": "BUM DESA JAYA ABADI KOTA NEGARA ILIR",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/TkClT35rrbMbAS4dV7nLqOWo74m8nFlRGp4sM_-wjNjcvIyb-FUW6"
+    },
+    {
+        "kec": "KOTABUMI UTARA",
+        "desa": "WONO MARTO",
+        "nama": "BUM DESA SWADESA ARTHA MANDIRI WONO MARTO",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/uiz5P7UEz5XvVRYgWZxsae4CZJUSKcjmog10inVN6O_oqgKxjmZPG"
+    },
+    {
+        "kec": "KOTABUMI UTARA",
+        "desa": "MARGO REJO",
+        "nama": "BUM DESA MANHA MARGOREJO JAYA MARGO REJO",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/1e4BiviSAwVdhRBydqAXwuRaeB4Y0Wy7_t-JAPLLW9xjYPbiympz-"
+    },
+    {
+        "kec": "KOTABUMI UTARA",
+        "desa": "SAWO JAJAR",
+        "nama": "BUM DESA SAWOJAJAR MAKMUR SAWO JAJAR",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/YMILN2ywcY8h_XDIHtB7iewRFSsKXuLek6hHv4ivs3jVzOxuAmvYO"
+    },
+    {
+        "kec": "KOTABUMI UTARA",
+        "desa": "MADOKORO BARU",
+        "nama": "BUM DESA MAJU JAYA MADOKORO BARU",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/djkh6M-Lz_Y3xxiuP0BJ_-71R3PwbLMwSDB22Cd8IEdmJhQosZPsG"
+    },
+    {
+        "kec": "KOTABUMI SELATAN",
+        "desa": "MULANG MAYA",
+        "nama": "BUM DESA MUMAY JAYA MULANG MAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/JrmgRlGbv0Ie4_DSUTzZH-6asPVDEsWQ8sCw-x17xTsJFx3ljTzAG"
+    },
+    {
+        "kec": "KOTABUMI SELATAN",
+        "desa": "KARANG AGUNG",
+        "nama": "BUM DESA AGUNG JAYA KARANG AGUNG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/lxavg1J1CRKv8IBcWwwn4Owk0BaTXEhFJ5H0oEVhLSD79SzqrVLHu"
+    },
+    {
+        "kec": "KOTABUMI SELATAN",
+        "desa": "CURUP GURUH",
+        "nama": "BUM DESA JAYA  MANDIRI CURUP GURUH",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/mbgGj3v3xIPAoyNYHNF01-1CYtjfwMxq186QieN2PMCn4Tv5MrxJG"
+    },
+    {
+        "kec": "KOTABUMI SELATAN",
+        "desa": "WAY MELAN",
+        "nama": "BUM DESA MEKAR JAYA WAY MELAN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/0EPJmq31yVP8ssver30vaOlv2M7DyDmmHgnsBl8o-74pppAc0bVUa"
+    },
+    {
+        "kec": "KOTABUMI SELATAN",
+        "desa": "TAMAN JAYA",
+        "nama": "BUM DESA PERMATA TAMAN JAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/PXfoWuctBrcx-SaZ4SvZ2-6qPie38ChV093oU1_-JhLg2UHKAwSRG"
+    },
+    {
+        "kec": "KOTABUMI SELATAN",
+        "desa": "ALAM JAYA",
+        "nama": "BUM DESA MAJU JAYA ALAM JAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/fVdPtsUFmrYZt1UIj30oC-Byk9pVkVH8wykoJB2bA_LriILL2Rp8q"
+    },
+    {
+        "kec": "KOTABUMI SELATAN",
+        "desa": "SINAR MAS ALAM",
+        "nama": "BUM DESA ALAM SARI SINAR MAS ALAM",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/doe1LsQHvSX_e0Vlsf7SGep6HlxTOasL8CZH99pYcQhySGa6lrf3C"
+    },
+    {
+        "kec": "ABUNG TENGAH",
+        "desa": "KINCIRAN",
+        "nama": "BUM DESA LUMINTIR KINCIRAN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/VOWu38sLPya9aFvt_c2fEOykpqcsumFX8Ra5Dd15hwicSc2PCZBGi"
+    },
+    {
+        "kec": "ABUNG TENGAH",
+        "desa": "NEGLA SARI",
+        "nama": "BUM DESA NEGLA BERSAMA NEGLA SARI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/IF1nrVV8JydrBfcP2YrceOKzedzHAqdy7faXS1b6AuUVl1tmL6CnG"
+    },
+    {
+        "kec": "ABUNG TENGAH",
+        "desa": "KEDATON",
+        "nama": "BUM DESA SEKAR ABADI KEDATON",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/H6Q08-Bzm0uxVeUJ0DwCRuZmiGZucff9I6_Tv18vQi2Aw_kVYCB7y"
+    },
+    {
+        "kec": "ABUNG PEKURUN",
+        "desa": "OGAN CAMPANG",
+        "nama": "BUM DESA BUMDES ANUGERAH OGAN CAMPANG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/YzvgiA5ojPloA9BjVACo7-51uD7axE2nzNMqvo7fxwl-2xBc0RkQq"
+    },
+    {
+        "kec": "ABUNG PEKURUN",
+        "desa": "PEKURUN TENGAH",
+        "nama": "BUM DESA BINA KARYA PEKURUN TENGAH",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/SZhFGuo6dL63A3V_aLSwp-Le4CDRrd2-sORdGLgiDJ5luGmTKMpse"
+    },
+    {
+        "kec": "ABUNG PEKURUN",
+        "desa": "OGAN JAYA",
+        "nama": "BUM DESA JAYA SENTOSA MAKMUR OGAN JAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/QEYcJIYOCUOGJTHSuc12xeaORBKQ4RcF8M4vYWa09Q92lJWSE3ETe"
+    },
+    {
+        "kec": "SUNGKAI JAYA",
+        "desa": "SRI AGUNG",
+        "nama": "BUM DESA AGUNG JAYA SEJAHTERA SRI AGUNG",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/vRx1Ox6kH_c2sg-Opd2PdOmtweoAoqdEh-8bifrMs6Owm9EldH5PC"
+    },
+    {
+        "kec": "SUNGKAI JAYA",
+        "desa": "LEPANG TENGAH",
+        "nama": "BUM DESA BINA BERSAMA TENGAH JAYA LEPANG TENGAH",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/DMQ8HAm6RTbvDPf8sjnmMeDPxXxCFsPeFMqW-YWBClI3qIxD7jAfm"
+    },
+    {
+        "kec": "SUNGKAI JAYA",
+        "desa": "CAHAYA MAKMUR",
+        "nama": "BUM DESA TIGA SAUDARA CAHAYA MAKMUR",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/fD2CbQP6y4bEtgKvoxrGtuxNTQGXrrCOa64GOSJvoFEJiI0S_v9oC"
+    },
+    {
+        "kec": "SUNGKAI JAYA",
+        "desa": "SRI JAYA",
+        "nama": "BUM DESA SEJAHTERA SRI JAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/sxImFp9G-QUjlin_vmp9O-tgWk9er2sGoIrr9d2FBdxOt8W43ZQlm"
+    },
+    {
+        "kec": "SUNGKAI BARAT",
+        "desa": "SINAR HARAPAN",
+        "nama": "BUM DESA HARAPAN JAYA SINAR HARAPAN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/y2MwmZWivD5mjGiNNv8uyug9WWAodFHwe6Tj1m7fpkmVcx4ErzEui"
+    },
+    {
+        "kec": "SUNGKAI BARAT",
+        "desa": "NEGERI SAKTI",
+        "nama": "BUM DESA NESA ABADI NEGERI SAKTI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/Kkn69lqtcG4RgH6VcasS2O-1ZO6tMW4JFoK7HRu4GH1vEU-8i7SOC"
+    },
+    {
+        "kec": "SUNGKAI BARAT",
+        "desa": "TANJUNG JAYA",
+        "nama": "BUM DESA JAYA MAKMUR TANJUNG JAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/skI-OEeiwYuIRk4qgcIMdOFuHE55jq9g48DwckJc8aXjVDzDBtR4G"
+    },
+    {
+        "kec": "SUNGKAI BARAT",
+        "desa": "GUNUNG RAJA",
+        "nama": "BUM DESA MAJU JAYA GUNUNG RAJA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/FmVlpJsAJV2w67y69UEfWu8DMEuRuHGbyE3sf4MKvoqRC5CLzLGle"
+    },
+    {
+        "kec": "SUNGKAI BARAT",
+        "desa": "CAHAYA MAS",
+        "nama": "BUM DESA CAHAYA LESTARI CAHAYA MAS",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/_EEZlOZX2jSMLgfuwyVfHuYvYgOivQb51Fn0Qf7PqFEQmBYUblU3e"
+    },
+    {
+        "kec": "SUNGKAI BARAT",
+        "desa": "GUNUNG MAKNIBAI",
+        "nama": "BUM DESA GUMA JAYA GUNUNG MAKNIBAI",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/8gtfjsT1SycIaAn3jpfPXOEQdGnMyDYtt-SyYyyXT3itC_tR-haUG"
+    },
+    {
+        "kec": "SUNGKAI BARAT",
+        "desa": "NEGERI BATIN JAYA",
+        "nama": "BUM DESA JAYA MANDIRI NEGERI BATIN JAYA",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/pjvop7X5ZZNAMF7qvjlksujWHrL3S5gY5h_Fp36fhCbda_P-bbGCK"
+    },
+    {
+        "kec": "ABUNG KUNANG",
+        "desa": "AJI KAGUNGAN",
+        "nama": "BUM DESA MUDA BERSATU AJI KAGUNGAN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/_7RQv4Q4ZauhGCQ6v0s_SOuySXMCQ1Q3dI8Rt9gjEMJj0wWfp_oFW"
+    },
+    {
+        "kec": "ABUNG KUNANG",
+        "desa": "TALANG JEMBATAN",
+        "nama": "BUM DESA MAJU SEJAHTERA TALANG JEMBATAN",
+        "link": "https:\/\/esurvey.bps.go.id\/h\/s\/jAGmCLMIu1QnEHR1nijdLO6CYSrXmh0RT632uN8s_-jXM-SO6wVNS"
+    }
+]

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Link Pengisian SE2026 - BUMDES Lampung Utara</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -46,7 +48,8 @@
         body {
             background-color: #FAFAFA;
             -webkit-tap-highlight-color: transparent;
-            overflow: hidden; /* Mengunci scroll body, scroll akan di handle oleh container */
+            overflow: hidden;
+            /* Mengunci scroll body, scroll akan di handle oleh container */
         }
 
         /* Glassmorphism khusus sidebar dan topbar */
@@ -63,7 +66,7 @@
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 20px -5px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -78,16 +81,19 @@
             width: 6px;
             height: 6px;
         }
+
         ::-webkit-scrollbar-track {
-            background: #f1f1f1; 
+            background: #f1f1f1;
             border-radius: 10px;
         }
+
         ::-webkit-scrollbar-thumb {
-            background: #ddd; 
+            background: #ddd;
             border-radius: 10px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
-            background: #F26522; 
+            background: #F26522;
         }
 
         /* Efek klik tombol */
@@ -98,7 +104,7 @@
         /* Background grid pattern dominan oranye */
         .bg-pattern {
             background-size: 60px 60px;
-            background-image: 
+            background-image:
                 linear-gradient(to right, rgba(242, 101, 34, 0.03) 1px, transparent 1px),
                 linear-gradient(to bottom, rgba(242, 101, 34, 0.03) 1px, transparent 1px);
         }
@@ -107,30 +113,37 @@
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
+
         .no-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
 
-        
+
 
         /* Custom keyframe untuk efek shimmer tombol */
         @keyframes shimmer {
-            100% { transform: skewX(-12deg) translateX(200%); }
+            100% {
+                transform: skewX(-12deg) translateX(200%);
+            }
         }
     </style>
 </head>
+
 <body class="text-gray-800 font-sans h-screen w-full flex flex-col md:flex-row">
 
     <!-- Sidebar / Navigasi Desktop -->
-    <aside class="w-72 glass-nav h-full hidden md:flex flex-col z-20 flex-shrink-0 shadow-[4px_0_24px_rgba(0,0,0,0.02)] relative">
+    <aside
+        class="w-72 glass-nav h-full hidden md:flex flex-col z-20 flex-shrink-0 shadow-[4px_0_24px_rgba(0,0,0,0.02)] relative">
         <!-- Logo Area -->
         <div class="p-6 border-b border-gray-100/50 flex flex-col items-center justify-center relative">
             <div class="absolute inset-0 bg-gradient-to-br from-bpsOrangeLight/50 to-transparent z-0"></div>
             <div class="relative z-10 flex items-center justify-center gap-3 w-full">
-                <img src="img/logo-bps.png" alt="Logo BPS" class="h-10 w-auto object-contain drop-shadow-sm" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/2/28/Logo_BPS_%28Badan_Pusat_Statistik%29_Indonesia.svg'">
+                <img src="img/logo-bps.png" alt="Logo BPS" class="h-10 w-auto object-contain drop-shadow-sm"
+                    onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/2/28/Logo_BPS_%28Badan_Pusat_Statistik%29_Indonesia.svg'">
                 <div class="h-8 w-px bg-gray-300"></div>
-                <img src="img/logo-se2026.png" alt="Logo SE2026" class="h-10 w-auto object-contain drop-shadow-sm" onerror="this.outerHTML='<div class=\'flex flex-col items-center justify-center\'><div class=\'text-bpsOrange font-extrabold text-xl tracking-tighter leading-none flex items-center\'>SE<span class=\'text-bpsBlue ml-0.5\'>2026</span></div></div>'">
+                <img src="img/logo-se2026.png" alt="Logo SE2026" class="h-10 w-auto object-contain drop-shadow-sm"
+                    onerror="this.outerHTML='<div class=\'flex flex-col items-center justify-center\'><div class=\'text-bpsOrange font-extrabold text-xl tracking-tighter leading-none flex items-center\'>SE<span class=\'text-bpsBlue ml-0.5\'>2026</span></div></div>'">
             </div>
             <div class="relative z-10 mt-4 text-center">
                 <h2 class="text-sm font-bold text-gray-800 leading-tight">Pengisian SE2026</h2>
@@ -145,7 +158,7 @@
                 <!-- Nav items will be injected by JS -->
             </ul>
         </div>
-        
+
         <!-- Footer Sidebar -->
         <div class="p-4 border-t border-gray-100 text-center text-[10px] text-gray-400">
             &copy; 2026 BPS Kab. Lampung Utara
@@ -154,24 +167,30 @@
 
     <!-- Main Content Area -->
     <main class="flex-1 flex flex-col h-full relative bg-pattern">
-        
+
         <!-- Ornamen Latar Belakang (Blurry blobs) -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-bpsOrange/10 rounded-full mix-blend-multiply filter blur-3xl opacity-60 pointer-events-none transform translate-x-1/3 -translate-y-1/3"></div>
-        <div class="absolute bottom-0 left-0 w-[30rem] h-[30rem] bg-bpsBlue/5 rounded-full mix-blend-multiply filter blur-3xl opacity-60 pointer-events-none transform -translate-x-1/3 translate-y-1/3"></div>
+        <div
+            class="absolute top-0 right-0 w-96 h-96 bg-bpsOrange/10 rounded-full mix-blend-multiply filter blur-3xl opacity-60 pointer-events-none transform translate-x-1/3 -translate-y-1/3">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[30rem] h-[30rem] bg-bpsBlue/5 rounded-full mix-blend-multiply filter blur-3xl opacity-60 pointer-events-none transform -translate-x-1/3 translate-y-1/3">
+        </div>
 
         <!-- Mobile Header & Nav -->
         <div class="md:hidden glass-nav z-20 shadow-sm border-b border-gray-100 flex-shrink-0">
             <div class="p-4 flex justify-between items-center bg-white/50">
                 <div class="flex items-center gap-2">
-                    <img src="img/logo-bps.png" alt="Logo BPS" class="h-7 w-auto" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/2/28/Logo_BPS_%28Badan_Pusat_Statistik%29_Indonesia.svg'">
+                    <img src="img/logo-bps.png" alt="Logo BPS" class="h-7 w-auto"
+                        onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/2/28/Logo_BPS_%28Badan_Pusat_Statistik%29_Indonesia.svg'">
                     <div class="h-5 w-px bg-gray-300"></div>
-                    <img src="img/logo-se2026.png" alt="SE2026" class="h-7 w-auto" onerror="this.outerHTML='<div class=\'text-bpsOrange font-extrabold text-sm tracking-tighter flex items-center\'>SE<span class=\'text-bpsBlue ml-0.5\'>2026</span></div>'">
+                    <img src="img/logo-se2026.png" alt="SE2026" class="h-7 w-auto"
+                        onerror="this.outerHTML='<div class=\'text-bpsOrange font-extrabold text-sm tracking-tighter flex items-center\'>SE<span class=\'text-bpsBlue ml-0.5\'>2026</span></div>'">
                 </div>
                 <div class="text-right">
                     <h1 class="text-xs font-bold text-gray-800">Form SE2026</h1>
                 </div>
             </div>
-            
+
             <!-- Horizontal Scrollable Tabs untuk Mobile -->
             <div class="px-2 py-3 overflow-x-auto no-scrollbar border-t border-gray-50 bg-white/80 backdrop-blur-md">
                 <div class="flex space-x-2 w-max px-2" id="nav-list-mobile">
@@ -182,20 +201,25 @@
 
         <!-- Area Kartu Data -->
         <div class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 z-10 relative" id="main-scroll-area">
-            
+
             <!-- Header Halaman -->
             <div class="mb-8 mt-2 md:mt-0 max-w-5xl mx-auto">
                 <h1 class="text-2xl sm:text-3xl font-black text-gray-800 mb-2">
-                    Daftar BUMDES <span class="text-transparent bg-clip-text bg-gradient-to-r from-bpsOrange to-bpsOrangeDark" id="current-kecamatan-title">Seluruh Kecamatan</span>
+                    Daftar BUMDES <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-bpsOrange to-bpsOrangeDark"
+                        id="current-kecamatan-title">Seluruh Kecamatan</span>
                 </h1>
                 <p class="text-sm text-gray-500 font-medium">
-                    Silakan cari BUMDES Anda dan klik tautan untuk memulai pengisian pendataan mandiri (CAWI) Sensus Ekonomi 2026.
+                    Silakan cari BUMDES Anda dan klik tautan untuk memulai pengisian pendataan mandiri (CAWI) Sensus
+                    Ekonomi 2026.
                 </p>
-                
+
                 <!-- Statistik Mini -->
                 <div class="flex flex-col sm:flex-row gap-4 mt-4">
-                    <div class="bg-white/80 backdrop-blur-sm border border-orange-100 rounded-xl px-4 py-2 shadow-sm flex items-center gap-3 w-fit">
-                        <div class="w-8 h-8 rounded-full bg-bpsOrangeLight text-bpsOrange flex items-center justify-center font-bold flex-shrink-0">
+                    <div
+                        class="bg-white/80 backdrop-blur-sm border border-orange-100 rounded-xl px-4 py-2 shadow-sm flex items-center gap-3 w-fit">
+                        <div
+                            class="w-8 h-8 rounded-full bg-bpsOrangeLight text-bpsOrange flex items-center justify-center font-bold flex-shrink-0">
                             <i class="fas fa-building"></i>
                         </div>
                         <div>
@@ -209,14 +233,15 @@
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <i class="fas fa-search text-orange-300"></i>
                         </div>
-                        <input type="text" id="searchInput" placeholder="Cari nama BUMDES atau Desa..." 
+                        <input type="text" id="searchInput" placeholder="Cari nama BUMDES atau Desa..."
                             class="w-full pl-10 pr-4 py-3 h-full bg-white/80 backdrop-blur-sm border border-orange-100 focus:border-bpsOrange focus:ring-2 focus:ring-bpsOrange/20 rounded-xl text-sm transition-all shadow-sm text-gray-700 placeholder-gray-400 outline-none">
                     </div>
                 </div>
             </div>
 
             <!-- Grid Container Kartu -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto pb-20" id="cards-container">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto pb-20"
+                id="cards-container">
                 <!-- Cards will be injected by JS -->
             </div>
 
@@ -231,43 +256,85 @@
 
     <script>
         // Data Dummy JSON (~20 Data)
-        const bumdesData = [
-            { kec: "Kotabumi", desa: "Kotabumi Tengah", nama: "BUMDes Maju Bersama", link: "#" },
-            { kec: "Kotabumi", desa: "Sindang Sari", nama: "BUMDes Sindang Jaya", link: "#" },
-            { kec: "Kotabumi Selatan", desa: "Kelapa Tujuh", nama: "BUMDes Tujuh Harapan", link: "#" },
-            { kec: "Kotabumi Selatan", desa: "Mulia Asri", nama: "BUMDes Asri Sejahtera", link: "#" },
-            { kec: "Kotabumi Selatan", desa: "Tanjung Aman", nama: "BUMDes Aman Sentosa", link: "#" },
-            { kec: "Kotabumi Utara", desa: "Madukoro", nama: "BUMDes Madu Murni", link: "#" },
-            { kec: "Kotabumi Utara", desa: "Wonomarto", nama: "BUMDes Wono Indah", link: "#" },
-            { kec: "Abung Selatan", desa: "Kembang Tanjung", nama: "BUMDes Kembang Wangi", link: "#" },
-            { kec: "Abung Selatan", desa: "Trimodadi", nama: "BUMDes Tri Mandiri", link: "#" },
-            { kec: "Abung Selatan", desa: "Candimas", nama: "BUMDes Candi Emas", link: "#" },
-            { kec: "Bukit Kemuning", desa: "Bukit Kemuning", nama: "BUMDes Puncak Gemilang", link: "#" },
-            { kec: "Bukit Kemuning", desa: "Suka Menanti", nama: "BUMDes Menanti Makmur", link: "#" },
-            { kec: "Abung Semuli", desa: "Semuli Jaya", nama: "BUMDes Semuli Berkah", link: "#" },
-            { kec: "Abung Semuli", desa: "Suka Maju", nama: "BUMDes Maju Terus", link: "#" },
-            { kec: "Tanjung Raja", desa: "Tanjung Raja", nama: "BUMDes Raja Agung", link: "#" },
-            { kec: "Tanjung Raja", desa: "Suka Mulya", nama: "BUMDes Mulya Abadi", link: "#" },
-            { kec: "Sungkai Selatan", desa: "Ketapang", nama: "BUMDes Ketapang Indah", link: "#" },
-            { kec: "Sungkai Utara", desa: "Negara Ratu", nama: "BUMDes Ratu Makmur", link: "#" },
-            { kec: "Abung Surakarta", desa: "Tata Karya", nama: "BUMDes Karya Nyata", link: "#" },
-            { kec: "Abung Timur", desa: "Bumi Agung", nama: "BUMDes Agung Sedaya", link: "#" }
-        ];
+        // const bumdesData = [
+        //     { kec: "Kotabumi", desa: "Kotabumi Tengah", nama: "BUMDes Maju Bersama", link: "#" },
+        //     { kec: "Kotabumi", desa: "Sindang Sari", nama: "BUMDes Sindang Jaya", link: "#" },
+        //     { kec: "Kotabumi Selatan", desa: "Kelapa Tujuh", nama: "BUMDes Tujuh Harapan", link: "#" },
+        //     { kec: "Kotabumi Selatan", desa: "Mulia Asri", nama: "BUMDes Asri Sejahtera", link: "#" },
+        //     { kec: "Kotabumi Selatan", desa: "Tanjung Aman", nama: "BUMDes Aman Sentosa", link: "#" },
+        //     { kec: "Kotabumi Utara", desa: "Madukoro", nama: "BUMDes Madu Murni", link: "#" },
+        //     { kec: "Kotabumi Utara", desa: "Wonomarto", nama: "BUMDes Wono Indah", link: "#" },
+        //     { kec: "Abung Selatan", desa: "Kembang Tanjung", nama: "BUMDes Kembang Wangi", link: "#" },
+        //     { kec: "Abung Selatan", desa: "Trimodadi", nama: "BUMDes Tri Mandiri", link: "#" },
+        //     { kec: "Abung Selatan", desa: "Candimas", nama: "BUMDes Candi Emas", link: "#" },
+        //     { kec: "Bukit Kemuning", desa: "Bukit Kemuning", nama: "BUMDes Puncak Gemilang", link: "#" },
+        //     { kec: "Bukit Kemuning", desa: "Suka Menanti", nama: "BUMDes Menanti Makmur", link: "#" },
+        //     { kec: "Abung Semuli", desa: "Semuli Jaya", nama: "BUMDes Semuli Berkah", link: "#" },
+        //     { kec: "Abung Semuli", desa: "Suka Maju", nama: "BUMDes Maju Terus", link: "#" },
+        //     { kec: "Tanjung Raja", desa: "Tanjung Raja", nama: "BUMDes Raja Agung", link: "#" },
+        //     { kec: "Tanjung Raja", desa: "Suka Mulya", nama: "BUMDes Mulya Abadi", link: "#" },
+        //     { kec: "Sungkai Selatan", desa: "Ketapang", nama: "BUMDes Ketapang Indah", link: "#" },
+        //     { kec: "Sungkai Utara", desa: "Negara Ratu", nama: "BUMDes Ratu Makmur", link: "#" },
+        //     { kec: "Abung Surakarta", desa: "Tata Karya", nama: "BUMDes Karya Nyata", link: "#" },
+        //     { kec: "Abung Timur", desa: "Bumi Agung", nama: "BUMDes Agung Sedaya", link: "#" }
+        // ];
 
-        // Ekstrak daftar kecamatan unik dan urutkan
-        const kecamatanList = [...new Set(bumdesData.map(item => item.kec))].sort();
-
+        let bumdesData = [];
+        let kecamatanList = [];
         let currentFilter = 'Semua';
         let searchQuery = '';
-
         let audioCtx;
+
+        // 2. Fungsi Fetch & Inisialisasi Utama
+        async function initApp() {
+            try {
+                const response = await fetch('/ngibar/bumdes/data/bumdes.json');
+
+                if (!response.ok) {
+                    throw new Error(`Gagal mengambil data: ${response.status}`);
+                }
+
+                // Simpan data JSON ke variabel global
+                bumdesData = await response.json();
+                console.log('Data BUMDes berhasil dimuat:', bumdesData);
+
+                // Ekstrak daftar kecamatan unik SETELAH data JSON benar-benar masuk
+                kecamatanList = [...new Set(bumdesData.map(item => item.kec))].sort();
+
+                // Render Navigasi dan Card setelah data siap
+                renderNav();
+                renderCards();
+
+                // Pasang Listener Search Input
+                const searchInput = document.getElementById('searchInput');
+                if (searchInput) {
+                    searchInput.addEventListener('input', (e) => {
+                        searchQuery = e.target.value;
+                        renderCards();
+                    });
+                }
+
+            } catch (error) {
+                console.error('Terjadi kesalahan saat memuat data BUMDes:', error);
+                // Menampilkan pesan error di container jika fetch gagal
+                const container = document.getElementById('cards-container');
+                if (container) {
+                    container.innerHTML = `
+                    <div class="col-span-full text-center py-10 text-red-500 font-semibold">
+                        Gagal memuat data BUMDes. Silakan periksa koneksi atau path file JSON kamu.
+                    </div>
+                `;
+                }
+            }
+        }
+
+        // --- LOGIKA AUDIO ---
         function initAudio() {
             if (!audioCtx) {
                 audioCtx = new (window.AudioContext || window.webkitAudioContext)();
             }
         }
 
-        // Suara klik yang elegan dan minimalis (pop sound)
         function playClickSound() {
             if (!audioCtx) return;
             if (audioCtx.state === 'suspended') audioCtx.resume();
@@ -279,7 +346,7 @@
             gainNode.connect(audioCtx.destination);
 
             oscillator.type = 'sine';
-            
+
             // Frekuensi diatur agar lebih warm (nuansa oranye)
             oscillator.frequency.setValueAtTime(600, audioCtx.currentTime);
             oscillator.frequency.exponentialRampToValueAtTime(150, audioCtx.currentTime + 0.08);
@@ -291,10 +358,13 @@
             oscillator.stop(audioCtx.currentTime + 0.08);
         }
 
+        // --- LOGIKA RENDER NAVIGASI ---
         function renderNav() {
             const deskNav = document.getElementById('nav-list-desktop');
             const mobNav = document.getElementById('nav-list-mobile');
-            
+
+            if (!deskNav || !mobNav) return;
+
             deskNav.innerHTML = '';
             mobNav.innerHTML = '';
 
@@ -302,22 +372,22 @@
 
             navItems.forEach(kec => {
                 const isActive = kec === currentFilter;
-                
+
                 // --- Desktop Nav Item ---
                 const li = document.createElement('li');
                 const btnDesk = document.createElement('button');
                 btnDesk.className = `w-full flex items-center justify-between px-4 py-3 rounded-xl text-left transition-all duration-200 group ${isActive ? 'bg-gradient-to-r from-bpsOrange to-bpsOrangeDark text-white shadow-md shadow-orange-200' : 'text-gray-600 hover:bg-bpsOrangeLight hover:text-bpsOrange'}`;
-                
+
                 let countBadge = '';
-                if(kec !== 'Semua') {
+                if (kec !== 'Semua') {
                     const count = bumdesData.filter(d => d.kec === kec).length;
                     countBadge = `<span class="text-[10px] py-0.5 px-2 rounded-full ${isActive ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-500 group-hover:bg-bpsOrange/10 group-hover:text-bpsOrange'}">${count}</span>`;
                 }
 
                 btnDesk.innerHTML = `
-                    <span class="text-sm font-semibold truncate pr-2"><i class="fas ${kec === 'Semua' ? 'fa-layer-group' : 'fa-map'} w-5 opacity-70"></i> ${kec}</span>
-                    ${countBadge}
-                `;
+                <span class="text-sm font-semibold truncate pr-2"><i class="fas ${kec === 'Semua' ? 'fa-layer-group' : 'fa-map'} w-5 opacity-70"></i> ${kec}</span>
+                ${countBadge}
+            `;
                 btnDesk.onclick = (e) => handleFilterClick(e, kec, btnDesk);
                 li.appendChild(btnDesk);
                 deskNav.appendChild(li);
@@ -335,7 +405,7 @@
         function handleFilterClick(event, kec, element) {
             initAudio();
             playClickSound();
-            
+
             // Animasi tombol klik
             element.classList.add('btn-clicked');
             setTimeout(() => element.classList.remove('btn-clicked'), 150);
@@ -344,72 +414,82 @@
                 currentFilter = kec;
                 renderNav(); // Re-render untuk update state active
                 renderCards();
-                
+
                 // Update Title
-                document.getElementById('current-kecamatan-title').innerText = kec === 'Semua' ? 'Seluruh Kecamatan' : `Kec. ${kec}`;
-                
+                const titleEl = document.getElementById('current-kecamatan-title');
+                if (titleEl) {
+                    titleEl.innerText = kec === 'Semua' ? 'Seluruh Kecamatan' : `Kec. ${kec}`;
+                }
+
                 // Scroll to top of main area
-                document.getElementById('main-scroll-area').scrollTo({top: 0, behavior: 'smooth'});
+                const mainScroll = document.getElementById('main-scroll-area');
+                if (mainScroll) {
+                    mainScroll.scrollTo({ top: 0, behavior: 'smooth' });
+                }
             }
         }
 
+        // --- LOGIKA RENDER CARDS ---
         function renderCards() {
             const container = document.getElementById('cards-container');
             const emptyState = document.getElementById('empty-state');
             const countEl = document.getElementById('total-count');
-            
+
+            if (!container) return;
+
             container.innerHTML = '';
-            
-            // Filter berdasarkan Kecamatan DAN Search Query (Nama/Desa)
+
+            // Filter berdasarkan Kecamatan DAN Search Query
             const filteredData = bumdesData.filter(d => {
                 const matchKec = currentFilter === 'Semua' || d.kec === currentFilter;
-                const matchSearch = d.nama.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                                    d.desa.toLowerCase().includes(searchQuery.toLowerCase());
+                const matchSearch = (d.nama && d.nama.toLowerCase().includes(searchQuery.toLowerCase())) ||
+                    (d.desa && d.desa.toLowerCase().includes(searchQuery.toLowerCase()));
                 return matchKec && matchSearch;
             });
 
-            countEl.innerText = filteredData.length;
+            if (countEl) countEl.innerText = filteredData.length;
 
             if (filteredData.length === 0) {
                 container.classList.add('hidden');
-                emptyState.classList.remove('hidden');
-                emptyState.classList.add('flex');
+                if (emptyState) {
+                    emptyState.classList.remove('hidden');
+                    emptyState.classList.add('flex');
+                }
             } else {
                 container.classList.remove('hidden');
-                emptyState.classList.add('hidden');
-                emptyState.classList.remove('flex');
+                if (emptyState) {
+                    emptyState.classList.add('hidden');
+                    emptyState.classList.remove('flex');
+                }
 
                 filteredData.forEach((item, index) => {
                     const card = document.createElement('div');
-                    // Style base card, left border tebal warna oranye
                     card.className = `card-item glass-card rounded-2xl overflow-hidden relative border-l-4 border-l-bpsOrange flex flex-col justify-between`;
-                    
-                    // Staggered animation delay
-                    const delay = index * 50; 
+
+                    const delay = index * 50;
                     card.style.animation = `fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards ${delay}ms`;
 
                     card.innerHTML = `
-                        <div class="p-5 flex-1 relative">
-                            <!-- Dekorasi pattern oranye di pojok kanan -->
-                            <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-bpsOrangeLight to-transparent opacity-50 rounded-bl-3xl pointer-events-none"></div>
-                            
-                            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-bpsOrange/10 text-bpsOrangeDark text-[10px] font-bold tracking-wider uppercase mb-3">
-                                <i class="fas fa-map-marker-alt"></i> ${item.kec}
-                            </div>
-                            
-                            <h3 class="text-xl font-extrabold text-gray-800 leading-tight mb-1 group-hover:text-bpsOrange transition-colors">${item.nama}</h3>
-                            <p class="text-sm text-gray-500 font-medium flex items-center gap-2">
-                                <i class="fas fa-home text-gray-300"></i> Desa ${item.desa}
-                            </p>
+                    <div class="p-5 flex-1 relative">
+                        <div class="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-bpsOrangeLight to-transparent opacity-50 rounded-bl-3xl pointer-events-none"></div>
+                        
+                        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-bpsOrange/10 text-bpsOrangeDark text-[10px] font-bold tracking-wider uppercase mb-3">
+                            <i class="fas fa-map-marker-alt"></i> ${item.kec}
                         </div>
                         
-                        <div class="p-4 pt-0 mt-auto border-t border-dashed border-gray-100 bg-white/50">
-                            <a href="${item.link}" onclick="handleLinkClick(event, this)" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-bpsOrange to-bpsOrangeDark text-white py-3 px-4 rounded-xl font-bold shadow-md shadow-orange-200/50 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden group/btn">
-                                <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover/btn:animate-[shimmer_0.7s_forwards]"></div>
-                                Isi CAWI <i class="fas fa-arrow-right text-sm group-hover/btn:translate-x-1 transition-transform"></i>
-                            </a>
-                        </div>
-                    `;
+                        <h3 class="text-xl font-extrabold text-gray-800 leading-tight mb-1 group-hover:text-bpsOrange transition-colors">${item.nama}</h3>
+                        <p class="text-sm text-gray-500 font-medium flex items-center gap-2">
+                            <i class="fas fa-home text-gray-300"></i> Desa ${item.desa}
+                        </p>
+                    </div>
+                    
+                    <div class="p-4 pt-0 mt-auto border-t border-dashed border-gray-100 bg-white/50">
+                        <a target="_blank" rel="noopener noreferrer" href="${item.link}" onclick="handleLinkClick(event, this)" class="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-bpsOrange to-bpsOrangeDark text-white py-3 px-4 rounded-xl font-bold shadow-md shadow-orange-200/50 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 relative overflow-hidden group/btn">
+                            <div class="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover/btn:animate-[shimmer_0.7s_forwards]"></div>
+                            Isi CAWI <i class="fas fa-arrow-right text-sm group-hover/btn:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                `;
                     container.appendChild(card);
                 });
             }
@@ -417,34 +497,28 @@
 
         // Animasi klik untuk link CAWI
         function handleLinkClick(event, element) {
-            event.preventDefault(); // Mencegah reload untuk demo
             initAudio();
             playClickSound();
-            
+
             element.classList.add('btn-clicked');
-            
+
             setTimeout(() => {
                 element.classList.remove('btn-clicked');
-                // Simulasi navigasi
-                console.log('Membuka link CAWI...');
+                // Jika link-nya riil dan ingin dibuka di tab baru:
                 // window.open(element.href, '_blank');
             }, 150);
         }
 
-        window.onload = () => {
-            renderNav();
-            renderCards();
-            
-            // Event listener untuk input pencarian
-            document.getElementById('searchInput').addEventListener('input', (e) => {
-                searchQuery = e.target.value;
-                renderCards();
-            });
+        // 3. Jalankan Aplikasi Saat Halaman Selesai Dibuat (DOM Ready)
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inisialisasi aplikasi (Fetch & Render)
+            initApp();
 
-            // Registrasi event listener pertama untuk audio (karena browser policy)
+            // Registrasi event listener audio saat interaksi pertama
             document.body.addEventListener('touchstart', initAudio, { once: true });
             document.body.addEventListener('click', initAudio, { once: true });
-        };
+        });
     </script>
 </body>
+
 </html>
