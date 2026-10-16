@@ -5,28 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#152b49">
   <meta name="description" content="Direktori pencarian dan penyaringan data assignment.">
-  <title>Pengisian Mandiri Data SE2026 ASN</title>
+  <title>Pengisian Mandiri SE2026 ASN</title>
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="brand" href="./" aria-label="Pengisian Mandiri Data SE2026 ASN — beranda">
+      <a class="brand" href="./" aria-label="Pengisian Mandiri SE2026 ASN — beranda">
         <span class="brand-mark" aria-hidden="true">D</span>
         <span class="brand-copy">
-          <strong>Pengisian Mandiri Data SE2026 ASN</strong>
+          <strong>Pengisian Mandiri SE2026 ASN</strong>
+          
         </span>
       </a>
-      <!-- <span class="topbar-note"><span class="live-dot"></span> Data lokal · Tanpa backend</span> -->
+      <span class="topbar-note"><span class="live-dot"></span> Verifikasi identitas sebelum akses</span>
     </div>
   </header>
 
   <main class="page-shell">
     <section class="intro" aria-labelledby="page-title">
       <p class="eyebrow">PENCARIAN DATA</p>
-      <h1 id="page-title">Pengisian Mandiri<br class="mobile-break"> Data ASN</h1>
-      <p class="intro-copy">Cari berdasarkan nama, alamat, instansi, kode identitas, dan informasi lainnya. Gunakan filter untuk mempersempit hasil.</p>
+      <h1 id="page-title"><br class="mobile-break">Pengisian Mandiri SE2026 - ASN Lampung Utara.</h1>
+      <p class="intro-copy">Cari berdasarkan nama, alamat, instansi, kode identitas, dan informasi lainnya. Untuk membuka CAWI, verifikasi NIK Anggota Keluarga, atau Nomor KK terlebih dahulu.</p>
     </section>
 
     <section class="search-panel" aria-label="Pencarian dan filter data">
@@ -100,10 +101,26 @@
       </nav>
     </section>
 
-    <!-- <footer class="footer">
-      <span>Pengisian Mandiri Data SE2026 ASN</span>
-      <span>Data ditampilkan dari <code>data.json</code></span>
-    </footer> -->
+
+    <dialog id="verification-dialog" class="verification-dialog" aria-labelledby="verification-title">
+      <div class="dialog-card">
+        <button id="verification-close" class="dialog-close" type="button" aria-label="Tutup dialog">×</button>
+        <p class="dialog-eyebrow">VERIFIKASI SEBELUM AKSES</p>
+        <h2 id="verification-title">Verifikasi identitas</h2>
+        <p id="verification-record-name" class="dialog-copy">Masukkan NIK atau Nomor KK yang terdaftar pada data keluarga assignment ini.</p>
+        <form id="verification-form" novalidate>
+          <label class="verification-label" for="identity-input">NIK Anggota Keluarga, atau Nomor KK</label>
+          <input id="identity-input" name="identity" type="password" inputmode="numeric" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="18" placeholder="Masukkan 16 digit" aria-describedby="identity-help verification-error" required>
+          <p id="identity-help" class="dialog-helper">Masukkan tepat 16 digit. Input tidak disimpan oleh aplikasi.</p>
+          <p id="verification-error" class="validation-error" role="alert" hidden></p>
+          <div class="dialog-actions">
+            <button id="verification-cancel" class="button button-quiet" type="button">Batal</button>
+            <button class="button button-primary" type="submit">Verifikasi &amp; buka CAWI</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+
   </main>
 </body>
 </html>

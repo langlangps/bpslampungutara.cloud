@@ -1,16 +1,18 @@
-# Direktori Assignment
+# Direktori Assignment — Verifikasi CAWI
 
-Aplikasi pencarian data assignment menggunakan **HTML, CSS, dan vanilla JavaScript**. Tidak menggunakan framework, database, server API, Docker, atau dependensi eksternal. Data dibaca dari `data.json` dan diproses langsung di browser.
+Aplikasi pencarian assignment dengan HTML, CSS, dan vanilla JavaScript. Data dibaca dari `data.json`. Tidak ada proses build, framework, atau database.
 
 ## Fitur
 
-- Pencarian teks di nama, alamat, instansi, unit kerja, kode identitas, status, lokasi, dan kolom lainnya.
-- Filter kombinasi untuk `assignment_status_alias`, `lokasi_kerja_fasih`, `instansi_dari_bkd`, `unit_kerja_dari_bkd`, dan `instansi_kerja_fasih`.
-- Kartu ringkas yang menampilkan nama, alamat, instansi/unit BKD, instansi Fasih, status, lokasi, serta tombol tautan CAWI.
-- Alamat menggunakan `alamat_dari_bkd`; jika kosong, otomatis menggunakan `alamat_prelist`.
-- Link CAWI menerima URL biasa maupun string Markdown link seperti `[label](https://alamat...)`.
-- Pagination untuk menjaga tampilan tetap ringan saat data berisi ribuan baris.
-- Layout responsif untuk desktop dan ponsel.
+- Pencarian data assignment dan pagination.
+- Filter untuk `assignment_status_alias`, `instansi_lokasi`, `Instansi`, `Unit Kerja`, dan `instansi_kerja`.
+- Kartu menampilkan nama, alamat, instansi/unit kerja BKD atau instansi Fasih, lokasi, serta status.
+- Alamat menggunakan `ALAMAT`; jika kosong, menggunakan `data2` (mendukung juga skema lama `alamat_dari_bkd` lalu `alamat_prelist`).
+- Tombol CAWI **tidak berupa tautan langsung**. Pengguna harus memasukkan NIK/No. KK, lalu input dibandingkan dengan `dtsen_no_kk` dan `nik_dtsen#1` sampai `nik_dtsen#10` pada baris assignment yang dipilih.
+- Jika input salah, aplikasi menampilkan pesan validasi dan tidak membuka tautan. Jika cocok, tautan CAWI dibuka di tab baru.
+- Instansi: jika salah satu kolom BKD (`Instansi` atau `Unit Kerja`) terisi, tampilkan hanya kolom BKD yang terisi. Instansi Fasih ditampilkan hanya jika kedua kolom BKD kosong. Jika semua kosong, bagian instansi tidak ditampilkan.
+- Validasi input mensyaratkan 16 digit angka; spasi atau tanda hubung yang dipakai sebagai pemisah akan diabaikan.
+- URL hanya diterima jika HTTPS dan host/path sesuai `https://esurvey.bps.go.id/h/s/`.
 
 ## Struktur berkas
 
@@ -23,17 +25,20 @@ direktori-assignment/
 └── README.md
 ```
 
-## 1. Menyiapkan data dari Pandas DataFrame
+## 1. Ekspor data lengkap dari Pandas
 
-Tidak perlu menaruh 2.300 data secara hardcoded di `app.js`. Simpan semua baris di `data.json`, supaya data mudah diperbarui tanpa mengubah kode aplikasi.
+ZIP ini memuat **3 baris contoh** dari contoh yang diberikan di percakapan, bukan keseluruhan data sekitar 2.300 baris. Sebelum dipakai, ganti `data.json` dengan seluruh DataFrame Anda.
 
-Misalnya DataFrame Anda bernama `df`:
+Misalnya DataFrame bernama `df`:
 
 ```python
-import json
-import pandas as pd
+# Kolom identitas harus berbentuk string agar digit awal tetap terjaga.
+identity_columns = ["dtsen_no_kk", *[f"nik_dtsen#{i}" for i in range(1, 11)]]
+for col in identity_columns:
+    if col in df.columns:
+        df[col] = df[col].astype("string")
 
-# Mengubah nilai NaN/NaT menjadi null JSON yang valid.
+# NaN/NA akan diserialisasi menjadi null JSON yang valid.
 df.to_json(
     "data.json",
     orient="records",
@@ -42,65 +47,36 @@ df.to_json(
 )
 ```
 
-Perintah di atas membuat `data.json` sebagai array objek, sesuai format yang dibaca aplikasi. Pastikan file `data.json` hasil ekspor diletakkan satu folder dengan `index.html`, `app.js`, dan `styles.css`.
+**Penting:** jika kolom identitas sudah terlanjur dibaca sebagai angka dan kehilangan nol di depan, mengubahnya menjadi string setelahnya tidak dapat memulihkan nol tersebut. Pastikan kolom dibaca sebagai string saat sumber data diimpor.
 
-Contoh bentuk datanya:
+Pastikan kolom berikut ada di hasil ekspor dengan nama yang sesuai:
 
-```json
-[
-  {
-    "assignment_id": "id-assignment",
-    "code_identity": "kode identitas",
-    "nama_prelist": "NAMA RESPONDEN",
-    "alamat_prelist": "ALAMAT DARI PRELIST",
-    "assignment_status_alias": "OPEN",
-    "alamat_dari_bkd": null,
-    "instansi_dari_bkd": null,
-    "unit_kerja_dari_bkd": null,
-    "instansi_kerja_fasih": "NAMA INSTANSI FASIH",
-    "lokasi_kerja_fasih": "LAMPUNG UTARA",
-    "link_cawi": "https://contoh.id/tautan-cawi"
-  }
-]
-```
+- `nama_prelist`, `data2`, `ALAMAT`, `code_identity`, `assignment_status_alias`
+- `Instansi`, `Unit Kerja`, `instansi_kerja`, `instansi_lokasi`
+- `url`, `dtsen_no_kk`, `nik_dtsen#1` sampai `nik_dtsen#10`
 
-Nama kolom mengikuti nama di DataFrame. Kolom yang kosong boleh berisi `null`, `NaN` dari Pandas akan diubah menjadi `null` oleh `to_json()`.
+Kolom lain boleh tetap disertakan. Nama kolom peka huruf besar/kecil, jadi pertahankan nama asli dari DataFrame. Nilai NIK dan Nomor KK sebaiknya bertipe string agar nol di depan tidak hilang.
 
-> **Penting:** folder unduhan proyek ini berisi tujuh baris contoh dari data yang diberikan di percakapan, bukan seluruh 2.300-an baris. Ganti `data.json` dengan hasil ekspor DataFrame lengkap sebelum dipakai.
+## 2. Menjalankan lokal
 
-## 2. Menjalankan di komputer lokal
-
-Browser biasanya membatasi `fetch("data.json")` ketika `index.html` dibuka langsung melalui alamat `file://`. Jalankan web server statis sederhana dari folder proyek.
-
-### Dengan Python
-
-Buka Terminal atau Command Prompt di folder `direktori-assignment`, kemudian jalankan:
+Buka terminal di folder proyek, lalu jalankan:
 
 ```bash
 python -m http.server 8000
 ```
 
-Buka alamat berikut di browser:
+Buka `http://localhost:8000` pada browser. Gunakan web server; membuka `index.html` secara langsung melalui `file://` dapat membuat browser menolak `fetch("data.json")`.
 
-```text
-http://localhost:8000
-```
+## 3. Deploy ke hosting
 
-Untuk menghentikan server, tekan `Ctrl+C` di Terminal.
+Unggah `index.html`, `styles.css`, `app.js`, dan `data.json` ke folder yang sama di hosting statis. `README.md` boleh ikut diunggah, tetapi tidak diperlukan aplikasi untuk berjalan. Tidak ada build atau instalasi dependensi.
 
-## 3. Deploy ke hosting statis
+## 4. Aturan validasi
 
-Setelah mengganti `data.json` dengan data lengkap, unggah **semua lima berkas** (`index.html`, `styles.css`, `app.js`, `data.json`, `README.md`) ke satu folder di hosting. Tidak ada proses build atau instalasi paket.
+Untuk setiap kartu, input dicocokkan hanya dengan No. KK dan sepuluh kolom NIK milik **baris assignment tersebut**. Nilai tidak dicocokkan ke seluruh dataset agar satu keluarga tidak secara tidak sengaja membuka tautan milik assignment lain. Nilai masukan tidak disimpan ke local storage, cookie, atau dikirim ke server oleh kode aplikasi.
 
-Bisa menggunakan hosting statis apa pun yang mendukung penyajian berkas HTML, CSS, JS, dan JSON, seperti GitHub Pages, Netlify, atau hosting web biasa. Jika aplikasi diletakkan dalam subfolder, pastikan `data.json` berada di folder yang sama dengan `index.html`.
+## PENTING: batasan keamanan aplikasi statis
 
-Sesudah deploy, cek hal-hal berikut:
+Validasi ini berjalan **di browser (client-side)**. Ini mencegah tombol membuka CAWI sebelum input cocok melalui alur normal, tetapi **bukan perlindungan keamanan yang kuat**: `data.json` berisi tautan CAWI dan NIK/No. KK yang dipakai untuk verifikasi sehingga pengunjung yang dapat mengakses berkas tersebut berpotensi membacanya atau melewati validasi melalui Developer Tools. Memindahkan daftar NIK ke berkas terpisah, mengenkripsi/menyamarkan JSON, atau menyembunyikan URL melalui JavaScript tidak mengatasi masalah ini.
 
-1. Halaman dapat dibuka melalui URL hosting.
-2. Tidak muncul pesan gagal membaca `data.json`.
-3. Jumlah assignment sesuai dengan banyaknya baris DataFrame.
-4. Tombol CAWI mengarah ke tautan yang benar.
-
-## Catatan privasi dan akses
-
-Ini aplikasi **frontend statis**. Data di `data.json` dikirim ke browser setiap pengunjung yang membuka situs; tidak ada autentikasi atau kontrol akses bawaan. Jika data memuat tautan survei atau informasi yang tidak boleh diakses publik, tempatkan situs dan berkas JSON di hosting dengan pembatasan akses yang sesuai, atau jangan unggah data tersebut ke hosting publik.
+Karena data berisi pengenal pribadi dan tautan survei, **jangan unggah paket ini ke hosting publik jika akses data harus dibatasi**. Untuk keamanan sungguhan, simpan data dan URL di server yang tidak dapat diakses langsung, lalu lakukan validasi di endpoint backend yang menerapkan autentikasi, HTTPS, pembatasan percobaan, pencatatan seperlunya, dan kebijakan akses. Endpoint hanya mengembalikan/mengarahkan ke URL setelah verifikasi di sisi server. Backend tersebut tidak harus memakai database; dapat membaca file privat yang hanya tersedia di server, tetapi tetap membutuhkan lingkungan server-side.

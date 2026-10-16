@@ -2,50 +2,40 @@
   "use strict";
 
   const DATA_URL = "data.json";
+  const NIK_FIELDS = ["dtsen_no_kk", ...Array.from({ length: 10 }, (_, i) => `nik_dtsen#${i + 1}`)];
+  const SENSITIVE_FIELDS = new Set(NIK_FIELDS);
   const FIELDS = {
-    status: { key: "assignment_status_alias", selectId: "filter-status", placeholder: "Semua status" },
-    lokasi: { key: "lokasi_kerja_fasih", selectId: "filter-lokasi", placeholder: "Semua lokasi" },
-    instansiBkd: { key: "instansi_dari_bkd", selectId: "filter-instansi-bkd", placeholder: "Semua instansi BKD" },
-    unitBkd: { key: "unit_kerja_dari_bkd", selectId: "filter-unit-bkd", placeholder: "Semua unit kerja" },
-    instansiFasih: { key: "instansi_kerja_fasih", selectId: "filter-instansi-fasih", placeholder: "Semua instansi Fasih" }
+    status: { keys: ["assignment_status_alias"], selectId: "filter-status", placeholder: "Semua status" },
+    lokasi: { keys: ["instansi_lokasi", "lokasi_kerja_fasih"], selectId: "filter-lokasi", placeholder: "Semua lokasi" },
+    instansiBkd: { keys: ["Instansi", "instansi_dari_bkd"], selectId: "filter-instansi-bkd", placeholder: "Semua instansi BKD" },
+    unitBkd: { keys: ["Unit Kerja", "unit_kerja_dari_bkd"], selectId: "filter-unit-bkd", placeholder: "Semua unit kerja" },
+    instansiFasih: { keys: ["instansi_kerja", "instansi_kerja_fasih"], selectId: "filter-instansi-fasih", placeholder: "Semua instansi Fasih" }
   };
 
   const state = {
-    data: [],
-    filtered: [],
-    page: 1,
-    pageSize: 12,
-    query: "",
-    filters: { status: "", lokasi: "", instansiBkd: "", unitBkd: "", instansiFasih: "" }
+    data: [], filtered: [], page: 1, pageSize: 12, query: "",
+    activeRecord: null, filters: { status: "", lokasi: "", instansiBkd: "", unitBkd: "", instansiFasih: "" }
   };
 
   const $ = (selector) => document.querySelector(selector);
   const els = {
-    search: $("#search-input"),
-    reset: $("#reset-button"),
-    emptyReset: $("#empty-reset-button"),
-    pageSize: $("#page-size"),
-    summary: $("#results-summary"),
-    grid: $("#results-grid"),
-    message: $("#data-message"),
-    empty: $("#empty-state"),
-    pagination: $("#pagination"),
-    pageInfo: $("#page-info"),
-    prev: $("#prev-page"),
-    next: $("#next-page")
+    search: $("#search-input"), reset: $("#reset-button"), emptyReset: $("#empty-reset-button"), pageSize: $("#page-size"),
+    summary: $("#results-summary"), grid: $("#results-grid"), message: $("#data-message"), empty: $("#empty-state"),
+    pagination: $("#pagination"), pageInfo: $("#page-info"), prev: $("#prev-page"), next: $("#next-page"),
+    dialog: $("#verification-dialog"), dialogForm: $("#verification-form"), dialogClose: $("#verification-close"),
+    dialogCancel: $("#verification-cancel"), dialogRecordName: $("#verification-record-name"), identityInput: $("#identity-input"),
+    verificationError: $("#verification-error")
   };
 
   function asText(value) {
     if (value === null || value === undefined) return "";
+    if (typeof value === "number" && Number.isNaN(value)) return "";
     const result = String(value).trim();
-    return result.toLowerCase() === "nan" || result.toLowerCase() === "none" ? "" : result;
+    return ["nan", "none", "null", "nat"].includes(result.toLowerCase()) ? "" : result;
   }
 
   function normalize(value) {
-    return asText(value)
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .toLocaleLowerCase("id-ID");
+    return asText(value).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("id-ID");
   }
 
   function firstNonEmpty(...values) {
@@ -56,30 +46,44 @@
     return "";
   }
 
-  function getAddress(record) {
-    return firstNonEmpty(record.alamat_dari_bkd, record.alamat_prelist);
+  function getField(record, keys) {
+    return firstNonEmpty(...keys.map((key) => record?.[key]));
   }
 
-  // Menerima URL biasa maupun Markdown link seperti [label](https://contoh.id/...).
+  function getName(record) {
+    return firstNonEmpty(record.nama_prelist, "Nama tidak tersedia");
+  }
+
+  function getAddress(record) {
+    // Support both the new data shape (ALAMAT/data2) and the previous shape.
+    return firstNonEmpty(record.ALAMAT, record.alamat_dari_bkd, record.data2, record.alamat_prelist);
+  }
+
+  function getInstansiBkd(record) { return getField(record, ["Instansi", "instansi_dari_bkd"]); }
+  function getUnitBkd(record) { return getField(record, ["Unit Kerja", "unit_kerja_dari_bkd"]); }
+  function getInstansiFasih(record) { return getField(record, ["instansi_kerja", "instansi_kerja_fasih"]); }
+  function getLocation(record) { return getField(record, ["instansi_lokasi", "lokasi_kerja_fasih"]); }
+  function getCawiValue(record) { return firstNonEmpty(record.url, record.link_cawi); }
+
+  // Menerima URL biasa atau format Markdown seperti [label](https://contoh.id/tautan).
+  // Hanya mengizinkan HTTPS ke domain CAWI BPS yang diharapkan.
   function getCawiUrl(value) {
     let text = asText(value);
     if (!text) return "";
     text = text.replace(/\\\[/g, "[").replace(/\\\]/g, "]");
-
     const markdownMatch = text.match(/\]\((https?:\/\/[^\s)]+)\)/i);
     if (markdownMatch) text = markdownMatch[1];
     else {
       const urlMatch = text.match(/https?:\/\/[^\s)\]>]+/i);
       if (urlMatch) text = urlMatch[0];
     }
-
     try {
       const parsed = new URL(text);
-      if (parsed.protocol === "https:" || parsed.protocol === "http:") return parsed.href;
+      if (parsed.protocol !== "https:" || parsed.hostname !== "esurvey.bps.go.id" || !parsed.pathname.startsWith("/h/s/")) return "";
+      return parsed.href;
     } catch (_) {
       return "";
     }
-    return "";
   }
 
   function createSvg(pathMarkup, className = "") {
@@ -91,7 +95,11 @@
     return svg;
   }
 
-  function setOptions(select, values, placeholder) {
+  function getFilterValue(record, filterName) {
+    return getField(record, FIELDS[filterName].keys);
+  }
+
+  function setOptions(select, placeholder) {
     const selected = select.value;
     select.replaceChildren();
     const allOption = document.createElement("option");
@@ -99,55 +107,45 @@
     allOption.textContent = placeholder;
     select.append(allOption);
 
-    const unique = new Map();
+    const unique = new Set();
     state.data.forEach((record) => {
-      const raw = asText(record[select.dataset.field]);
-      if (raw && !unique.has(raw)) unique.set(raw, raw);
+      const value = getFilterValue(record, select.dataset.filter);
+      if (value) unique.add(value);
     });
-    [...unique.values()]
-      .sort((a, b) => a.localeCompare(b, "id", { sensitivity: "base", numeric: true }))
-      .forEach((value) => {
-        const option = document.createElement("option");
-        option.value = value;
-        option.textContent = value;
-        select.append(option);
-      });
-    select.value = [...unique.values()].includes(selected) ? selected : "";
+    const sorted = [...unique].sort((a, b) => a.localeCompare(b, "id", { sensitivity: "base", numeric: true }));
+    sorted.forEach((value) => {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = value;
+      select.append(option);
+    });
+    select.value = sorted.includes(selected) ? selected : "";
   }
 
   function buildFilters() {
     Object.entries(FIELDS).forEach(([filterName, config]) => {
       const select = document.getElementById(config.selectId);
       select.dataset.filter = filterName;
-      select.dataset.field = config.key;
-      setOptions(select, state.data, config.placeholder);
+      setOptions(select, config.placeholder);
     });
   }
 
   function recordSearchText(record) {
-    return normalize([
-      record.assignment_id,
-      record.code_identity,
-      record.nama_prelist,
-      record.alamat_prelist,
-      record.alamat_dari_bkd,
-      record["SATUAN KERJA"],
-      record.assignment_status_alias,
-      record.instansi_dari_bkd,
-      record.unit_kerja_dari_bkd,
-      record.instansi_kerja_fasih,
-      record.lokasi_kerja_fasih,
-      record.link_cawi
-    ].map(asText).join(" "));
+    // NIK/No. KK and URL are deliberately omitted from general search.
+    const values = Object.entries(record).filter(([key, value]) => {
+      if (SENSITIVE_FIELDS.has(key) || key === "url" || key === "link_cawi") return false;
+      return value !== null && value !== undefined && typeof value !== "object";
+    }).map(([, value]) => asText(value));
+    return normalize(values.join(" "));
   }
 
   function applyFilters() {
     state.query = normalize(els.search.value);
     state.filtered = state.data.filter((record) => {
       if (state.query && !recordSearchText(record).includes(state.query)) return false;
-      return Object.entries(FIELDS).every(([filterName, config]) => {
+      return Object.entries(FIELDS).every(([filterName]) => {
         const selected = state.filters[filterName];
-        return !selected || asText(record[config.key]) === selected;
+        return !selected || getFilterValue(record, filterName) === selected;
       });
     });
     state.page = 1;
@@ -155,14 +153,13 @@
   }
 
   function appendDetail(list, label, value) {
+    if (!asText(value)) return;
     const row = document.createElement("div");
     row.className = "detail-row";
     const dt = document.createElement("dt");
     dt.textContent = label;
     const dd = document.createElement("dd");
-    const text = asText(value);
-    dd.textContent = text || "Belum tersedia";
-    if (!text) dd.className = "detail-empty";
+    dd.textContent = asText(value);
     row.append(dt, dd);
     list.append(row);
   }
@@ -185,7 +182,7 @@
 
     const name = document.createElement("h3");
     name.className = "card-name";
-    name.textContent = firstNonEmpty(record.nama_prelist, "Nama tidak tersedia");
+    name.textContent = getName(record);
 
     const address = document.createElement("p");
     address.className = "card-address";
@@ -196,11 +193,19 @@
 
     const details = document.createElement("dl");
     details.className = "card-details";
-    appendDetail(details, "Instansi (BKD)", record.instansi_dari_bkd);
-    appendDetail(details, "Unit Kerja (BKD)", record.unit_kerja_dari_bkd);
-    appendDetail(details, "Instansi (Fasih)", record.instansi_kerja_fasih);
+    const instansiBkd = getInstansiBkd(record);
+    const unitBkd = getUnitBkd(record);
+    const instansiFasih = getInstansiFasih(record);
 
-    const location = asText(record.lokasi_kerja_fasih);
+    // Prioritaskan data BKD jika salah satunya terisi. Tampilkan Fasih hanya jika keduanya kosong.
+    if (instansiBkd || unitBkd) {
+      appendDetail(details, "Instansi (BKD)", instansiBkd);
+      appendDetail(details, "Unit Kerja (BKD)", unitBkd);
+    } else if (instansiFasih) {
+      appendDetail(details, "Instansi (Fasih)", instansiFasih);
+    }
+
+    const location = getLocation(record);
     let locationElement = null;
     if (location) {
       locationElement = document.createElement("p");
@@ -215,19 +220,17 @@
     action.className = "card-action";
     const note = document.createElement("span");
     note.className = "card-action-note";
-    note.textContent = "Tautan pengisian";
+    note.textContent = "Perlu verifikasi identitas";
     action.append(note);
 
-    const cawiUrl = getCawiUrl(record.link_cawi);
-    if (cawiUrl) {
-      const link = document.createElement("a");
-      link.className = "button cawi-button";
-      link.href = cawiUrl;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.append(document.createTextNode("Buka CAWI "));
-      link.append(createSvg('<path d="M14 3h7v7"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>'));
-      action.append(link);
+    if (getCawiUrl(getCawiValue(record))) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "button cawi-button";
+      button.append(document.createTextNode("Verifikasi & buka CAWI "));
+      button.append(createSvg('<path d="M14 3h7v7"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>'));
+      button.addEventListener("click", () => openVerification(record));
+      action.append(button);
     } else {
       const unavailable = document.createElement("span");
       unavailable.className = "cawi-unavailable";
@@ -235,7 +238,8 @@
       action.append(unavailable);
     }
 
-    card.append(top, name, address, details);
+    card.append(top, name, address);
+    if (details.children.length) card.append(details);
     if (locationElement) card.append(locationElement);
     card.append(action);
     return card;
@@ -258,9 +262,7 @@
     const strong = document.createElement("strong");
     strong.textContent = filteredNumber;
     els.summary.append(strong, document.createTextNode(` dari ${allNumber} assignment ditampilkan`));
-    if (state.query || Object.values(state.filters).some(Boolean)) {
-      els.summary.append(document.createTextNode(" · hasil pencarian"));
-    }
+    if (state.query || Object.values(state.filters).some(Boolean)) els.summary.append(document.createTextNode(" · hasil pencarian"));
 
     const hasResults = total > 0;
     els.empty.hidden = hasResults;
@@ -282,6 +284,71 @@
     state.page = 1;
     applyFilters();
     els.search.focus();
+  }
+
+  function clearVerificationError() {
+    els.verificationError.textContent = "";
+    els.verificationError.hidden = true;
+    els.identityInput.removeAttribute("aria-invalid");
+  }
+
+  function showVerificationError(message) {
+    els.verificationError.textContent = message;
+    els.verificationError.hidden = false;
+    els.identityInput.setAttribute("aria-invalid", "true");
+    els.identityInput.focus();
+  }
+
+  function openVerification(record) {
+    state.activeRecord = record;
+    els.dialogForm.reset();
+    clearVerificationError();
+    els.dialogRecordName.textContent = `Assignment: ${getName(record)}. Masukkan NIK PNS, NIK salah satu anggota keluarga, atau Nomor KK yang sesuai dengan data assignment ini.`;
+    if (typeof els.dialog.showModal === "function") {
+      els.dialog.showModal();
+      window.setTimeout(() => els.identityInput.focus(), 0);
+    } else {
+      // Browser lawas: degrade gracefully to a blocking prompt.
+      const value = window.prompt(`Verifikasi untuk ${getName(record)}\nMasukkan NIK atau Nomor KK (16 digit):`);
+      if (value !== null) validateAndOpen(value, record);
+      state.activeRecord = null;
+    }
+  }
+
+  function normalizeIdentity(value) {
+    // Hanya abaikan spasi/tanda hubung saat pengguna memisahkan digit.
+    return asText(value).replace(/[\s-]/g, "");
+  }
+
+  function validateAndOpen(inputValue, record) {
+    const identity = normalizeIdentity(inputValue);
+    if (!/^\d{16}$/.test(identity)) {
+      showVerificationError("Input harus terdiri dari tepat 16 digit angka. Periksa kembali NIK atau Nomor KK.");
+      return false;
+    }
+
+    const matched = NIK_FIELDS.some((field) => {
+      const candidate = normalizeIdentity(record[field]);
+      return /^\d{16}$/.test(candidate) && candidate === identity;
+    });
+    if (!matched) {
+      showVerificationError("Data tidak cocok. Periksa kembali NIK atau Nomor KK yang dimasukkan untuk assignment ini.");
+      return false;
+    }
+
+    const cawiUrl = getCawiUrl(getCawiValue(record));
+    if (!cawiUrl) {
+      showVerificationError("Tautan CAWI tidak tersedia atau format tautannya tidak dikenali.");
+      return false;
+    }
+
+    // Called directly inside the submit interaction so browsers are less likely to block the new tab.
+    window.open(cawiUrl, "_blank", "noopener,noreferrer");
+    if (els.dialog.open) els.dialog.close("verified");
+    els.dialogForm.reset();
+    clearVerificationError();
+    state.activeRecord = null;
+    return true;
   }
 
   function showLoadError(error) {
@@ -312,12 +379,26 @@
       state.page = 1;
       render();
     });
-    els.prev.addEventListener("click", () => {
-      if (state.page > 1) { state.page -= 1; render(); }
-    });
+    els.prev.addEventListener("click", () => { if (state.page > 1) { state.page -= 1; render(); } });
     els.next.addEventListener("click", () => {
       const totalPages = Math.ceil(state.filtered.length / state.pageSize);
       if (state.page < totalPages) { state.page += 1; render(); }
+    });
+
+    els.dialogCancel.addEventListener("click", () => els.dialog.close("cancelled"));
+    els.dialogClose.addEventListener("click", () => els.dialog.close("cancelled"));
+    els.dialog.addEventListener("close", () => {
+      els.dialogForm.reset();
+      clearVerificationError();
+      state.activeRecord = null;
+    });
+    els.dialog.addEventListener("click", (event) => {
+      // Klik pada backdrop menutup dialog, klik di dalam kartu tidak.
+      if (event.target === els.dialog) els.dialog.close("cancelled");
+    });
+    els.dialogForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (state.activeRecord) validateAndOpen(els.identityInput.value, state.activeRecord);
     });
 
     document.addEventListener("keydown", (event) => {
