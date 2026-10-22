@@ -303,13 +303,13 @@
     state.activeRecord = record;
     els.dialogForm.reset();
     clearVerificationError();
-    els.dialogRecordName.textContent = `Assignment: ${getName(record)}. Masukkan NIK PNS, NIK salah satu anggota keluarga, atau Nomor KK yang sesuai dengan data assignment ini.`;
+    els.dialogRecordName.textContent = `Assignment: ${getName(record)}. Masukkan NIK atau Nomor KK.`;
     if (typeof els.dialog.showModal === "function") {
       els.dialog.showModal();
       window.setTimeout(() => els.identityInput.focus(), 0);
     } else {
       // Browser lawas: degrade gracefully to a blocking prompt.
-      const value = window.prompt(`Verifikasi untuk ${getName(record)}\nMasukkan NIK atau Nomor KK (16 digit):`);
+      const value = window.prompt(`Verifikasi untuk ${getName(record)}\nMasukkan NIK atau Nomor KK:`);
       if (value !== null) validateAndOpen(value, record);
       state.activeRecord = null;
     }
