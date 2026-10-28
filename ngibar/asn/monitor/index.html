@@ -1244,7 +1244,9 @@
         const statusMap = {
           'OPEN': 'BELUM DIKERJAKAN',
           'DRAFT': 'SEDANG DIKERJAKAN',
-          'SUBMITTED RESPONDENT': 'SUDAH DIKERJAKAN'
+          'SUBMITTED RESPONDENT': 'SUDAH DIKERJAKAN',
+          'EDITED BY Admin Kabupaten': 'SUDAH DIKERJAKAN',
+          'COMPLETED BY Admin Kabupaten': 'SUDAH DIKERJAKAN',
         };
 
         const statuses = [...new Set(state.rows.map(r => r.__status))].sort((a, b) => a.localeCompare(b, 'id'));
