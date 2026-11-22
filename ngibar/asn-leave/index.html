@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#152b49">
+  <meta name="description" content="Direktori pencarian dan penyaringan data assignment.">
+  <title>Pengisian Mandiri Data SE2026 ASN</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="./" aria-label="Pengisian Mandiri Data SE2026 ASN — beranda">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        <span class="brand-copy">
+          <strong>Pengisian Mandiri Data SE2026 ASN</strong>
+        </span>
+      </a>
+      <!-- <span class="topbar-note"><span class="live-dot"></span> Data lokal · Tanpa backend</span> -->
+    </div>
+  </header>
+
+  <main class="page-shell">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">PENCARIAN DATA</p>
+      <h1 id="page-title">Pengisian Mandiri<br class="mobile-break"> Data ASN</h1>
+      <p class="intro-copy">Cari berdasarkan nama, alamat, instansi, kode identitas, dan informasi lainnya. Gunakan filter untuk mempersempit hasil.</p>
+    </section>
+
+    <section class="search-panel" aria-label="Pencarian dan filter data">
+      <div class="search-row">
+        <label class="search-box" for="search-input">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg>
+          <input id="search-input" type="search" placeholder="Cari nama, alamat, instansi, kode identitas…" autocomplete="off" spellcheck="false">
+          <kbd>Ctrl K</kbd>
+        </label>
+        <button id="reset-button" class="button button-quiet" type="button">Reset filter</button>
+      </div>
+
+      <div class="filters-grid">
+        <label class="filter-field">
+          <span>Assignment Status</span>
+          <select id="filter-status"><option value="">Semua status</option></select>
+        </label>
+        <label class="filter-field">
+          <span>Lokasi</span>
+          <select id="filter-lokasi"><option value="">Semua lokasi</option></select>
+        </label>
+        <label class="filter-field">
+          <span>Instansi (BKD)</span>
+          <select id="filter-instansi-bkd"><option value="">Semua instansi BKD</option></select>
+        </label>
+        <label class="filter-field">
+          <span>Unit Kerja (BKD)</span>
+          <select id="filter-unit-bkd"><option value="">Semua unit kerja</option></select>
+        </label>
+        <label class="filter-field">
+          <span>Instansi (Fasih)</span>
+          <select id="filter-instansi-fasih"><option value="">Semua instansi Fasih</option></select>
+        </label>
+      </div>
+    </section>
+
+    <section class="results-section" aria-labelledby="results-title">
+      <div class="results-header">
+        <div>
+          <h2 id="results-title">Daftar assignment</h2>
+          <p id="results-summary" class="results-summary" aria-live="polite">Memuat data…</p>
+        </div>
+        <label class="page-size-control" for="page-size">
+          <span>Tampilkan</span>
+          <select id="page-size" aria-label="Jumlah kartu per halaman">
+            <option value="12" selected>12</option>
+            <option value="24">24</option>
+            <option value="48">48</option>
+          </select>
+          <span>/ halaman</span>
+        </label>
+      </div>
+
+      <div id="data-message" class="message" role="status" hidden></div>
+      <div id="results-grid" class="results-grid" aria-live="polite" aria-busy="true"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <div class="empty-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg>
+        </div>
+        <h3>Tidak ada data yang cocok</h3>
+        <p>Coba ubah kata kunci atau kurangi filter yang aktif.</p>
+        <button id="empty-reset-button" class="button button-primary" type="button">Hapus pencarian dan filter</button>
+      </div>
+
+      <nav id="pagination" class="pagination" aria-label="Navigasi halaman" hidden>
+        <span id="page-info" class="page-info"></span>
+        <div class="page-actions">
+          <button id="prev-page" class="page-button" type="button" aria-label="Halaman sebelumnya">← Sebelumnya</button>
+          <button id="next-page" class="page-button" type="button" aria-label="Halaman berikutnya">Berikutnya →</button>
+        </div>
+      </nav>
+    </section>
+
+    <!-- <footer class="footer">
+      <span>Pengisian Mandiri Data SE2026 ASN</span>
+      <span>Data ditampilkan dari <code>data.json</code></span>
+    </footer> -->
+  </main>
+</body>
+</html>
